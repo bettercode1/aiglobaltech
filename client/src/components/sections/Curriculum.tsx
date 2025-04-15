@@ -16,8 +16,13 @@ export default function Curriculum() {
   };
 
   return (
-    <section id="curriculum" className="py-16 bg-gray-100">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="curriculum" className="py-16 bg-gradient-to-br from-indigo-50 to-blue-100 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMCkiIG9wYWNpdHk9IjAuMDMiPjxwYXRoIGQ9Ik0xMCAzMCBMNTAgMzAiIHN0cm9rZT0iIzQzMzhmZiIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIiAvPjwvc3ZnPg==')]"></div>
+        <div className="absolute top-10 right-1/4 w-64 h-64 bg-indigo-300/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-1/3 w-96 h-96 bg-blue-300/20 rounded-full blur-3xl"></div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <span className="text-blue-500 font-medium">CURRICULUM</span>
           <h2 className="font-sans font-bold text-3xl md:text-4xl mt-2 mb-4">What You'll Learn</h2>

@@ -16,8 +16,14 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-24 bg-gray-50 overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-24 bg-gradient-to-br from-white to-blue-50 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiIG9wYWNpdHk9IjAuMDQiPjxyZWN0IHg9IjE5IiB5PSIxOSIgd2lkdGg9IjIiIGhlaWdodD0iMiIgZmlsbD0iIzYzNjZmMSIgLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiIC8+PC9zdmc+')]"></div>
+        <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-200 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-blue-200 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute top-1/2 left-1/4 w-40 h-40 bg-purple-200 rounded-full blur-2xl opacity-20"></div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 relative">
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-24 h-24 bg-purple-100 rounded-full blur-3xl opacity-70"></div>
