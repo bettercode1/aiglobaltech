@@ -16,8 +16,14 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="py-16 bg-gradient-to-br from-blue-950 via-indigo-950 to-purple-950 text-white relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg3KSIgb3BhY2l0eT0iMC4wNyI+PHBhdGggZD0iTTAgMTAgUTQwIDQwIDgwIDEwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIgLz48L3N2Zz4=')]"></div>
+        <div className="absolute top-40 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/5 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl"></div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <span className="text-blue-500 font-medium">PRICING</span>
           <h2 className="font-sans font-bold text-3xl md:text-4xl mt-2 mb-4">Investment in Your Future</h2>

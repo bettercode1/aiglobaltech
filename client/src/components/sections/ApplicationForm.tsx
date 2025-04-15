@@ -97,11 +97,13 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section id="apply" className="py-24 bg-gradient-to-br from-purple-50 to-indigo-50 relative overflow-hidden">
+    <section id="apply" className="py-24 bg-gradient-to-br from-violet-50 to-indigo-100 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute -top-24 -right-24 w-64 h-64 bg-purple-200 rounded-full blur-3xl opacity-30"></div>
-        <div className="absolute bottom-10 left-10 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg2MCkiIG9wYWNpdHk9IjAuMDQiPjxyZWN0IHg9IjE4IiB5PSIxOCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iIzgxNmNmZiIgLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjcGF0dGVybikiIC8+PC9zdmc+')]"></div>
+        <div className="absolute -top-24 -right-24 w-64 h-64 bg-violet-300 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-indigo-300 rounded-full blur-3xl opacity-20"></div>
+        <div className="absolute top-1/3 left-1/4 w-40 h-40 bg-purple-300 rounded-full blur-2xl opacity-20"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
