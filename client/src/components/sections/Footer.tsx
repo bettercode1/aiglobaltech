@@ -70,7 +70,6 @@ export default function Footer() {
           <div className="md:col-span-4">
             <div className="mb-6">
               <BettercodeLogotype showText={true} />
-              <p className="text-xs text-gray-400 mt-1">Technologies PVT LTD</p>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Empowering the next generation of AI professionals through comprehensive training and real-world experience. Join us on the journey to shape the future of artificial intelligence.
@@ -146,7 +145,7 @@ export default function Footer() {
             <h4 className="font-sans font-bold text-lg mb-6 text-white">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <button onClick={() => alert('Terms & Conditions: This AI training program is provided by Bettercode Technologies PVT LTD. By enrolling in the program, you agree to our terms of service including attendance, code of conduct, and intellectual property policies.')} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <button onClick={() => alert('Terms & Conditions: This AI training program is provided by AI Learning Hub (AILH). By enrolling in the program, you agree to our terms of service including attendance, code of conduct, and intellectual property policies.')} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Terms & Conditions</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </button>
@@ -164,7 +163,7 @@ export default function Footer() {
                 </button>
               </li>
               <li>
-                <a href="mailto:info@bettercode.co.in?subject=Career%20Inquiry" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <a href="mailto:info@ailearninghub.com?subject=Career%20Inquiry" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Careers</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </a>
@@ -180,13 +179,13 @@ export default function Footer() {
                   <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <a href="https://g.co/kgs/h98RWH7" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">Bettercode Technologies PVT LTD, Pimpri Chinchwad, Pune 411033</a>
+                  <a href="https://g.co/kgs/h98RWH7" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">AI Learning Hub, Pimpri Chinchwad, Pune 411033</a>
                 </li>
                 <li className="flex items-start">
                   <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <a href="mailto:info@bettercode.co.in" className="text-gray-300 hover:text-white transition-colors duration-300">info@bettercode.co.in</a>
+                  <a href="mailto:info@ailearninghub.com" className="text-gray-300 hover:text-white transition-colors duration-300">info@ailearninghub.com</a>
                 </li>
                 <li className="flex items-start">
                   <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
@@ -198,7 +197,7 @@ export default function Footer() {
                   <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
                     <ExternalLink className="h-5 w-5" />
                   </div>
-                  <a href="https://www.bettercode.co.in" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">www.bettercode.co.in</a>
+                  <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300">www.ailearninghub.com</a>
                 </li>
               </ul>
               <div className="mt-6 pt-6 border-t border-white/10">
@@ -217,7 +216,7 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-6 md:mb-0">© {currentYear} Bettercode Technologies PVT LTD. All rights reserved.</p>
+            <p className="text-gray-400 text-sm mb-6 md:mb-0">© {currentYear} AI Learning Hub (AILH). All rights reserved.</p>
             <div className="text-gray-400 text-sm max-w-2xl text-center md:text-right">
               <p className="mb-1">*Disclaimer: Job placement after the internship is subject to performance evaluation, available positions, and market conditions.</p>
               <p>All program details are subject to change. Please refer to the most recent communications for up-to-date information.</p>

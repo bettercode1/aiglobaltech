@@ -7,12 +7,12 @@ const BettercodeLogotype: React.FC<{ className?: string, showText?: boolean }> =
   return (
     <div className={`flex items-center ${className}`}>
       <div className="flex items-center justify-center h-10 w-10 bg-black rounded-full border-2 border-cyan-400">
-        <span className="font-bold text-xs text-cyan-400">BC</span>
+        <span className="font-bold text-xs text-cyan-400">AILH</span>
       </div>
       {showText && (
         <div className="ml-2">
           <div className="flex flex-col">
-            <span className="font-sans font-bold text-xl">Better<span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">code</span></span>
+            <span className="font-sans font-bold text-xl">AI <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Learning Hub</span></span>
           </div>
         </div>
       )}
