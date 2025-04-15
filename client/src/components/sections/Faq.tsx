@@ -36,7 +36,7 @@ export default function Faq() {
     },
     {
       question: "What certificate will I receive upon completion?",
-      answer: "Upon successful completion of the program, you will receive two certificates: a Workshop Completion Certificate detailing the AI & GenAI skills acquired, and an Internship Experience Certificate verifying your 3 months of practical work experience. Both certificates are industry-recognized and can be showcased in your resume and professional profiles."
+      answer: "Upon successful completion of the program, you will receive two certificates: a Workshop Completion Certificate detailing the AI & GenAI skills acquired, and an Internship Experience Certificate verifying your 2 months of practical work experience. Both certificates are industry-recognized and can be showcased in your resume and professional profiles."
     },
     {
       question: "What is the difference between online and offline modes?",

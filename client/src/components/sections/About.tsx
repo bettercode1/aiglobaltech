@@ -55,7 +55,7 @@ export default function About() {
             </div>
             <h3 className="font-sans font-bold text-2xl mb-3 text-white group-hover:text-blue-400 transition-colors duration-300">Real-World Experience</h3>
             <p className="text-gray-400 leading-relaxed">
-              Gain 3 months of hands-on internship experience working on actual projects with industry mentors. Build a portfolio that showcases your skills to potential employers.
+              Gain 2 months of hands-on internship experience working on actual projects with industry mentors. Build a portfolio that showcases your skills to potential employers.
             </p>
           </div>
           

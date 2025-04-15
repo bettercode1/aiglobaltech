@@ -41,7 +41,7 @@ export default function Hero() {
               Your Future in <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">AI & GenAI</span> Starts Here
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-              A comprehensive 6-month workshop and internship program designed for anyone who wants to learn AI and survive in the AI-driven future—no engineering background required.
+              A comprehensive 5-month program (3-month workshop + 2-month internship) designed for anyone who wants to learn AI and survive in the AI-driven future—no engineering background required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
@@ -106,7 +106,7 @@ export default function Hero() {
                   <Sparkles className="h-5 w-5 text-cyan-400" />
                 </div>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-cyan-400 font-mono">06</span></p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-cyan-400 font-mono">05</span></p>
               <p className="text-gray-400 font-mono text-xs">PROGRAM_MONTHS</p>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-blue-500/10 hover:border-blue-500/30">
@@ -115,7 +115,7 @@ export default function Hero() {
                   <Zap className="h-5 w-5 text-blue-400" />
                 </div>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-blue-400 font-mono">03+</span></p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-blue-400 font-mono">02</span></p>
               <p className="text-gray-400 font-mono text-xs">INTERNSHIP_MONTHS</p>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-indigo-500/10 hover:border-indigo-500/30">

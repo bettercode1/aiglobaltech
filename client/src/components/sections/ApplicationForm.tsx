@@ -138,7 +138,7 @@ export default function ApplicationForm() {
                     <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">
                       <Sparkles className="h-4 w-4" />
                     </div>
-                    <span>3-month paid internship opportunity</span>
+                    <span>2-month paid internship opportunity</span>
                   </li>
                   <li className="flex items-start">
                     <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">

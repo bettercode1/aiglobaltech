@@ -27,7 +27,7 @@ export default function Curriculum() {
           <span className="text-blue-500 font-medium">CURRICULUM</span>
           <h2 className="font-sans font-bold text-3xl md:text-4xl mt-2 mb-4">What You'll Learn</h2>
           <p className="max-w-3xl mx-auto text-gray-600">
-            Our comprehensive curriculum takes you from AI fundamentals to building advanced GenAI applications over a 6-month journey.
+            Our comprehensive curriculum takes you from AI fundamentals to building advanced GenAI applications over a 5-month journey (3-month workshop + 2-month internship).
           </p>
         </div>
         
@@ -69,7 +69,7 @@ export default function Curriculum() {
                 <div className="bg-green-100 p-2 rounded-full text-green-500 mr-4">
                   <Briefcase className="h-6 w-6" />
                 </div>
-                <h4 className="font-sans font-semibold text-lg">Phase 2: Internship (3 Months)</h4>
+                <h4 className="font-sans font-semibold text-lg">Phase 2: Internship (2 Months)</h4>
               </div>
               <ul className="space-y-2 pl-12">
                 <li className="flex items-center">
