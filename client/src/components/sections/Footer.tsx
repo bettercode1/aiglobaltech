@@ -25,13 +25,31 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-blue-950 to-indigo-950 text-white pt-20 pb-8 relative overflow-hidden">
+    <footer className="bg-gradient-to-br from-black via-slate-900 to-slate-950 text-white pt-20 pb-8 relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxNSkiIG9wYWNpdHk9IjAuMDUiPjxjaXJjbGUgY3g9IjMwIiBjeT0iMzAiIHI9IjEiIGZpbGw9IndoaXRlIiAvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIgLz48L3N2Zz4=')]"></div>
-        <div className="absolute top-10 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-10 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 left-1/4 w-40 h-40 bg-indigo-500/5 rounded-full blur-2xl"></div>
+        {/* Digital grid background */}
+        <div className="absolute top-0 right-0 w-full h-full opacity-10" 
+          style={{
+            backgroundImage: 'linear-gradient(to right, #0f172a 1px, transparent 1px), linear-gradient(to bottom, #0f172a 1px, transparent 1px)',
+            backgroundSize: '20px 20px'
+          }}>
+        </div>
+        
+        {/* Circuit-like digital lines */}
+        <div className="absolute top-0 left-0 w-full h-full opacity-5">
+          <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0,100 Q50,50 100,100 T200,100 T300,100 T400,100" stroke="#22d3ee" strokeWidth="1" fill="none" />
+            <path d="M0,200 Q50,150 100,200 T200,200 T300,200 T400,200" stroke="#0ea5e9" strokeWidth="1" fill="none" />
+            <path d="M100,0 Q150,50 100,100 T100,200 T100,300 T100,400" stroke="#22d3ee" strokeWidth="1" fill="none" />
+            <path d="M200,0 Q250,50 200,100 T200,200 T200,300 T200,400" stroke="#0ea5e9" strokeWidth="1" fill="none" />
+          </svg>
+        </div>
+        
+        {/* Glowing orbs */}
+        <div className="absolute top-10 right-10 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 left-1/4 w-40 h-40 bg-cyan-400/5 rounded-full blur-2xl"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -50,11 +68,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-4">
             <div className="flex items-center mb-6">
-              <div className="text-purple-400 mr-3">
+              <div className="text-cyan-400 mr-3">
                 <BrainCircuit className="h-10 w-10" />
               </div>
               <div>
-                <span className="font-sans font-bold text-2xl">AI<span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Future</span></span>
+                <span className="font-sans font-bold text-2xl">Better<span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">code</span></span>
+                <p className="text-xs text-gray-400">Technologies PVT LTD</p>
               </div>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -162,31 +181,38 @@ export default function Footer() {
             <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6">
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-purple-400 flex-shrink-0">
+                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <span className="text-gray-300">123 AI Boulevard, Tech Park, Bangalore - 560001</span>
+                  <span className="text-gray-300">Bettercode Technologies PVT LTD, Pimpri Chinchwad, Pune 411033</span>
                 </li>
                 <li className="flex items-start">
-                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-purple-400 flex-shrink-0">
+                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
                     <Mail className="h-5 w-5" />
                   </div>
-                  <a href="mailto:info@aifuture.com" className="text-gray-300 hover:text-white transition-colors duration-300">info@aifuture.com</a>
+                  <a href="mailto:info@bettercode.co.in" className="text-gray-300 hover:text-white transition-colors duration-300">info@bettercode.co.in</a>
                 </li>
                 <li className="flex items-start">
-                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-purple-400 flex-shrink-0">
+                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
                     <Phone className="h-5 w-5" />
                   </div>
-                  <a href="tel:+919876543210" className="text-gray-300 hover:text-white transition-colors duration-300">+91 9876543210</a>
+                  <a href="tel:+919028757042" className="text-gray-300 hover:text-white transition-colors duration-300">+91 90287 57042</a>
+                </li>
+                <li className="flex items-start">
+                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
+                    <ExternalLink className="h-5 w-5" />
+                  </div>
+                  <a href="https://www.bettercode.co.in" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">www.bettercode.co.in</a>
                 </li>
               </ul>
               <div className="mt-6 pt-6 border-t border-white/10">
                 <button 
                   onClick={() => scrollToSection('apply')}
-                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                  className="w-full bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
                 >
-                  Apply Now
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
+                  APPLY.exe
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
               </div>
             </div>
@@ -195,7 +221,7 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-6 md:mb-0">© {currentYear} AIFuture. All rights reserved.</p>
+            <p className="text-gray-400 text-sm mb-6 md:mb-0">© {currentYear} Bettercode Technologies PVT LTD. All rights reserved.</p>
             <div className="text-gray-400 text-sm max-w-2xl text-center md:text-right">
               <p className="mb-1">*Disclaimer: Job placement after the internship is subject to performance evaluation, available positions, and market conditions.</p>
               <p>All program details are subject to change. Please refer to the most recent communications for up-to-date information.</p>
