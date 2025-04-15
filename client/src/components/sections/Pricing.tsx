@@ -35,7 +35,7 @@ export default function Pricing() {
         <div className="max-w-3xl mx-auto bg-white text-gray-900 rounded-xl shadow-lg overflow-hidden">
           <div className="bg-purple-100 p-6 text-center">
             <h3 className="font-sans font-bold text-2xl text-purple-500">Complete Workshop + Internship Package</h3>
-            <p className="text-gray-600 mt-2">Comprehensive 6-month program</p>
+            <p className="text-gray-600 mt-2">Comprehensive 5-month program</p>
           </div>
           
           <div className="p-8">
@@ -88,7 +88,7 @@ export default function Pricing() {
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                    <span className="text-gray-600">3 months of supervised internship</span>
+                    <span className="text-gray-600">2 months of supervised internship</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />

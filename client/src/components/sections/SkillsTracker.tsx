@@ -275,7 +275,7 @@ export default function SkillsTracker() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <span className="text-green-400">$</span>
-              <span className="ml-2">system.info: Skills monitored throughout the 6-month AILH program</span>
+              <span className="ml-2">system.info: Skills monitored throughout the 5-month AILH program</span>
             </div>
             <div className="hidden md:flex items-center">
               <span className="h-2 w-2 bg-green-500 rounded-full animate-pulse mr-2"></span>
