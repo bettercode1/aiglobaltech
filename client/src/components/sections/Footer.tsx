@@ -69,7 +69,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-4">
             <div className="mb-6">
-              <BettercodeLogotype />
+              <BettercodeLogotype showText={true} />
+              <p className="text-xs text-gray-400 mt-1">Technologies PVT LTD</p>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Empowering the next generation of AI professionals through comprehensive training and real-world experience. Join us on the journey to shape the future of artificial intelligence.
