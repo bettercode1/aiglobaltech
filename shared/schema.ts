@@ -31,7 +31,7 @@ export const content = pgTable("content", {
   subtitle: text("subtitle"),
   description: text("description"),
   content: jsonb("content"),
-  updatedAt: timestamp("updated_at").defaultNow().notNull(),
+  updatedAt: text("updated_at").notNull(),
   updatedBy: integer("updated_by").references(() => users.id)
 });
 

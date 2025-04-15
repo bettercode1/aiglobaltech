@@ -673,7 +673,7 @@ export default function Admin() {
                             )}
                           </td>
                           <td className="py-4 px-6 text-sm text-gray-500 border-b">
-                            {item.updatedAt ? formatDate(item.updatedAt) : "—"}
+                            {item.updatedAt ? formatDate(String(item.updatedAt)) : "—"}
                           </td>
                           <td className="py-4 px-6 border-b">
                             <button
