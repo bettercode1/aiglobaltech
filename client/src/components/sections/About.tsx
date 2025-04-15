@@ -112,26 +112,26 @@ export default function About() {
                     <p className="text-gray-400">Seeking to enhance job prospects with in-demand AI skills</p>
                   </div>
                 </li>
-                <li className="flex items-start p-3 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-blue-200 hover:shadow transition-all duration-300">
+                <li className="flex items-start p-3 bg-gray-800 rounded shadow-md border border-indigo-500/20 hover:border-indigo-500/50 hover:shadow-lg transition-all duration-300">
                   <div className="flex-shrink-0 mr-4">
-                    <div className="p-2 bg-blue-100 rounded-lg text-blue-600">
+                    <div className="p-2 bg-indigo-900/50 rounded text-indigo-400">
                       <Check className="h-5 w-5" />
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Professionals</h4>
-                    <p className="text-gray-600">Looking to transition into AI & GenAI roles</p>
+                    <h4 className="font-semibold text-white">Professionals</h4>
+                    <p className="text-gray-400">Looking to transition into AI & GenAI roles</p>
                   </div>
                 </li>
-                <li className="flex items-start p-3 bg-white rounded-xl shadow-sm border border-gray-100 hover:border-violet-200 hover:shadow transition-all duration-300">
+                <li className="flex items-start p-3 bg-gray-800 rounded shadow-md border border-purple-500/20 hover:border-purple-500/50 hover:shadow-lg transition-all duration-300">
                   <div className="flex-shrink-0 mr-4">
-                    <div className="p-2 bg-violet-100 rounded-lg text-violet-600">
+                    <div className="p-2 bg-purple-900/50 rounded text-purple-400">
                       <Check className="h-5 w-5" />
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold">AI enthusiasts</h4>
-                    <p className="text-gray-600">Passionate about learning cutting-edge AI technologies</p>
+                    <h4 className="font-semibold text-white">AI enthusiasts</h4>
+                    <p className="text-gray-400">Passionate about learning cutting-edge AI technologies</p>
                   </div>
                 </li>
               </ul>
@@ -139,9 +139,10 @@ export default function About() {
               <div className="mt-10">
                 <button 
                   onClick={() => scrollToSection('apply')}
-                  className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-4 px-8 rounded-full shadow-md hover:shadow-lg transition-all duration-300 flex items-center group"
+                  className="bg-gray-800 hover:bg-gray-700 text-cyan-400 border border-cyan-500/50 font-medium py-3 px-6 rounded shadow-md hover:shadow-lg transition-all duration-300 flex items-center group"
                 >
-                  Join Our Program
+                  <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
+                  JOIN_PROGRAM.exe
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
               </div>

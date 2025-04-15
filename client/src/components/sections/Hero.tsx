@@ -46,78 +46,95 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={() => scrollToSection('apply')}
-                className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-4 px-8 rounded-full shadow-lg hover:shadow-xl text-center transition-all duration-300 flex items-center justify-center group"
+                className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
               >
-                Apply Now
+                <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
+                APPLY.exe
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <button 
                 onClick={() => scrollToSection('curriculum')}
-                className="backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 text-white font-medium py-4 px-8 rounded-full shadow-lg text-center transition-all duration-300"
+                className="bg-gray-900/80 border border-white/10 hover:border-cyan-500/30 text-gray-300 hover:text-cyan-400 font-medium py-3 px-6 rounded shadow-lg text-center transition-all duration-300 font-mono tracking-wide"
               >
-                View Curriculum
+                &lt;view_curriculum/&gt;
               </button>
             </div>
           </div>
           <div className="md:w-1/2 relative">
             {/* Image frame with decorative elements */}
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl blur-md opacity-70"></div>
-              <div className="relative overflow-hidden rounded-xl shadow-2xl">
+              <div className="absolute -inset-0.5 bg-cyan-500/30 rounded blur-sm"></div>
+              <div className="absolute -inset-1 border border-cyan-500/50 rounded"></div>
+              <div className="relative overflow-hidden rounded shadow-2xl border border-cyan-500/20">
+                <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-cyan-500/10 to-transparent p-2 z-20 flex justify-between items-center border-b border-cyan-500/20 text-xs font-mono text-cyan-400">
+                  <span>AI_TRAINING_v2.25.exe</span>
+                  <span className="flex items-center">
+                    <span className="inline-block w-2 h-2 bg-cyan-400 rounded-full mr-1"></span>
+                    <span>ACTIVE</span>
+                  </span>
+                </div>
                 <img 
                   src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                   alt="AI Workshop" 
-                  className="w-full h-auto rounded-xl hover:scale-105 transition-transform duration-700" 
+                  className="w-full h-auto hover:scale-105 transition-transform duration-700 brightness-75" 
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none"></div>
               </div>
-              <div className="absolute -bottom-4 -right-4 bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/20 shadow-xl">
+              <div className="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-md p-3 rounded border border-cyan-500/30 shadow-xl">
                 <div className="flex items-center">
-                  <Star className="h-5 w-5 text-yellow-400 mr-1" />
-                  <span className="font-bold">4.9/5</span>
-                  <span className="ml-2 text-sm text-gray-200">(190+ reviews)</span>
+                  <Star className="h-5 w-5 text-cyan-400 mr-1" />
+                  <span className="font-bold text-white">4.9/5</span>
+                  <span className="ml-2 text-xs text-gray-300 font-mono">[190+ reviews]</span>
                 </div>
               </div>
+              <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-cyan-500/50"></div>
+              <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-cyan-500/50"></div>
             </div>
           </div>
         </div>
         
-        <div className="mt-20 py-5 px-8 bg-white/10 rounded-xl backdrop-blur-md border border-white/20 shadow-xl">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div className="transform hover:scale-105 transition-transform duration-300">
+        <div className="mt-20 py-5 px-8 bg-gray-900/50 rounded border border-cyan-500/20 shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 via-transparent to-cyan-500"></div>
+          <div className="absolute right-0 top-0 h-full w-0.5 bg-gradient-to-b from-cyan-500 via-transparent to-transparent"></div>
+          <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-transparent via-transparent to-cyan-500"></div>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center relative z-10">
+            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-cyan-500/10 hover:border-cyan-500/30">
               <div className="flex justify-center mb-2">
-                <div className="p-3 bg-purple-500/20 rounded-full">
-                  <Sparkles className="h-6 w-6 text-purple-400" />
+                <div className="p-2 bg-black border border-cyan-500/30 rounded">
+                  <Sparkles className="h-5 w-5 text-cyan-400" />
                 </div>
               </div>
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">6</p>
-              <p className="text-gray-200 font-medium">Months Program</p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-cyan-400 font-mono">06</span></p>
+              <p className="text-gray-400 font-mono text-xs">PROGRAM_MONTHS</p>
             </div>
-            <div className="transform hover:scale-105 transition-transform duration-300">
+            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-blue-500/10 hover:border-blue-500/30">
               <div className="flex justify-center mb-2">
-                <div className="p-3 bg-blue-500/20 rounded-full">
-                  <Zap className="h-6 w-6 text-blue-400" />
+                <div className="p-2 bg-black border border-blue-500/30 rounded">
+                  <Zap className="h-5 w-5 text-blue-400" />
                 </div>
               </div>
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">3+</p>
-              <p className="text-gray-200 font-medium">Months Internship</p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-blue-400 font-mono">03+</span></p>
+              <p className="text-gray-400 font-mono text-xs">INTERNSHIP_MONTHS</p>
             </div>
-            <div className="transform hover:scale-105 transition-transform duration-300">
+            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-indigo-500/10 hover:border-indigo-500/30">
               <div className="flex justify-center mb-2">
-                <div className="p-3 bg-indigo-500/20 rounded-full">
-                  <Star className="h-6 w-6 text-indigo-400" />
+                <div className="p-2 bg-black border border-indigo-500/30 rounded">
+                  <Star className="h-5 w-5 text-indigo-400" />
                 </div>
               </div>
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-indigo-400 to-violet-400 bg-clip-text text-transparent">15+</p>
-              <p className="text-gray-200 font-medium">GenAI Tools</p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-indigo-400 font-mono">15+</span></p>
+              <p className="text-gray-400 font-mono text-xs">GENAI_TOOLS</p>
             </div>
-            <div className="transform hover:scale-105 transition-transform duration-300">
+            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-purple-500/10 hover:border-purple-500/30">
               <div className="flex justify-center mb-2">
-                <div className="p-3 bg-violet-500/20 rounded-full">
-                  <Users className="h-6 w-6 text-violet-400" />
+                <div className="p-2 bg-black border border-purple-500/30 rounded">
+                  <Users className="h-5 w-5 text-purple-400" />
                 </div>
               </div>
-              <p className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-violet-400 to-purple-400 bg-clip-text text-transparent">10+</p>
-              <p className="text-gray-200 font-medium">Industry Experts</p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-purple-400 font-mono">10+</span></p>
+              <p className="text-gray-400 font-mono text-xs">INDUSTRY_EXPERTS</p>
             </div>
           </div>
         </div>
@@ -125,10 +142,10 @@ export default function Hero() {
         <div className="flex justify-center mt-16">
           <button 
             onClick={() => scrollToSection('about')}
-            className="group text-white hover:text-purple-200 transition flex flex-col items-center"
+            className="group text-cyan-400 hover:text-cyan-300 transition flex flex-col items-center"
           >
-            <span className="mb-2 font-medium">Learn More</span>
-            <div className="p-2 bg-white/10 backdrop-blur-md rounded-full border border-white/20 shadow-md group-hover:bg-white/20 transition-all duration-300">
+            <span className="mb-2 font-mono text-xs tracking-wider">SCROLL_DOWN.exe</span>
+            <div className="p-2 bg-black/50 rounded border border-cyan-500/30 shadow-md group-hover:border-cyan-500/50 transition-all duration-300">
               <ChevronDown className="animate-bounce" />
             </div>
           </button>
