@@ -2,6 +2,7 @@ import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Curriculum from "@/components/sections/Curriculum";
+import SkillsTracker from "@/components/sections/SkillsTracker";
 import Benefits from "@/components/sections/Benefits";
 import Pricing from "@/components/sections/Pricing";
 import Faq from "@/components/sections/Faq";
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <About />
       <Curriculum />
+      <SkillsTracker />
       <Benefits />
       <Pricing />
       <Faq />
