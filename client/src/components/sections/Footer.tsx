@@ -150,26 +150,26 @@ export default function Footer() {
             <h4 className="font-sans font-bold text-lg mb-6 text-white">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <a href="https://www.bettercode.co.in/terms" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Terms & Conditions</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <a href="https://www.bettercode.co.in/privacy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Privacy Policy</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <a href="https://www.bettercode.co.in/refund" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Refund Policy</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </a>
               </li>
               <li>
-                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
-                  <span>Cookie Policy</span>
+                <a href="https://www.bettercode.co.in/careers" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                  <span>Careers</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </a>
               </li>
@@ -184,7 +184,7 @@ export default function Footer() {
                   <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <span className="text-gray-300">Bettercode Technologies PVT LTD, Pimpri Chinchwad, Pune 411033</span>
+                  <a href="https://g.co/kgs/h98RWH7" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">Bettercode Technologies PVT LTD, Pimpri Chinchwad, Pune 411033</a>
                 </li>
                 <li className="flex items-start">
                   <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">

@@ -46,7 +46,7 @@ export default function Pricing() {
                   <span className="text-purple-500 text-5xl font-bold">₹39,999</span>
                   <span className="text-gray-500 ml-2">/ program</span>
                 </div>
-                <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded mt-2">20% Early Bird Discount</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded mt-2">10% Early Bird Discount</span>
               </div>
             </div>
             
@@ -113,11 +113,12 @@ export default function Pricing() {
             <div className="text-center">
               <button 
                 onClick={() => scrollToSection('apply')}
-                className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-8 rounded-md inline-block transition"
+                className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
               >
-                Apply for Program
+                <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
+                APPLY.exe
               </button>
-              <p className="text-sm text-gray-500 mt-4">Limited seats available. Early bird discount valid until June 30, 2023.</p>
+              <p className="text-sm text-gray-500 mt-4">Limited Seats Available. <span className="font-semibold text-green-600">Early bird discount (10% off) for first 11 admissions only!</span></p>
             </div>
           </div>
           
