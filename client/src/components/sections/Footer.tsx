@@ -1,4 +1,5 @@
-import { BrainCircuit, MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin, ExternalLink, ChevronUp, ArrowRight } from "lucide-react";
+import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin, ExternalLink, ChevronUp, ArrowRight } from "lucide-react";
+import BettercodeLogotype from "../BettercodeLogotype";
 
 export default function Footer() {
   const scrollToSection = (id: string) => {
@@ -67,14 +68,8 @@ export default function Footer() {
         {/* Grid sections */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-4">
-            <div className="flex items-center mb-6">
-              <div className="text-cyan-400 mr-3">
-                <BrainCircuit className="h-10 w-10" />
-              </div>
-              <div>
-                <span className="font-sans font-bold text-2xl">Better<span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">code</span></span>
-                <p className="text-xs text-gray-400">Technologies PVT LTD</p>
-              </div>
+            <div className="mb-6">
+              <BettercodeLogotype />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Empowering the next generation of AI professionals through comprehensive training and real-world experience. Join us on the journey to shape the future of artificial intelligence.
@@ -150,25 +145,25 @@ export default function Footer() {
             <h4 className="font-sans font-bold text-lg mb-6 text-white">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <a href="https://www.bettercode.co.in/terms" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <button onClick={() => alert('Terms & Conditions: This AI training program is provided by Bettercode Technologies PVT LTD. By enrolling in the program, you agree to our terms of service including attendance, code of conduct, and intellectual property policies.')} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Terms & Conditions</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </a>
+                </button>
               </li>
               <li>
-                <a href="https://www.bettercode.co.in/privacy" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <button onClick={() => alert('Privacy Policy: We collect personal information solely for program administration. Your data is securely stored and never shared with unauthorized third parties. You have the right to access and request deletion of your information.')} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Privacy Policy</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </a>
+                </button>
               </li>
               <li>
-                <a href="https://www.bettercode.co.in/refund" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <button onClick={() => alert('Refund Policy: Full refunds available if requested within 7 days of payment. Partial refunds of 50% if requested before the program begins. No refunds available once the program has started.')} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Refund Policy</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </a>
+                </button>
               </li>
               <li>
-                <a href="https://www.bettercode.co.in/careers" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <a href="mailto:info@bettercode.co.in?subject=Career%20Inquiry" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Careers</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </a>

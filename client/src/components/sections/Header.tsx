@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { BrainCircuit, Menu, X, ChevronRight } from "lucide-react";
+import { Menu, X, ChevronRight } from "lucide-react";
+import BettercodeLogotype from "../BettercodeLogotype";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -50,10 +51,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <a href="#" className="flex items-center" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>
-            <div className="text-purple-600 mr-2">
-              <BrainCircuit className="h-8 w-8" />
-            </div>
-            <span className="font-sans font-bold text-2xl">AI<span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Future</span></span>
+            <BettercodeLogotype />
           </a>
         </div>
         
@@ -99,10 +97,11 @@ export default function Header() {
         <div className="hidden md:block">
           <a 
             href="#apply" 
-            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-2.5 px-6 rounded-full shadow-md hover:shadow-lg transition-all duration-200 flex items-center group"
+            className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
             onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
           >
-            Apply Now
+            <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
+            APPLY.exe
             <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
           </a>
         </div>
