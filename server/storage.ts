@@ -96,7 +96,7 @@ export class DatabaseStorage implements IStorage {
       .insert(content)
       .values({
         ...contentData,
-        updated_at: new Date().toISOString()
+        updatedAt: new Date().toISOString()
       })
       .returning();
     return newContent;
@@ -107,7 +107,7 @@ export class DatabaseStorage implements IStorage {
       .update(content)
       .set({
         ...updates,
-        updated_at: new Date().toISOString()
+        updatedAt: new Date().toISOString()
       })
       .where(eq(content.section, section))
       .returning();

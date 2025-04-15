@@ -3,6 +3,7 @@ import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Curriculum from "@/components/sections/Curriculum";
 import SkillsTracker from "@/components/sections/SkillsTracker";
+import SkillTree from "@/components/sections/SkillTree";
 import Benefits from "@/components/sections/Benefits";
 import LearningPath from "@/components/sections/LearningPath";
 import Pricing from "@/components/sections/Pricing";
@@ -18,6 +19,7 @@ export default function Home() {
       <About />
       <Curriculum />
       <LearningPath />
+      <SkillTree />
       <SkillsTracker />
       <Benefits />
       <Pricing />
