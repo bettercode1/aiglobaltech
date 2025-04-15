@@ -6,13 +6,18 @@ const BettercodeLogotype: React.FC<{ className?: string, showText?: boolean }> =
 }) => {
   return (
     <div className={`flex items-center ${className}`}>
-      <div className="flex items-center justify-center h-10 w-10 bg-black rounded-full border-2 border-cyan-400">
-        <span className="font-bold text-xs text-cyan-400">AILH</span>
+      <div className="flex items-center justify-center h-12 w-12 bg-gradient-to-br from-purple-600 to-cyan-500 rounded-lg shadow-lg shadow-cyan-500/20">
+        <span className="font-bold text-sm text-white tracking-widest">AILH</span>
       </div>
       {showText && (
-        <div className="ml-2">
+        <div className="ml-3">
           <div className="flex flex-col">
-            <span className="font-sans font-bold text-xl">AI <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Learning Hub</span></span>
+            <span className="font-sans font-bold text-xl">
+              <span className="text-white">AI</span> 
+              <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent ml-1">
+                Learning Hub
+              </span>
+            </span>
           </div>
         </div>
       )}

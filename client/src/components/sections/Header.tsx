@@ -44,7 +44,7 @@ export default function Header() {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-white/90 backdrop-blur-md text-gray-800 shadow-lg" 
+          ? "bg-gray-900/90 backdrop-blur-md text-white shadow-lg border-b border-purple-500/20" 
           : "bg-transparent text-white"
       }`}
     >
@@ -59,7 +59,7 @@ export default function Header() {
         <div className="hidden md:flex space-x-8">
           <a 
             href="#about" 
-            className={`font-medium ${scrolled ? 'text-gray-700 hover:text-purple-600' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
           >
             About

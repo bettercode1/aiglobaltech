@@ -63,20 +63,20 @@ export default function Hero() {
           <div className="md:w-1/2 relative">
             {/* Image frame with decorative elements */}
             <div className="relative">
-              <div className="absolute -inset-0.5 bg-cyan-500/30 rounded blur-sm"></div>
-              <div className="absolute -inset-1 border border-cyan-500/50 rounded"></div>
-              <div className="relative overflow-hidden rounded shadow-2xl border border-cyan-500/20">
-                <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-cyan-500/10 to-transparent p-2 z-20 flex justify-between items-center border-b border-cyan-500/20 text-xs font-mono text-cyan-400">
-                  <span>AI_TRAINING_v2.25.exe</span>
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500/40 to-cyan-500/40 rounded blur-sm"></div>
+              <div className="absolute -inset-1 border border-purple-500/50 rounded"></div>
+              <div className="relative overflow-hidden rounded shadow-2xl border border-cyan-500/30">
+                <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-purple-500/20 via-cyan-500/10 to-transparent p-2 z-20 flex justify-between items-center border-b border-purple-500/30 text-xs font-mono text-purple-400">
+                  <span>AILH_PROGRAM_v3.0.exe</span>
                   <span className="flex items-center">
-                    <span className="inline-block w-2 h-2 bg-cyan-400 rounded-full mr-1"></span>
-                    <span>ACTIVE</span>
+                    <span className="inline-block w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full mr-1"></span>
+                    <span>ENROLLING</span>
                   </span>
                 </div>
                 <img 
-                  src="https://images.unsplash.com/photo-1591453089816-0fbb971b454c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="AI Workshop" 
-                  className="w-full h-auto hover:scale-105 transition-transform duration-700 brightness-75" 
+                  src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
+                  alt="AI Learning Hub Workshop" 
+                  className="w-full h-auto hover:scale-105 transition-transform duration-700 brightness-90" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none"></div>
               </div>
@@ -87,7 +87,7 @@ export default function Hero() {
                   <span className="ml-2 text-xs text-gray-300 font-mono">[190+ reviews]</span>
                 </div>
               </div>
-              <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-cyan-500/50"></div>
+              <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-purple-500/50"></div>
               <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-cyan-500/50"></div>
             </div>
           </div>
