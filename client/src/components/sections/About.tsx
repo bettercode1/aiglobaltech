@@ -34,7 +34,7 @@ export default function About() {
             Transform Your Career with <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">AI Skills</span>
           </h2>
           <p className="max-w-3xl mx-auto text-gray-400 text-lg relative">
-            Our workshop cum internship program is designed to equip you with the skills needed to thrive in the rapidly evolving AI landscape, from fundamentals to advanced applications.
+            Our workshop cum internship program welcomes everyone who wants to master AI, regardless of technical background. We'll equip you with the skills needed to survive and thrive in the rapidly evolving AI landscape.
           </p>
         </div>
         
@@ -45,7 +45,7 @@ export default function About() {
             </div>
             <h3 className="font-sans font-bold text-2xl mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300">Comprehensive Learning</h3>
             <p className="text-gray-400 leading-relaxed">
-              From AI fundamentals to advanced GenAI techniques, our curriculum covers everything you need to build practical applications. Learn by doing with expert guidance.
+              From AI fundamentals to advanced GenAI techniques, our curriculum is designed for all backgrounds—no coding experience required. Learn practical AI skills with expert guidance.
             </p>
           </div>
           
@@ -132,6 +132,17 @@ export default function About() {
                   <div>
                     <h4 className="font-semibold text-white">AI enthusiasts</h4>
                     <p className="text-gray-400">Passionate about learning cutting-edge AI technologies</p>
+                  </div>
+                </li>
+                <li className="flex items-start p-3 bg-gray-800 rounded shadow-md border border-cyan-500/20 hover:border-cyan-500/50 hover:shadow-lg transition-all duration-300">
+                  <div className="flex-shrink-0 mr-4">
+                    <div className="p-2 bg-cyan-900/50 rounded text-cyan-400">
+                      <Check className="h-5 w-5" />
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-white">Non-technical individuals</h4>
+                    <p className="text-gray-400">Anyone who wants to survive and thrive in the AI-driven future</p>
                   </div>
                 </li>
               </ul>

@@ -41,7 +41,7 @@ export default function Hero() {
               Your Future in <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">AI & GenAI</span> Starts Here
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-              A comprehensive 6-month workshop and internship program designed for final year students and fresh graduates to master AI and Generative AI technologies.
+              A comprehensive 6-month workshop and internship program designed for anyone who wants to learn AI and survive in the AI-driven future—no engineering background required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
