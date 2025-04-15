@@ -25,7 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Loader2 } from "lucide-react";
+import { Loader2, User, Mail, Phone, BookOpen, Send, Sparkles } from "lucide-react";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -97,257 +97,322 @@ export default function ApplicationForm() {
   };
 
   return (
-    <section id="apply" className="py-16 bg-white">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <span className="text-blue-500 font-medium">APPLICATION</span>
-            <h2 className="font-sans font-bold text-3xl md:text-4xl mt-2 mb-4">Apply for the Program</h2>
-            <p className="max-w-3xl mx-auto text-gray-600">
+    <section id="apply" className="py-24 bg-gradient-to-br from-purple-50 to-indigo-50 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute -top-24 -right-24 w-64 h-64 bg-purple-200 rounded-full blur-3xl opacity-30"></div>
+        <div className="absolute bottom-10 left-10 w-96 h-96 bg-indigo-200 rounded-full blur-3xl opacity-30"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12 relative">
+            <div className="inline-flex items-center justify-center p-1 rounded-full bg-white shadow-md mb-4">
+              <div className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
+                <Sparkles className="h-4 w-4 mr-2" />
+                APPLICATION
+              </div>
+            </div>
+            <h2 className="font-sans font-bold text-4xl md:text-5xl mt-2 mb-4">
+              Apply for the <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Program</span>
+            </h2>
+            <p className="max-w-3xl mx-auto text-gray-600 text-lg">
               Fill out the form below to start your application process for our AI & GenAI workshop and internship program.
             </p>
           </div>
           
-          <div className="bg-gray-50 rounded-xl shadow-md overflow-hidden">
-            <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="p-8">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <FormField
-                    control={form.control}
-                    name="firstName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>First Name*</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Enter your first name" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="lastName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Last Name*</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Enter your last name" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
+            <div className="md:flex">
+              <div className="hidden md:block md:w-1/3 bg-gradient-to-br from-purple-600 to-indigo-700 p-8 text-white">
+                <h3 className="font-bold text-xl mb-6">Program Benefits</h3>
+                <ul className="space-y-4">
+                  <li className="flex items-start">
+                    <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">
+                      <Sparkles className="h-4 w-4" />
+                    </div>
+                    <span>Comprehensive AI & GenAI training</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">
+                      <Sparkles className="h-4 w-4" />
+                    </div>
+                    <span>3-month paid internship opportunity</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">
+                      <Sparkles className="h-4 w-4" />
+                    </div>
+                    <span>Certificate of completion</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">
+                      <Sparkles className="h-4 w-4" />
+                    </div>
+                    <span>Portfolio of projects</span>
+                  </li>
+                  <li className="flex items-start">
+                    <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">
+                      <Sparkles className="h-4 w-4" />
+                    </div>
+                    <span>Networking opportunities</span>
+                  </li>
+                </ul>
+
+                <div className="mt-12 bg-white/10 rounded-xl p-4">
+                  <p className="font-medium mb-2">Application Timeline</p>
+                  <p className="text-sm opacity-90">Our team will review your application and contact you within 2-3 business days.</p>
                 </div>
-                
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Email Address*</FormLabel>
-                        <FormControl>
-                          <Input type="email" placeholder="you@example.com" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Phone Number*</FormLabel>
-                        <FormControl>
-                          <Input placeholder="Your phone number" {...field} />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <FormField
-                    control={form.control}
-                    name="education"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Highest Education*</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select your highest education" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="high-school">High School</SelectItem>
-                            <SelectItem value="diploma">Diploma</SelectItem>
-                            <SelectItem value="bachelors">Bachelor's Degree</SelectItem>
-                            <SelectItem value="masters">Master's Degree</SelectItem>
-                            <SelectItem value="phd">PhD</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <FormField
-                    control={form.control}
-                    name="mode"
-                    render={({ field }) => (
-                      <FormItem className="space-y-2">
-                        <FormLabel>Program Mode Preference*</FormLabel>
-                        <FormControl>
-                          <RadioGroup
-                            onValueChange={field.onChange}
-                            defaultValue={field.value}
-                            className="flex space-x-4"
-                          >
-                            <div className="flex items-center space-x-2">
-                              <RadioGroupItem value="online" id="online" />
-                              <label htmlFor="online">Online</label>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              <RadioGroupItem value="offline" id="offline" />
-                              <label htmlFor="offline">Offline</label>
-                            </div>
-                            <div className="flex items-center space-x-2">
-                              <RadioGroupItem value="hybrid" id="hybrid" />
-                              <label htmlFor="hybrid">Hybrid</label>
-                            </div>
-                          </RadioGroup>
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <FormField
-                    control={form.control}
-                    name="experience"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Prior Programming Experience*</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select your experience level" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="none">No experience</SelectItem>
-                            <SelectItem value="beginner">Beginner (basic understanding)</SelectItem>
-                            <SelectItem value="intermediate">Intermediate (some projects)</SelectItem>
-                            <SelectItem value="advanced">Advanced (professional experience)</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <FormField
-                    control={form.control}
-                    name="motivation"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>Why do you want to join this program?*</FormLabel>
-                        <FormControl>
-                          <Textarea
-                            placeholder="Tell us about your motivation to join the AI & GenAI program..."
-                            rows={4}
-                            {...field}
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                
-                <div className="mb-6">
-                  <FormField
-                    control={form.control}
-                    name="referral"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormLabel>How did you hear about us?</FormLabel>
-                        <Select onValueChange={field.onChange} defaultValue={field.value}>
-                          <FormControl>
-                            <SelectTrigger>
-                              <SelectValue placeholder="Select an option" />
-                            </SelectTrigger>
-                          </FormControl>
-                          <SelectContent>
-                            <SelectItem value="social-media">Social Media</SelectItem>
-                            <SelectItem value="search-engine">Search Engine</SelectItem>
-                            <SelectItem value="friend">Friend or Colleague</SelectItem>
-                            <SelectItem value="event">Event or Workshop</SelectItem>
-                            <SelectItem value="advertisement">Advertisement</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </SelectContent>
-                        </Select>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                
-                <div className="mb-8">
-                  <FormField
-                    control={form.control}
-                    name="terms"
-                    render={({ field }) => (
-                      <FormItem className="flex flex-row items-start space-x-3 space-y-0">
-                        <FormControl>
-                          <Checkbox
-                            checked={field.value}
-                            onCheckedChange={field.onChange}
-                          />
-                        </FormControl>
-                        <div className="space-y-1 leading-none">
-                          <FormLabel>
-                            I agree to the <a href="#" className="text-blue-500 hover:underline">Terms and Conditions</a> and <a href="#" className="text-blue-500 hover:underline">Privacy Policy</a>.
+              </div>
+              
+              <div className="md:w-2/3 p-8">
+                <Form {...form}>
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="firstName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="flex items-center text-gray-700">
+                              <User className="mr-2 h-4 w-4 text-purple-500" />
+                              First Name*
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="Enter your first name" className="rounded-lg" {...field} />
+                            </FormControl>
+                            <FormMessage className="text-sm" />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="lastName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="flex items-center text-gray-700">
+                              <User className="mr-2 h-4 w-4 text-purple-500" />
+                              Last Name*
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="Enter your last name" className="rounded-lg" {...field} />
+                            </FormControl>
+                            <FormMessage className="text-sm" />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="flex items-center text-gray-700">
+                              <Mail className="mr-2 h-4 w-4 text-purple-500" />
+                              Email Address*
+                            </FormLabel>
+                            <FormControl>
+                              <Input type="email" placeholder="you@example.com" className="rounded-lg" {...field} />
+                            </FormControl>
+                            <FormMessage className="text-sm" />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="flex items-center text-gray-700">
+                              <Phone className="mr-2 h-4 w-4 text-purple-500" />
+                              Phone Number*
+                            </FormLabel>
+                            <FormControl>
+                              <Input placeholder="Your phone number" className="rounded-lg" {...field} />
+                            </FormControl>
+                            <FormMessage className="text-sm" />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    
+                    <FormField
+                      control={form.control}
+                      name="education"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="flex items-center text-gray-700">
+                            <BookOpen className="mr-2 h-4 w-4 text-purple-500" />
+                            Highest Education*
                           </FormLabel>
-                          <FormMessage />
-                        </div>
-                      </FormItem>
-                    )}
-                  />
-                </div>
-                
-                <div className="text-center">
-                  <button
-                    type="submit"
-                    disabled={submitting}
-                    className="bg-purple-500 hover:bg-purple-600 text-white font-medium py-3 px-8 rounded-md inline-flex items-center justify-center transition disabled:opacity-70"
-                  >
-                    {submitting ? (
-                      <>
-                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                        Submitting...
-                      </>
-                    ) : (
-                      "Submit Application"
-                    )}
-                  </button>
-                  <p className="text-sm text-gray-500 mt-4">Our team will review your application and contact you within 2-3 business days.</p>
-                </div>
-              </form>
-            </Form>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="rounded-lg">
+                                <SelectValue placeholder="Select your highest education" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="high-school">High School</SelectItem>
+                              <SelectItem value="diploma">Diploma</SelectItem>
+                              <SelectItem value="bachelors">Bachelor's Degree</SelectItem>
+                              <SelectItem value="masters">Master's Degree</SelectItem>
+                              <SelectItem value="phd">PhD</SelectItem>
+                              <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage className="text-sm" />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="mode"
+                      render={({ field }) => (
+                        <FormItem className="space-y-3">
+                          <FormLabel className="text-gray-700">Program Mode Preference*</FormLabel>
+                          <FormControl>
+                            <RadioGroup
+                              onValueChange={field.onChange}
+                              defaultValue={field.value}
+                              className="flex flex-wrap gap-6"
+                            >
+                              <div className="flex items-center space-x-2 border border-gray-200 rounded-lg p-3 hover:border-purple-300 transition-colors">
+                                <RadioGroupItem value="online" id="online" />
+                                <label htmlFor="online" className="cursor-pointer font-medium">Online</label>
+                              </div>
+                              <div className="flex items-center space-x-2 border border-gray-200 rounded-lg p-3 hover:border-purple-300 transition-colors">
+                                <RadioGroupItem value="offline" id="offline" />
+                                <label htmlFor="offline" className="cursor-pointer font-medium">Offline</label>
+                              </div>
+                              <div className="flex items-center space-x-2 border border-gray-200 rounded-lg p-3 hover:border-purple-300 transition-colors">
+                                <RadioGroupItem value="hybrid" id="hybrid" />
+                                <label htmlFor="hybrid" className="cursor-pointer font-medium">Hybrid</label>
+                              </div>
+                            </RadioGroup>
+                          </FormControl>
+                          <FormMessage className="text-sm" />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="experience"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-gray-700">Prior Programming Experience*</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="rounded-lg">
+                                <SelectValue placeholder="Select your experience level" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="none">No experience</SelectItem>
+                              <SelectItem value="beginner">Beginner (basic understanding)</SelectItem>
+                              <SelectItem value="intermediate">Intermediate (some projects)</SelectItem>
+                              <SelectItem value="advanced">Advanced (professional experience)</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage className="text-sm" />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="motivation"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-gray-700">Why do you want to join this program?*</FormLabel>
+                          <FormControl>
+                            <Textarea
+                              placeholder="Tell us about your motivation to join the AI & GenAI program..."
+                              rows={4}
+                              className="rounded-lg resize-none"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-sm" />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="referral"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-gray-700">How did you hear about us?</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="rounded-lg">
+                                <SelectValue placeholder="Select an option" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="social-media">Social Media</SelectItem>
+                              <SelectItem value="search-engine">Search Engine</SelectItem>
+                              <SelectItem value="friend">Friend or Colleague</SelectItem>
+                              <SelectItem value="event">Event or Workshop</SelectItem>
+                              <SelectItem value="advertisement">Advertisement</SelectItem>
+                              <SelectItem value="other">Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage className="text-sm" />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
+                      name="terms"
+                      render={({ field }) => (
+                        <FormItem className="flex flex-row items-start space-x-3 space-y-0 bg-indigo-50 p-4 rounded-lg">
+                          <FormControl>
+                            <Checkbox
+                              checked={field.value}
+                              onCheckedChange={field.onChange}
+                              className="mt-1"
+                            />
+                          </FormControl>
+                          <div className="space-y-1 leading-none">
+                            <FormLabel className="text-gray-700">
+                              I agree to the <a href="#" className="text-purple-600 hover:underline font-medium">Terms and Conditions</a> and <a href="#" className="text-purple-600 hover:underline font-medium">Privacy Policy</a>.
+                            </FormLabel>
+                            <FormMessage className="text-sm" />
+                          </div>
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <div className="pt-4">
+                      <button
+                        type="submit"
+                        disabled={submitting}
+                        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-4 px-8 rounded-xl inline-flex items-center justify-center transition-all duration-300 disabled:opacity-70 shadow-md hover:shadow-lg"
+                      >
+                        {submitting ? (
+                          <>
+                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                            Submitting...
+                          </>
+                        ) : (
+                          <>
+                            Submit Application
+                            <Send className="ml-2 h-5 w-5" />
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </form>
+                </Form>
+              </div>
+            </div>
           </div>
         </div>
       </div>

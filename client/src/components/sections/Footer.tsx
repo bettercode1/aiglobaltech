@@ -1,4 +1,4 @@
-import { BrainCircuit, MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { BrainCircuit, MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin, ExternalLink, ChevronUp, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   const scrollToSection = (id: string) => {
@@ -15,116 +15,187 @@ export default function Footer() {
     }
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  };
+
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-6">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
-          <div className="md:col-span-1">
-            <div className="flex items-center mb-4">
-              <div className="text-purple-500 mr-2">
-                <BrainCircuit className="h-8 w-8" />
+    <footer className="bg-gradient-to-br from-gray-900 to-indigo-950 text-white pt-20 pb-8 relative overflow-hidden">
+      {/* Decorative elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+        <div className="absolute top-10 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-10 left-10 w-64 h-64 bg-indigo-500/5 rounded-full blur-3xl"></div>
+      </div>
+      
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Back to top button */}
+        <div className="absolute right-8 -top-10">
+          <button 
+            onClick={scrollToTop}
+            className="p-3 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300 shadow-lg group"
+            aria-label="Back to top"
+          >
+            <ChevronUp className="h-6 w-6 group-hover:-translate-y-1 transition-transform duration-300" />
+          </button>
+        </div>
+        
+        {/* Grid sections */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+          <div className="md:col-span-4">
+            <div className="flex items-center mb-6">
+              <div className="text-purple-400 mr-3">
+                <BrainCircuit className="h-10 w-10" />
               </div>
-              <span className="font-sans font-semibold text-xl">AI<span className="text-purple-500">Future</span></span>
+              <div>
+                <span className="font-sans font-bold text-2xl">AI<span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Future</span></span>
+              </div>
             </div>
-            <p className="text-gray-400 mb-4">Empowering the next generation of AI professionals through comprehensive training and real-world experience.</p>
+            <p className="text-gray-300 mb-6 leading-relaxed">
+              Empowering the next generation of AI professionals through comprehensive training and real-world experience. Join us on the journey to shape the future of artificial intelligence.
+            </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-400 hover:text-white transition">
+              <a href="#" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition">
+              <a href="#" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition">
+              <a href="#" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-white transition">
+              <a href="#" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
           </div>
           
-          <div>
-            <h4 className="font-sans font-semibold text-lg mb-4">Quick Links</h4>
-            <ul className="space-y-2">
+          <div className="md:col-span-2">
+            <h4 className="font-sans font-bold text-lg mb-6 text-white">Quick Links</h4>
+            <ul className="space-y-3">
               <li>
                 <button 
                   onClick={() => scrollToSection('about')}
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
-                  About
+                  <span>About</span>
+                  <ArrowRight className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </button>
               </li>
               <li>
                 <button 
                   onClick={() => scrollToSection('curriculum')}
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
-                  Curriculum
+                  <span>Curriculum</span>
+                  <ArrowRight className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </button>
               </li>
               <li>
                 <button 
                   onClick={() => scrollToSection('benefits')}
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
-                  Benefits
+                  <span>Benefits</span>
+                  <ArrowRight className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </button>
               </li>
               <li>
                 <button 
                   onClick={() => scrollToSection('pricing')}
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
-                  Pricing
+                  <span>Pricing</span>
+                  <ArrowRight className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </button>
               </li>
               <li>
                 <button 
                   onClick={() => scrollToSection('faq')}
-                  className="text-gray-400 hover:text-white transition"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
-                  FAQ
+                  <span>FAQ</span>
+                  <ArrowRight className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
                 </button>
               </li>
             </ul>
           </div>
           
-          <div>
-            <h4 className="font-sans font-semibold text-lg mb-4">Legal</h4>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Terms & Conditions</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Refund Policy</a></li>
-              <li><a href="#" className="text-gray-400 hover:text-white transition">Cookie Policy</a></li>
+          <div className="md:col-span-2">
+            <h4 className="font-sans font-bold text-lg mb-6 text-white">Legal</h4>
+            <ul className="space-y-3">
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                  <span>Terms & Conditions</span>
+                  <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                  <span>Privacy Policy</span>
+                  <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                  <span>Refund Policy</span>
+                  <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                  <span>Cookie Policy</span>
+                  <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+                </a>
+              </li>
             </ul>
           </div>
           
-          <div id="contact">
-            <h4 className="font-sans font-semibold text-lg mb-4">Contact Us</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start">
-                <MapPin className="h-5 w-5 text-gray-400 mt-0.5 mr-3" />
-                <span className="text-gray-400">123 AI Boulevard, Tech Park, Bangalore - 560001</span>
-              </li>
-              <li className="flex items-start">
-                <Mail className="h-5 w-5 text-gray-400 mt-0.5 mr-3" />
-                <span className="text-gray-400">info@aifuture.com</span>
-              </li>
-              <li className="flex items-start">
-                <Phone className="h-5 w-5 text-gray-400 mt-0.5 mr-3" />
-                <span className="text-gray-400">+91 9876543210</span>
-              </li>
-            </ul>
+          <div id="contact" className="md:col-span-4">
+            <h4 className="font-sans font-bold text-lg mb-6 text-white">Contact Us</h4>
+            <div className="bg-white/5 backdrop-blur-md rounded-2xl p-6">
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-purple-400 flex-shrink-0">
+                    <MapPin className="h-5 w-5" />
+                  </div>
+                  <span className="text-gray-300">123 AI Boulevard, Tech Park, Bangalore - 560001</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-purple-400 flex-shrink-0">
+                    <Mail className="h-5 w-5" />
+                  </div>
+                  <a href="mailto:info@aifuture.com" className="text-gray-300 hover:text-white transition-colors duration-300">info@aifuture.com</a>
+                </li>
+                <li className="flex items-start">
+                  <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-purple-400 flex-shrink-0">
+                    <Phone className="h-5 w-5" />
+                  </div>
+                  <a href="tel:+919876543210" className="text-gray-300 hover:text-white transition-colors duration-300">+91 9876543210</a>
+                </li>
+              </ul>
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <button 
+                  onClick={() => scrollToSection('apply')}
+                  className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-3 rounded-xl shadow-md hover:shadow-lg transition-all duration-300 flex items-center justify-center"
+                >
+                  Apply Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-6">
+        <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400 text-sm mb-4 md:mb-0">© {currentYear} AIFuture. All rights reserved.</p>
-            <div className="text-gray-400 text-sm">
-              <p className="mb-2">*Disclaimer: Job placement after the internship is subject to performance evaluation, available positions, and market conditions.</p>
+            <p className="text-gray-400 text-sm mb-6 md:mb-0">© {currentYear} AIFuture. All rights reserved.</p>
+            <div className="text-gray-400 text-sm max-w-2xl text-center md:text-right">
+              <p className="mb-1">*Disclaimer: Job placement after the internship is subject to performance evaluation, available positions, and market conditions.</p>
               <p>All program details are subject to change. Please refer to the most recent communications for up-to-date information.</p>
             </div>
           </div>
