@@ -51,7 +51,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <a href="#" className="flex items-center" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>
-            <BettercodeLogotype />
+            <BettercodeLogotype showText={false} />
           </a>
         </div>
         
