@@ -66,28 +66,28 @@ export default function Header() {
           </a>
           <a 
             href="#curriculum" 
-            className={`font-medium ${scrolled ? 'text-gray-700 hover:text-purple-600' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('curriculum'); }}
           >
             Curriculum
           </a>
           <a 
             href="#benefits" 
-            className={`font-medium ${scrolled ? 'text-gray-700 hover:text-purple-600' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('benefits'); }}
           >
             Benefits
           </a>
           <a 
             href="#pricing" 
-            className={`font-medium ${scrolled ? 'text-gray-700 hover:text-purple-600' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('pricing'); }}
           >
             Pricing
           </a>
           <a 
             href="#faq" 
-            className={`font-medium ${scrolled ? 'text-gray-700 hover:text-purple-600' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}
           >
             FAQ
@@ -97,11 +97,11 @@ export default function Header() {
         <div className="hidden md:block">
           <a 
             href="#apply" 
-            className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
+            className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:from-purple-700 hover:to-cyan-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-purple-900/20 text-center transition-all duration-300 flex items-center justify-center group"
             onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
           >
             <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
-            APPLY.exe
+            JOIN AILH
             <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
           </a>
         </div>
@@ -116,11 +116,11 @@ export default function Header() {
       
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-gray-100 shadow-lg animate-fadeIn">
+        <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-purple-500/20 shadow-lg animate-fadeIn">
           <div className="px-4 pt-2 pb-3 space-y-1">
             <a 
               href="#about" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
             >
               About
@@ -158,7 +158,7 @@ export default function Header() {
               className="block px-3 py-2.5 text-base font-medium bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg mt-4 shadow-md"
               onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
             >
-              Apply Now
+              Join AILH
             </a>
           </div>
         </div>
