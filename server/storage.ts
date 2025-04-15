@@ -1,4 +1,6 @@
 import { users, type User, type InsertUser, applications, type Application, type InsertApplication } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   getUser(id: number): Promise<User | undefined>;
@@ -8,50 +10,39 @@ export interface IStorage {
   getApplications(): Promise<Application[]>;
 }
 
-export class MemStorage implements IStorage {
-  private users: Map<number, User>;
-  private applications: Map<number, Application>;
-  private userCurrentId: number;
-  private applicationCurrentId: number;
-
-  constructor() {
-    this.users = new Map();
-    this.applications = new Map();
-    this.userCurrentId = 1;
-    this.applicationCurrentId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async getUser(id: number): Promise<User | undefined> {
-    return this.users.get(id);
+    const [user] = await db.select().from(users).where(eq(users.id, id));
+    return user || undefined;
   }
 
   async getUserByUsername(username: string): Promise<User | undefined> {
-    return Array.from(this.users.values()).find(
-      (user) => user.username === username,
-    );
+    const [user] = await db.select().from(users).where(eq(users.username, username));
+    return user || undefined;
   }
 
   async createUser(insertUser: InsertUser): Promise<User> {
-    const id = this.userCurrentId++;
-    const user: User = { ...insertUser, id };
-    this.users.set(id, user);
+    const [user] = await db
+      .insert(users)
+      .values(insertUser)
+      .returning();
     return user;
   }
 
   async createApplication(insertApplication: InsertApplication): Promise<Application> {
-    const id = this.applicationCurrentId++;
-    const application: Application = { 
-      ...insertApplication, 
-      id, 
-      createdAt: new Date().toISOString() 
-    };
-    this.applications.set(id, application);
+    const [application] = await db
+      .insert(applications)
+      .values({
+        ...insertApplication,
+        createdAt: new Date().toISOString()
+      })
+      .returning();
     return application;
   }
 
   async getApplications(): Promise<Application[]> {
-    return Array.from(this.applications.values());
+    return await db.select().from(applications);
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();

@@ -39,8 +39,8 @@ const formSchema = z.object({
   experience: z.string().min(1, "Please select your experience level"),
   motivation: z.string().min(20, "Please provide at least 20 characters about your motivation"),
   referral: z.string().optional(),
-  terms: z.literal(true, {
-    errorMap: () => ({ message: "You must accept the terms and conditions" }),
+  terms: z.boolean().refine(val => val === true, {
+    message: "You must accept the terms and conditions"
   }),
 });
 
