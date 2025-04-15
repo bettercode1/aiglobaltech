@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
-import BettercodeLogotype from "../BettercodeLogotype";
+import AILHLogotype from "../AILHLogotype";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,7 +51,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <a href="#" className="flex items-center" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>
-            <BettercodeLogotype showText={false} />
+            <AILHLogotype showText={false} />
           </a>
         </div>
         
@@ -127,35 +127,35 @@ export default function Header() {
             </a>
             <a 
               href="#curriculum" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('curriculum'); }}
             >
               Curriculum
             </a>
             <a 
               href="#benefits" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('benefits'); }}
             >
               Benefits
             </a>
             <a 
               href="#pricing" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('pricing'); }}
             >
               Pricing
             </a>
             <a 
               href="#faq" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-800 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}
             >
               FAQ
             </a>
             <a 
               href="#apply" 
-              className="block px-3 py-2.5 text-base font-medium bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white rounded-lg mt-4 shadow-md"
+              className="block px-3 py-2.5 text-base font-medium bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white rounded-lg mt-4 shadow-md"
               onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
             >
               Join AILH

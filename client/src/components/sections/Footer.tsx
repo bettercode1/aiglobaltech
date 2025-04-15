@@ -1,5 +1,5 @@
 import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin, ExternalLink, ChevronUp, ArrowRight } from "lucide-react";
-import BettercodeLogotype from "../BettercodeLogotype";
+import AILHLogotype from "../AILHLogotype";
 
 export default function Footer() {
   const scrollToSection = (id: string) => {
@@ -69,7 +69,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-4">
             <div className="mb-6">
-              <BettercodeLogotype showText={true} />
+              <AILHLogotype showText={true} />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Empowering the next generation of AI professionals through comprehensive training and real-world experience. Join us on the journey to shape the future of artificial intelligence.
@@ -203,10 +203,10 @@ export default function Footer() {
               <div className="mt-6 pt-6 border-t border-white/10">
                 <button 
                   onClick={() => scrollToSection('apply')}
-                  className="w-full bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
+                  className="w-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:from-purple-700 hover:to-cyan-600 font-medium py-3 px-6 rounded shadow-lg hover:shadow-purple-900/20 text-center transition-all duration-300 flex items-center justify-center group"
                 >
                   <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
-                  APPLY.exe
+                  JOIN AILH
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
               </div>
