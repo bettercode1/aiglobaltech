@@ -1,28 +1,32 @@
-import React from 'react';
+import React from "react";
 
-const AILHLogotype: React.FC<{ className?: string, showText?: boolean }> = ({ 
-  className = '',
-  showText = true 
-}) => {
+interface BettercodeLogotypeProps {
+  showText?: boolean;
+  className?: string;
+}
+
+export default function BettercodeLogotype({ 
+  showText = true, 
+  className = "" 
+}: BettercodeLogotypeProps) {
   return (
     <div className={`flex items-center ${className}`}>
-      <div className="flex items-center justify-center h-12 w-12 bg-gradient-to-br from-purple-600 to-cyan-500 rounded-lg shadow-lg shadow-cyan-500/20">
-        <span className="font-bold text-sm text-white tracking-widest">AILH</span>
+      <div className="flex-shrink-0 mr-2">
+        <div className="w-10 h-10 rounded-md bg-gradient-to-br from-cyan-500 to-purple-600 relative overflow-hidden flex items-center justify-center text-white font-bold">
+          <span className="text-xl">BC</span>
+        </div>
       </div>
+      
       {showText && (
-        <div className="ml-3">
-          <div className="flex flex-col">
-            <span className="font-sans font-bold text-xl">
-              <span className="text-white">AI</span> 
-              <span className="bg-gradient-to-r from-purple-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent ml-1">
-                Learning Hub
-              </span>
-            </span>
+        <div>
+          <div className="font-bold text-white text-xl tracking-tight leading-none">
+            Bettercode
+          </div>
+          <div className="text-xs text-gray-300 font-medium">
+            Technologies PVT LTD
           </div>
         </div>
       )}
     </div>
   );
-};
-
-export default AILHLogotype;
+}
