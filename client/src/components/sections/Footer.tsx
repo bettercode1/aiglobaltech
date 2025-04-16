@@ -203,7 +203,7 @@ export default function Footer() {
               <div className="mt-6 pt-6 border-t border-white/10">
                 <button 
                   onClick={() => scrollToSection('apply')}
-                  className="w-full bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:from-purple-700 hover:to-cyan-600 font-medium py-3 px-6 rounded shadow-lg hover:shadow-purple-900/20 text-center transition-all duration-300 flex items-center justify-center group"
+                  className="w-full bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
                 >
                   APPLY NOW
                   <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />

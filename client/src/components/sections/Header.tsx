@@ -44,7 +44,7 @@ export default function Header() {
     <header 
       className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? "bg-gray-900/90 backdrop-blur-md text-white shadow-lg border-b border-purple-500/20" 
+          ? "bg-gray-900/90 backdrop-blur-md text-white shadow-lg border-b border-red-500/20" 
           : "bg-transparent text-white"
       }`}
     >
@@ -97,7 +97,7 @@ export default function Header() {
         <div className="hidden md:block">
           <a 
             href="#apply" 
-            className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:from-purple-700 hover:to-cyan-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-purple-900/20 text-center transition-all duration-300 flex items-center justify-center group"
+            className="bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
             onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
           >
             APPLY NOW
@@ -115,7 +115,7 @@ export default function Header() {
       
       {/* Mobile Navigation */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-purple-500/20 shadow-lg animate-fadeIn">
+        <div className="md:hidden bg-gray-900/95 backdrop-blur-md border-t border-red-500/20 shadow-lg animate-fadeIn">
           <div className="px-4 pt-2 pb-3 space-y-1">
             <a 
               href="#about" 
@@ -154,7 +154,7 @@ export default function Header() {
             </a>
             <a 
               href="#apply" 
-              className="block px-3 py-2.5 text-base font-medium bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white rounded-lg mt-4 shadow-md"
+              className="block px-3 py-2.5 text-base font-medium bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white rounded-lg mt-4 shadow-md"
               onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
             >
               Apply Now

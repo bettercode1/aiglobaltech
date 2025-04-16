@@ -12,8 +12,11 @@ export default function BettercodeLogotype({
   return (
     <div className={`flex items-center ${className}`}>
       <div className="flex-shrink-0 mr-2">
-        <div className="w-10 h-10 rounded-md bg-gradient-to-br from-cyan-500 to-purple-600 relative overflow-hidden flex items-center justify-center text-white font-bold">
-          <span className="text-xl">BC</span>
+        {/* Logo styled after the Bettercode red/orange branding */}
+        <div className="h-10 w-10 relative">
+          <div className="absolute left-0 top-2 w-3 h-6 bg-red-500 transform -skew-x-12"></div>
+          <div className="absolute right-0 top-2 w-3 h-6 bg-red-500 transform skew-x-12"></div>
+          <div className="absolute right-0 bottom-0 w-1.5 h-1.5 rounded-full bg-red-500"></div>
         </div>
       </div>
       
