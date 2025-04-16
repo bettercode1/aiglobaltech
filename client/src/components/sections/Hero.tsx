@@ -33,12 +33,12 @@ export default function Hero() {
           <div className="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-12">
             <div className="inline-block px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-white text-sm font-medium mb-6 border border-white/20 shadow-lg">
               <span className="flex items-center">
-                <Sparkles className="h-4 w-4 mr-2 text-purple-400" />
+                <Sparkles className="h-4 w-4 mr-2 text-red-400" />
                 New Batch Starting Soon
               </span>
             </div>
             <h1 className="font-sans font-extrabold text-4xl sm:text-5xl md:text-6xl leading-tight mb-6 tracking-tight">
-              Your Future in <span className="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">AI & GenAI</span> Starts Here
+              Your Future in <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">AI & GenAI</span> Starts Here
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
               A comprehensive 5-month program (3-month workshop + 2-month internship) designed for anyone who wants to learn AI and survive in the AI-driven future—no engineering background required.
@@ -46,7 +46,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
                 onClick={() => scrollToSection('apply')}
-                className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
+                className="bg-black border border-red-500/50 text-red-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
               >
                 <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
                 APPLY
@@ -54,7 +54,7 @@ export default function Hero() {
               </button>
               <button 
                 onClick={() => scrollToSection('curriculum')}
-                className="bg-gray-900/80 border border-white/10 hover:border-cyan-500/30 text-gray-300 hover:text-cyan-400 font-medium py-3 px-6 rounded shadow-lg text-center transition-all duration-300 font-mono tracking-wide"
+                className="bg-gray-900/80 border border-white/10 hover:border-red-500/30 text-gray-300 hover:text-red-400 font-medium py-3 px-6 rounded shadow-lg text-center transition-all duration-300 font-mono tracking-wide"
               >
                 &lt;view_curriculum/&gt;
               </button>
@@ -63,9 +63,9 @@ export default function Hero() {
           <div className="md:w-1/2 relative">
             {/* Image frame with decorative elements */}
             <div className="relative">
-              <div className="absolute -inset-0.5 bg-gradient-to-br from-purple-500/40 to-cyan-500/40 rounded blur-sm"></div>
-              <div className="absolute -inset-1 border border-purple-500/50 rounded"></div>
-              <div className="relative overflow-hidden rounded shadow-2xl border border-cyan-500/30">
+              <div className="absolute -inset-0.5 bg-gradient-to-br from-red-500/40 to-orange-500/40 rounded blur-sm"></div>
+              <div className="absolute -inset-1 border border-red-500/50 rounded"></div>
+              <div className="relative overflow-hidden rounded shadow-2xl border border-red-500/30">
                 <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-purple-500/20 via-cyan-500/10 to-transparent p-2 z-20 flex justify-between items-center border-b border-purple-500/30 text-xs font-mono text-purple-400">
                   <span>AILH_PROGRAM_v3.0</span>
                   <span className="flex items-center">

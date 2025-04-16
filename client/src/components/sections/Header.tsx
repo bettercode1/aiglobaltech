@@ -73,21 +73,21 @@ export default function Header() {
           </a>
           <a 
             href="#benefits" 
-            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('benefits'); }}
           >
             Benefits
           </a>
           <a 
             href="#pricing" 
-            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('pricing'); }}
           >
             Pricing
           </a>
           <a 
             href="#faq" 
-            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}
           >
             FAQ
