@@ -118,22 +118,22 @@ export default function Hero() {
               <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-orange-400 font-mono">02</span></p>
               <p className="text-gray-400 font-mono text-xs">INTERNSHIP_MONTHS</p>
             </div>
-            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-indigo-500/10 hover:border-indigo-500/30">
+            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-amber-500/10 hover:border-amber-500/30">
               <div className="flex justify-center mb-2">
-                <div className="p-2 bg-black border border-indigo-500/30 rounded">
-                  <Star className="h-5 w-5 text-indigo-400" />
+                <div className="p-2 bg-black border border-amber-500/30 rounded">
+                  <Star className="h-5 w-5 text-amber-400" />
                 </div>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-indigo-400 font-mono">15+</span></p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-amber-400 font-mono">15+</span></p>
               <p className="text-gray-400 font-mono text-xs">GENAI_TOOLS</p>
             </div>
-            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-purple-500/10 hover:border-purple-500/30">
+            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-rose-500/10 hover:border-rose-500/30">
               <div className="flex justify-center mb-2">
-                <div className="p-2 bg-black border border-purple-500/30 rounded">
-                  <Users className="h-5 w-5 text-purple-400" />
+                <div className="p-2 bg-black border border-rose-500/30 rounded">
+                  <Users className="h-5 w-5 text-rose-400" />
                 </div>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-purple-400 font-mono">10+</span></p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-rose-400 font-mono">10+</span></p>
               <p className="text-gray-400 font-mono text-xs">INDUSTRY_EXPERTS</p>
             </div>
           </div>
@@ -142,10 +142,10 @@ export default function Hero() {
         <div className="flex justify-center mt-16">
           <button 
             onClick={() => scrollToSection('about')}
-            className="group text-cyan-400 hover:text-cyan-300 transition flex flex-col items-center"
+            className="group text-red-400 hover:text-red-300 transition flex flex-col items-center"
           >
             <span className="mb-2 font-mono text-xs tracking-wider">SCROLL DOWN</span>
-            <div className="p-2 bg-black/50 rounded border border-cyan-500/30 shadow-md group-hover:border-cyan-500/50 transition-all duration-300">
+            <div className="p-2 bg-black/50 rounded border border-red-500/30 shadow-md group-hover:border-red-500/50 transition-all duration-300">
               <ChevronDown className="animate-bounce" />
             </div>
           </button>
