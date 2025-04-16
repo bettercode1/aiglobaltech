@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
-import AILHLogotype from "../AILHLogotype";
+import BettercodeLogotype from "../BettercodeLogotype";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -51,7 +51,7 @@ export default function Header() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center">
           <a href="#" className="flex items-center" onClick={(e) => { e.preventDefault(); scrollToSection('hero'); }}>
-            <AILHLogotype showText={false} />
+            <BettercodeLogotype showText={false} />
           </a>
         </div>
         
@@ -100,8 +100,7 @@ export default function Header() {
             className="bg-gradient-to-r from-purple-600 to-cyan-500 text-white hover:from-purple-700 hover:to-cyan-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-purple-900/20 text-center transition-all duration-300 flex items-center justify-center group"
             onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
           >
-            <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
-            JOIN AILH
+            APPLY NOW
             <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
           </a>
         </div>
@@ -158,7 +157,7 @@ export default function Header() {
               className="block px-3 py-2.5 text-base font-medium bg-gradient-to-r from-purple-600 to-cyan-500 hover:from-purple-700 hover:to-cyan-600 text-white rounded-lg mt-4 shadow-md"
               onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
             >
-              Join AILH
+              Apply Now
             </a>
           </div>
         </div>
