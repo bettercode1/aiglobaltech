@@ -5,7 +5,6 @@ import Curriculum from "@/components/sections/Curriculum";
 import SkillsTracker from "@/components/sections/SkillsTracker";
 import Benefits from "@/components/sections/Benefits";
 import LearningPath from "@/components/sections/LearningPath";
-import ProgressEmojis from "@/components/sections/ProgressEmojis";
 import Pricing from "@/components/sections/Pricing";
 import Faq from "@/components/sections/Faq";
 import ApplicationForm from "@/components/sections/ApplicationForm";
@@ -19,7 +18,6 @@ export default function Home() {
       <About />
       <Curriculum />
       <LearningPath />
-      <ProgressEmojis />
       <SkillsTracker />
       <Benefits />
       <Pricing />

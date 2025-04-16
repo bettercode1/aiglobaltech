@@ -59,14 +59,14 @@ export default function Header() {
         <div className="hidden md:flex space-x-8">
           <a 
             href="#about" 
-            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
           >
             About
           </a>
           <a 
             href="#curriculum" 
-            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-purple-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('curriculum'); }}
           >
             Curriculum
@@ -119,35 +119,35 @@ export default function Header() {
           <div className="px-4 pt-2 pb-3 space-y-1">
             <a 
               href="#about" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}
             >
               About
             </a>
             <a 
               href="#curriculum" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('curriculum'); }}
             >
               Curriculum
             </a>
             <a 
               href="#benefits" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('benefits'); }}
             >
               Benefits
             </a>
             <a 
               href="#pricing" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('pricing'); }}
             >
               Pricing
             </a>
             <a 
               href="#faq" 
-              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-purple-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
               onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}
             >
               FAQ
