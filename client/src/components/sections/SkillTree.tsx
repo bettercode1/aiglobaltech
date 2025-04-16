@@ -364,33 +364,7 @@ export default function SkillTree() {
               />
             );
             
-            if (isActive) {
-              paths.push(
-                <motion.circle
-                  key={`circle-${pathId}`}
-                  r={4}
-                  fill={strokeColor}
-                  opacity={0.8}
-                  initial={{ scale: 0.2, opacity: 0 }}
-                  animate={{ 
-                    scale: [0.2, 1, 0.2],
-                    opacity: [0, 1, 0],
-                    pathOffset: [0, 1]
-                  }}
-                  transition={{
-                    duration: 1.5,
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                >
-                  <animateMotion
-                    dur="1.5s"
-                    repeatCount="indefinite"
-                    path={`M ${startPos.x} ${startPos.y} Q ${controlPointX} ${controlPointY} ${endPos.x} ${endPos.y}`}
-                  />
-                </motion.circle>
-              );
-            }
+            // Removed animated circles on paths
           }
         });
       }
@@ -480,15 +454,15 @@ export default function SkillTree() {
                 <span className="text-sm text-gray-700">Applications</span>
               </div>
               <div className="flex items-center ml-4">
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-2">
                   <CheckCircle className="w-4 h-4 text-indigo-500" />
-                  <span className="text-sm text-gray-700">= Click for details</span>
+                  <span className="text-sm text-gray-700">Click for details</span>
                 </div>
               </div>
-              <div className="flex items-center ml-2">
-                <div className="flex items-center gap-1">
+              <div className="flex items-center ml-4">
+                <div className="flex items-center gap-2">
                   <MousePointer2 className="w-4 h-4 text-indigo-500" />
-                  <span className="text-sm text-gray-700">= Hover to see connections</span>
+                  <span className="text-sm text-gray-700">Hover to see connections</span>
                 </div>
               </div>
             </div>
@@ -678,9 +652,8 @@ export default function SkillTree() {
                           {activeSkill.dependencies.map(depId => {
                             const dep = skills.find(s => s.id === depId);
                             return dep ? (
-                              <li key={depId} className="flex items-center">
-                                <ChevronRight className="h-3 w-3 mr-1 text-gray-400" />
-                                {dep.name}
+                              <li key={depId} className="flex items-center py-1">
+                                <span className="text-gray-600">• {dep.name}</span>
                               </li>
                             ) : null;
                           })}
@@ -696,9 +669,8 @@ export default function SkillTree() {
                           <h4 className="text-sm font-medium text-gray-700 mb-1">Unlocks</h4>
                           <ul className="text-sm text-gray-600">
                             {dependents.map(dep => (
-                              <li key={dep.id} className="flex items-center">
-                                <ChevronRight className="h-3 w-3 mr-1 text-gray-400" />
-                                {dep.name}
+                              <li key={dep.id} className="flex items-center py-1">
+                                <span className="text-gray-600">• {dep.name}</span>
                               </li>
                             ))}
                           </ul>
@@ -733,7 +705,7 @@ export default function SkillTree() {
                     
                     <div>
                       <button 
-                        className="text-sm text-gray-500 hover:text-gray-700"
+                        className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-md text-sm font-medium transition-colors"
                         onClick={() => setActiveSkill(null)}
                       >
                         Close
