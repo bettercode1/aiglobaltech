@@ -49,7 +49,7 @@ export default function Hero() {
                 className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
               >
                 <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
-                APPLY.exe
+                APPLY
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <button 
@@ -67,7 +67,7 @@ export default function Hero() {
               <div className="absolute -inset-1 border border-purple-500/50 rounded"></div>
               <div className="relative overflow-hidden rounded shadow-2xl border border-cyan-500/30">
                 <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-purple-500/20 via-cyan-500/10 to-transparent p-2 z-20 flex justify-between items-center border-b border-purple-500/30 text-xs font-mono text-purple-400">
-                  <span>AILH_PROGRAM_v3.0.exe</span>
+                  <span>AILH_PROGRAM_v3.0</span>
                   <span className="flex items-center">
                     <span className="inline-block w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full mr-1"></span>
                     <span>ENROLLING</span>
@@ -144,7 +144,7 @@ export default function Hero() {
             onClick={() => scrollToSection('about')}
             className="group text-cyan-400 hover:text-cyan-300 transition flex flex-col items-center"
           >
-            <span className="mb-2 font-mono text-xs tracking-wider">SCROLL_DOWN.exe</span>
+            <span className="mb-2 font-mono text-xs tracking-wider">SCROLL DOWN</span>
             <div className="p-2 bg-black/50 rounded border border-cyan-500/30 shadow-md group-hover:border-cyan-500/50 transition-all duration-300">
               <ChevronDown className="animate-bounce" />
             </div>

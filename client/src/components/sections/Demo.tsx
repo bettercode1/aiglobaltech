@@ -202,7 +202,7 @@ export default function Demo() {
                 <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
               <div className="flex-1 text-center">
-                <span className="font-mono text-sm text-gray-400">ai_demo_selector.exe</span>
+                <span className="font-mono text-sm text-gray-400">ai_demo_selector</span>
               </div>
             </div>
             
@@ -330,7 +330,7 @@ export default function Demo() {
             className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group mx-auto"
           >
             <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
-            START_LEARNING.exe
+            START LEARNING
             <span className="ml-2 group-hover:translate-x-1 transition-transform duration-200">→</span>
           </button>
         </div>
