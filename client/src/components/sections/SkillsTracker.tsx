@@ -137,7 +137,7 @@ const SkillProgress: React.FC<SkillProgressProps> = ({
       <div className="mt-3 flex justify-between relative z-10">
         <div className="flex items-center">
           <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></span>
-          <span className="text-xs font-mono text-gray-500">ailh.skills.tracking</span>
+          <span className="text-xs font-mono text-gray-500">skill.progress</span>
         </div>
         <div className="text-xs font-mono" style={{ 
           color: progress < endValue ? '#9ca3af' : 
@@ -247,12 +247,12 @@ export default function SkillsTracker() {
           </div>
           <div className="flex-1 text-center flex items-center justify-center">
             <div className="h-4 w-4 rounded-full bg-purple-500/30 mr-2 animate-pulse"></div>
-            <span className="font-mono text-sm text-gray-400">ailh_skills_tracker</span>
+            <span className="font-mono text-sm text-gray-400">skills tracker</span>
           </div>
           <div className="hidden md:flex items-center space-x-1 text-xs font-mono text-gray-500">
-            <span>user:student</span>
+            <span>Your skills</span>
             <span className="mx-1">|</span>
-            <span className="text-cyan-400">status:active</span>
+            <span className="text-cyan-400">in progress</span>
           </div>
         </div>
         
@@ -275,11 +275,11 @@ export default function SkillsTracker() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <span className="text-green-400">$</span>
-              <span className="ml-2">system.info: Skills monitored throughout the 5-month AILH program</span>
+              <span className="ml-2">Program skill progression</span>
             </div>
             <div className="hidden md:flex items-center">
               <span className="h-2 w-2 bg-green-500 rounded-full animate-pulse mr-2"></span>
-              <span className="text-cyan-400">ailh-progress-monitoring-active</span>
+              <span className="text-cyan-400">Skills overview</span>
             </div>
           </div>
         </div>
