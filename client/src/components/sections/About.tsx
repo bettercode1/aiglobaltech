@@ -153,7 +153,7 @@ export default function About() {
                   className="bg-gray-800 hover:bg-gray-700 text-cyan-400 border border-cyan-500/50 font-medium py-3 px-6 rounded shadow-md hover:shadow-lg transition-all duration-300 flex items-center group"
                 >
                   <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
-                  JOIN_PROGRAM.exe
+                  JOIN PROGRAM
                   <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
               </div>

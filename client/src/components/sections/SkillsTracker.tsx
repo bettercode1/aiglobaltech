@@ -247,7 +247,7 @@ export default function SkillsTracker() {
           </div>
           <div className="flex-1 text-center flex items-center justify-center">
             <div className="h-4 w-4 rounded-full bg-purple-500/30 mr-2 animate-pulse"></div>
-            <span className="font-mono text-sm text-gray-400">ailh_skills_tracker.exe</span>
+            <span className="font-mono text-sm text-gray-400">ailh_skills_tracker</span>
           </div>
           <div className="hidden md:flex items-center space-x-1 text-xs font-mono text-gray-500">
             <span>user:student</span>
