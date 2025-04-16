@@ -66,56 +66,56 @@ export default function Hero() {
               <div className="absolute -inset-0.5 bg-gradient-to-br from-red-500/40 to-orange-500/40 rounded blur-sm"></div>
               <div className="absolute -inset-1 border border-red-500/50 rounded"></div>
               <div className="relative overflow-hidden rounded shadow-2xl border border-red-500/30">
-                <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-purple-500/20 via-cyan-500/10 to-transparent p-2 z-20 flex justify-between items-center border-b border-purple-500/30 text-xs font-mono text-purple-400">
-                  <span>AILH_PROGRAM_v3.0</span>
+                <div className="absolute top-0 left-0 w-full bg-gradient-to-r from-red-500/20 via-orange-500/10 to-transparent p-2 z-20 flex justify-between items-center border-b border-red-500/30 text-xs font-mono text-red-400">
+                  <span>BETTERCODE_AI_PROGRAM</span>
                   <span className="flex items-center">
-                    <span className="inline-block w-2 h-2 bg-gradient-to-r from-purple-400 to-cyan-400 rounded-full mr-1"></span>
+                    <span className="inline-block w-2 h-2 bg-gradient-to-r from-red-500 to-orange-400 rounded-full mr-1"></span>
                     <span>ENROLLING</span>
                   </span>
                 </div>
                 <img 
                   src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-                  alt="AI Learning Hub Workshop" 
+                  alt="Bettercode AI Workshop" 
                   className="w-full h-auto hover:scale-105 transition-transform duration-700 brightness-90" 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/30 pointer-events-none"></div>
               </div>
-              <div className="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-md p-3 rounded border border-cyan-500/30 shadow-xl">
+              <div className="absolute bottom-4 right-4 bg-gray-900/80 backdrop-blur-md p-3 rounded border border-red-500/30 shadow-xl">
                 <div className="flex items-center">
-                  <Star className="h-5 w-5 text-cyan-400 mr-1" />
+                  <Star className="h-5 w-5 text-red-400 mr-1" />
                   <span className="font-bold text-white">4.9/5</span>
                   <span className="ml-2 text-xs text-gray-300 font-mono">[190+ reviews]</span>
                 </div>
               </div>
-              <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-purple-500/50"></div>
-              <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-cyan-500/50"></div>
+              <div className="absolute -top-3 -left-3 w-6 h-6 border-t border-l border-red-500/50"></div>
+              <div className="absolute -bottom-3 -right-3 w-6 h-6 border-b border-r border-orange-500/50"></div>
             </div>
           </div>
         </div>
         
-        <div className="mt-20 py-5 px-8 bg-gray-900/50 rounded border border-cyan-500/20 shadow-lg relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
-          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-cyan-500 via-transparent to-cyan-500"></div>
-          <div className="absolute right-0 top-0 h-full w-0.5 bg-gradient-to-b from-cyan-500 via-transparent to-transparent"></div>
-          <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-transparent via-transparent to-cyan-500"></div>
+        <div className="mt-20 py-5 px-8 bg-gray-900/50 rounded border border-red-500/20 shadow-lg relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
+          <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-red-500 via-transparent to-red-500"></div>
+          <div className="absolute right-0 top-0 h-full w-0.5 bg-gradient-to-b from-red-500 via-transparent to-transparent"></div>
+          <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-transparent via-transparent to-red-500"></div>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center relative z-10">
-            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-cyan-500/10 hover:border-cyan-500/30">
+            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-red-500/10 hover:border-red-500/30">
               <div className="flex justify-center mb-2">
-                <div className="p-2 bg-black border border-cyan-500/30 rounded">
-                  <Sparkles className="h-5 w-5 text-cyan-400" />
+                <div className="p-2 bg-black border border-red-500/30 rounded">
+                  <Sparkles className="h-5 w-5 text-red-400" />
                 </div>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-cyan-400 font-mono">05</span></p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-red-400 font-mono">05</span></p>
               <p className="text-gray-400 font-mono text-xs">PROGRAM_MONTHS</p>
             </div>
-            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-blue-500/10 hover:border-blue-500/30">
+            <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-orange-500/10 hover:border-orange-500/30">
               <div className="flex justify-center mb-2">
-                <div className="p-2 bg-black border border-blue-500/30 rounded">
-                  <Zap className="h-5 w-5 text-blue-400" />
+                <div className="p-2 bg-black border border-orange-500/30 rounded">
+                  <Zap className="h-5 w-5 text-orange-400" />
                 </div>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-blue-400 font-mono">02</span></p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-orange-400 font-mono">02</span></p>
               <p className="text-gray-400 font-mono text-xs">INTERNSHIP_MONTHS</p>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-indigo-500/10 hover:border-indigo-500/30">
