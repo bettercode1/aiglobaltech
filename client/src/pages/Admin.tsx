@@ -809,15 +809,15 @@ export default function Admin() {
               className="bg-purple-600 hover:bg-purple-700"
             >
               {isMutating ? (
-                <>
+                <div className="flex items-center">
                   <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
                   Saving...
-                </>
+                </div>
               ) : (
-                <>
+                <div className="flex items-center">
                   <Save className="h-4 w-4 mr-2" />
                   Save Changes
-                </>
+                </div>
               )}
             </Button>
           </DialogFooter>
@@ -924,15 +924,15 @@ export default function Admin() {
               className="bg-purple-600 hover:bg-purple-700"
             >
               {isMutating ? (
-                <>
+                <div className="flex items-center">
                   <RefreshCw className="h-4 w-4 mr-2 animate-spin" />
                   Saving...
-                </>
+                </div>
               ) : (
-                <>
+                <div className="flex items-center">
                   <Save className="h-4 w-4 mr-2" />
                   {selectedContent ? "Update Section" : "Create Section"}
-                </>
+                </div>
               )}
             </Button>
           </DialogFooter>
