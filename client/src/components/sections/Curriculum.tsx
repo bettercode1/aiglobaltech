@@ -18,7 +18,6 @@ export default function Curriculum() {
   return (
     <section id="curriculum" className="py-16 bg-gradient-to-br from-red-50 to-orange-100 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSgxMCkiIG9wYWNpdHk9IjAuMDMiPjxwYXRoIGQ9Ik0xMCAzMCBMNTAgMzAiIHN0cm9rZT0iI2VmNDQ0NCIgc3Ryb2tlLXdpZHRoPSIyIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIiAvPjwvc3ZnPg==')]"></div>
         <div className="absolute top-10 right-1/4 w-64 h-64 bg-red-300/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-10 left-1/3 w-96 h-96 bg-orange-300/20 rounded-full blur-3xl"></div>
       </div>
