@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, ArrowRight, Brain, Cpu, Braces, Microchip, Sparkles, Terminal, Database, Bot, ImagePlus, Code, Headphones, Leaf, Shield, User, Users, Globe } from "lucide-react";
+import { Check, ArrowRight, Brain, Cpu, Braces, Microchip, Sparkles, Terminal, Database, Bot, ImagePlus, Code, Headphones, Leaf, Shield, User, Users, Globe, Lightbulb, Rocket, Zap, Search, FileText, Workflow, Book } from "lucide-react";
 
 interface Module {
   id: string;
@@ -18,138 +18,138 @@ export default function LearningPath() {
   const [activeModule, setActiveModule] = useState<string | null>(null);
   const [highlightPath, setHighlightPath] = useState<string[]>([]);
 
-  // Define the modules and their relationships
+  // Define the modules and their relationships based on BuildSchool curriculum
   const modules: Module[] = [
     {
-      id: "ai-fundamentals",
-      title: "AI Fundamentals",
-      description: "Introduction to core AI concepts, history, and terminology. Learn about different types of AI and their applications.",
-      weeks: 3,
-      skills: ["AI Theory", "AI History", "Machine Learning Basics", "Ethical AI"],
+      id: "ai-foundations",
+      title: "AI Foundations",
+      description: "Introduction to AI concepts, terminology, and understanding Large Language Models (LLMs). Learn about ethical considerations in AI development.",
+      weeks: 2,
+      skills: ["AI Terminology", "LLM Understanding", "Ethical AI", "AI Applications"],
       icon: <Brain className="h-5 w-5" />,
-      tools: ["Python", "Jupyter Notebooks", "Scikit-learn"],
-      projects: ["AI Impact Analysis", "Simple Classifier Building"],
-      color: "purple",
+      tools: ["ChatGPT", "Claude", "Gemini", "Basic Prompt Writing"],
+      projects: ["AI Use-Case Analysis", "Ethical AI Implementation Plan"],
+      color: "red",
       dependencies: []
-    },
-    {
-      id: "data-processing",
-      title: "Data Processing",
-      description: "Learn data collection, cleaning, and preparation techniques essential for AI applications.",
-      weeks: 2,
-      skills: ["Data Cleaning", "Feature Engineering", "Data Visualization", "Data Ethics"],
-      icon: <Database className="h-5 w-5" />,
-      tools: ["Pandas", "NumPy", "Matplotlib", "Seaborn"],
-      projects: ["Dataset Preparation", "Data Visualization Dashboard"],
-      color: "blue",
-      dependencies: ["ai-fundamentals"]
-    },
-    {
-      id: "ml-techniques",
-      title: "ML Techniques",
-      description: "Explore various machine learning algorithms and their practical implementations.",
-      weeks: 3,
-      skills: ["Supervised Learning", "Unsupervised Learning", "Model Evaluation", "Hyperparameter Tuning"],
-      icon: <Braces className="h-5 w-5" />,
-      tools: ["TensorFlow", "PyTorch", "Scikit-learn", "Weights & Biases"],
-      projects: ["Prediction Model", "Clustering Application"],
-      color: "cyan",
-      dependencies: ["data-processing"]
-    },
-    {
-      id: "deep-learning",
-      title: "Deep Learning",
-      description: "Dive into neural networks and deep learning architectures and applications.",
-      weeks: 3,
-      skills: ["Neural Networks", "CNNs", "RNNs", "Transfer Learning"],
-      icon: <Cpu className="h-5 w-5" />,
-      tools: ["TensorFlow", "PyTorch", "Keras", "Hugging Face"],
-      projects: ["Image Classifier", "Text Classifier"],
-      color: "indigo",
-      dependencies: ["ml-techniques"]
-    },
-    {
-      id: "generative-ai-intro",
-      title: "Generative AI Intro",
-      description: "Introduction to generative models and their capabilities.",
-      weeks: 2,
-      skills: ["Generative Models", "GANs", "VAEs", "Diffusion Models"],
-      icon: <Sparkles className="h-5 w-5" />,
-      tools: ["Stable Diffusion", "GAN Frameworks", "Hugging Face"],
-      projects: ["Image Generation App", "Style Transfer Tool"],
-      color: "purple",
-      dependencies: ["deep-learning"]
-    },
-    {
-      id: "llm-fundamentals",
-      title: "LLM Fundamentals",
-      description: "Explore large language models and their capabilities in understanding and generating text.",
-      weeks: 2,
-      skills: ["Transformers", "LLM Architecture", "Fine-tuning", "Embeddings"],
-      icon: <Bot className="h-5 w-5" />,
-      tools: ["OpenAI API", "Claude API", "Llama", "LangChain"],
-      projects: ["Chatbot Development", "Custom LLM Integration"],
-      color: "blue",
-      dependencies: ["generative-ai-intro"]
     },
     {
       id: "prompt-engineering",
       title: "Prompt Engineering",
-      description: "Master the art of crafting effective prompts for generative AI systems.",
-      weeks: 2,
+      description: "Master the art of crafting effective prompts for AI systems. Learn techniques to improve AI outputs and responses.",
+      weeks: 1,
       skills: ["Prompt Design", "Few-shot Learning", "Chain-of-Thought", "System Prompts"],
       icon: <Terminal className="h-5 w-5" />,
       tools: ["OpenAI Playground", "Claude Console", "Prompt Libraries"],
-      projects: ["Prompt Template Library", "Advanced RAG System"],
-      color: "cyan",
-      dependencies: ["llm-fundamentals"]
+      projects: ["Prompt Template Library", "Specialized Prompt Development"],
+      color: "orange",
+      dependencies: ["ai-foundations"]
+    },
+    {
+      id: "conversational-ai",
+      title: "Conversational AI",
+      description: "Learn to work with and optimize conversational AI systems for customer service, support, and virtual assistants.",
+      weeks: 1,
+      skills: ["Chatbot Design", "Conversation Flow", "Response Optimization", "User Experience"],
+      icon: <Bot className="h-5 w-5" />,
+      tools: ["GPT-4o", "Claude 3", "Gemini", "Custom GPTs"],
+      projects: ["Customer Service Bot", "AI Assistant Development"],
+      color: "amber",
+      dependencies: ["prompt-engineering"]
     },
     {
       id: "image-generation",
       title: "Image Generation",
-      description: "Learn advanced techniques for generating and manipulating images with AI.",
-      weeks: 2,
-      skills: ["Text-to-Image", "Image Editing", "Style Transfer", "Animation"],
+      description: "Master techniques for generating and editing images with AI. Learn to create visual assets for various purposes.",
+      weeks: 1,
+      skills: ["Text-to-Image", "Image Editing", "Style Guidance", "Visual Composition"],
       icon: <ImagePlus className="h-5 w-5" />,
-      tools: ["DALL-E", "Midjourney", "Stable Diffusion", "ControlNet"],
-      projects: ["Custom Image Generator", "Visual Content Creator"],
-      color: "indigo",
-      dependencies: ["generative-ai-intro"]
+      tools: ["DALL-E 3", "Midjourney", "Stable Diffusion", "Adobe Firefly"],
+      projects: ["Visual Brand Asset Generator", "Creative Image Portfolio"],
+      color: "rose",
+      dependencies: ["prompt-engineering"]
     },
     {
-      id: "audio-generation",
-      title: "Audio Generation",
-      description: "Explore AI tools for speech, music, and sound generation and processing.",
-      weeks: 2,
-      skills: ["Text-to-Speech", "Voice Cloning", "Music Generation", "Audio Editing"],
+      id: "audio-video-ai",
+      title: "Audio & Video AI",
+      description: "Explore tools for creating and editing audio and video content using AI technologies.",
+      weeks: 1,
+      skills: ["Text-to-Speech", "Voice Cloning", "Video Generation", "Content Editing"],
       icon: <Headphones className="h-5 w-5" />,
-      tools: ["Whisper", "ElevenLabs", "Bark", "MusicGen"],
-      projects: ["Voice Assistant", "Music Creation Tool"],
-      color: "purple",
-      dependencies: ["generative-ai-intro"]
+      tools: ["ElevenLabs", "Descript", "Runway", "Pika"],
+      projects: ["AI Voice Assistant", "Video Content Generator"],
+      color: "red",
+      dependencies: ["image-generation"]
+    },
+    {
+      id: "ai-research",
+      title: "AI Research & Analysis",
+      description: "Learn how to leverage AI for research, data analysis, and information synthesis.",
+      weeks: 1,
+      skills: ["Information Retrieval", "Data Analysis", "Content Summarization", "Research Methods"],
+      icon: <Search className="h-5 w-5" />,
+      tools: ["Bing AI", "Perplexity", "Claude Opus", "Research Agents"],
+      projects: ["Market Research Analysis", "Data Insights Report"],
+      color: "orange",
+      dependencies: ["conversational-ai"]
+    },
+    {
+      id: "content-generation",
+      title: "Content Generation",
+      description: "Master AI-assisted content creation for marketing, blogs, social media, and other channels.",
+      weeks: 1,
+      skills: ["Copywriting", "SEO Content", "Social Media", "Brand Voice"],
+      icon: <FileText className="h-5 w-5" />,
+      tools: ["GPT-4", "Claude", "AI Writing Assistants", "SEO Tools"],
+      projects: ["Content Marketing Campaign", "Multi-channel Content Strategy"],
+      color: "amber",
+      dependencies: ["ai-research"]
+    },
+    {
+      id: "rag-systems",
+      title: "RAG Systems",
+      description: "Learn to build Retrieval Augmented Generation systems that combine LLMs with custom knowledge bases.",
+      weeks: 2,
+      skills: ["Vector Databases", "Document Processing", "Knowledge Retrieval", "System Architecture"],
+      icon: <Database className="h-5 w-5" />,
+      tools: ["LangChain", "LlamaIndex", "Pinecone", "Chroma DB"],
+      projects: ["Custom Knowledge Base", "Industry-specific RAG Application"],
+      color: "rose",
+      dependencies: ["content-generation"]
+    },
+    {
+      id: "ai-agents",
+      title: "AI Agents & Assistants",
+      description: "Build autonomous AI agents that can perform complex tasks and workflows.",
+      weeks: 2,
+      skills: ["Agent Design", "Tool Use", "Workflow Automation", "System Integration"],
+      icon: <Workflow className="h-5 w-5" />,
+      tools: ["OpenAI Assistants API", "AutoGPT", "LangChain Agents", "Function Calling"],
+      projects: ["Autonomous Business Assistant", "Multi-agent System"],
+      color: "red",
+      dependencies: ["rag-systems"]
     },
     {
       id: "ai-applications",
       title: "AI Applications",
-      description: "Build practical real-world AI applications and learn deployment strategies.",
+      description: "Learn to integrate AI into applications and services using APIs and development frameworks.",
       weeks: 3,
-      skills: ["Web Development", "API Integration", "UX/UI for AI", "Deployment"],
-      icon: <Microchip className="h-5 w-5" />,
-      tools: ["React", "Flask/FastAPI", "Docker", "Cloud APIs"],
-      projects: ["End-to-end AI Application", "AI-powered Website"],
-      color: "blue",
-      dependencies: ["prompt-engineering", "image-generation", "audio-generation"]
+      skills: ["API Integration", "UX/UI for AI", "Deployment", "Performance Optimization"],
+      icon: <Code className="h-5 w-5" />,
+      tools: ["OpenAI API", "Anthropic API", "Frontend Frameworks", "Backend Services"],
+      projects: ["End-to-end AI Application", "AI-powered Web Service"],
+      color: "orange",
+      dependencies: ["ai-agents"]
     },
     {
-      id: "ai-ethics",
-      title: "AI Ethics & Governance",
-      description: "Understand ethical considerations, biases, and responsible AI development practices.",
-      weeks: 2,
-      skills: ["Ethical AI Design", "Bias Detection", "Privacy Protection", "AI Governance"],
-      icon: <Shield className="h-5 w-5" />,
-      tools: ["Bias Detection Tools", "Model Cards", "Privacy Frameworks"],
-      projects: ["Ethical AI Assessment", "Bias Mitigation Strategy"],
-      color: "cyan",
+      id: "industry-projects",
+      title: "Industry AI Projects",
+      description: "Apply your skills to real-world industry challenges and build portfolio-ready projects.",
+      weeks: 3,
+      skills: ["Business Automation", "Customer Service", "Content Operations", "AI Strategy"],
+      icon: <Rocket className="h-5 w-5" />,
+      tools: ["Project Management Tools", "AI Development Stack", "Analytics"],
+      projects: ["Business Process Automation", "Industry-specific AI Solution"],
+      color: "amber",
       dependencies: ["ai-applications"]
     },
     {
@@ -161,8 +161,8 @@ export default function LearningPath() {
       icon: <Users className="h-5 w-5" />,
       tools: ["Industry Tools", "Team Collaboration Software", "Version Control"],
       projects: ["Industry Project", "Portfolio Development"],
-      color: "green",
-      dependencies: ["ai-ethics"]
+      color: "rose",
+      dependencies: ["industry-projects"]
     },
     {
       id: "certification",
@@ -170,10 +170,10 @@ export default function LearningPath() {
       description: "Receive your program certification and prepare for the job market.",
       weeks: 1,
       skills: ["Portfolio Presentation", "Interview Skills", "Networking"],
-      icon: <User className="h-5 w-5" />,
+      icon: <Book className="h-5 w-5" />,
       tools: ["Portfolio Platforms", "LinkedIn", "GitHub"],
       projects: ["Comprehensive Portfolio", "Job Application Strategy"],
-      color: "green",
+      color: "red",
       dependencies: ["internship-phase"]
     }
   ];
@@ -231,20 +231,20 @@ export default function LearningPath() {
     <section id="learning-path" className="py-24 bg-gray-50 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 w-full h-1 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent"></div>
-        <div className="absolute bottom-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent"></div>
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-200 rounded-full opacity-30 blur-3xl"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-cyan-200 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute top-0 w-full h-1 bg-gradient-to-r from-transparent via-red-500/20 to-transparent"></div>
+        <div className="absolute bottom-0 w-full h-1 bg-gradient-to-r from-transparent via-orange-500/20 to-transparent"></div>
+        <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-200 rounded-full opacity-30 blur-3xl"></div>
+        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-200 rounded-full opacity-30 blur-3xl"></div>
       </div>
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 text-purple-700 font-semibold text-sm mb-4">LEARNING JOURNEY</span>
+          <span className="inline-block px-4 py-1.5 rounded-full bg-red-100 text-red-700 font-semibold text-sm mb-4">LEARNING JOURNEY</span>
           <h2 className="font-sans font-bold text-4xl md:text-5xl mt-2 mb-4 text-gray-900">
-            Your <span className="bg-gradient-to-r from-purple-600 to-cyan-600 bg-clip-text text-transparent">Learning Path</span>
+            Your <span className="bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">Learning Path</span>
           </h2>
           <p className="max-w-3xl mx-auto text-gray-600 text-lg">
-            Explore our comprehensive {getTotalDuration()} curriculum from AI fundamentals to advanced applications. 
+            Explore our comprehensive {getTotalDuration()} curriculum based on BuildSchool's modern AI training approach. 
             Click on any module to see details and dependencies.
           </p>
         </div>
@@ -256,6 +256,34 @@ export default function LearningPath() {
               const isActive = activeModule === module.id;
               const isHighlighted = highlightPath.includes(module.id);
               const colorClasses = {
+                red: {
+                  bg: isActive ? "bg-red-600" : isHighlighted ? "bg-red-500" : "bg-red-100",
+                  text: isActive ? "text-white" : isHighlighted ? "text-white" : "text-red-700",
+                  border: isActive ? "border-red-700" : isHighlighted ? "border-red-400" : "border-red-200",
+                  icon: isActive ? "text-red-200" : isHighlighted ? "text-red-200" : "text-red-500",
+                  shadow: isActive ? "shadow-lg shadow-red-200" : ""
+                },
+                orange: {
+                  bg: isActive ? "bg-orange-600" : isHighlighted ? "bg-orange-500" : "bg-orange-100",
+                  text: isActive ? "text-white" : isHighlighted ? "text-white" : "text-orange-700",
+                  border: isActive ? "border-orange-700" : isHighlighted ? "border-orange-400" : "border-orange-200",
+                  icon: isActive ? "text-orange-200" : isHighlighted ? "text-orange-200" : "text-orange-500",
+                  shadow: isActive ? "shadow-lg shadow-orange-200" : ""
+                },
+                amber: {
+                  bg: isActive ? "bg-amber-600" : isHighlighted ? "bg-amber-500" : "bg-amber-100",
+                  text: isActive ? "text-white" : isHighlighted ? "text-white" : "text-amber-700",
+                  border: isActive ? "border-amber-700" : isHighlighted ? "border-amber-400" : "border-amber-200",
+                  icon: isActive ? "text-amber-200" : isHighlighted ? "text-amber-200" : "text-amber-500",
+                  shadow: isActive ? "shadow-lg shadow-amber-200" : ""
+                },
+                rose: {
+                  bg: isActive ? "bg-rose-600" : isHighlighted ? "bg-rose-500" : "bg-rose-100",
+                  text: isActive ? "text-white" : isHighlighted ? "text-white" : "text-rose-700",
+                  border: isActive ? "border-rose-700" : isHighlighted ? "border-rose-400" : "border-rose-200",
+                  icon: isActive ? "text-rose-200" : isHighlighted ? "text-rose-200" : "text-rose-500",
+                  shadow: isActive ? "shadow-lg shadow-rose-200" : ""
+                },
                 purple: {
                   bg: isActive ? "bg-purple-600" : isHighlighted ? "bg-purple-500" : "bg-purple-100",
                   text: isActive ? "text-white" : isHighlighted ? "text-white" : "text-purple-700",
@@ -269,20 +297,6 @@ export default function LearningPath() {
                   border: isActive ? "border-blue-700" : isHighlighted ? "border-blue-400" : "border-blue-200",
                   icon: isActive ? "text-blue-200" : isHighlighted ? "text-blue-200" : "text-blue-500",
                   shadow: isActive ? "shadow-lg shadow-blue-200" : ""
-                },
-                cyan: {
-                  bg: isActive ? "bg-cyan-600" : isHighlighted ? "bg-cyan-500" : "bg-cyan-100",
-                  text: isActive ? "text-white" : isHighlighted ? "text-white" : "text-cyan-700",
-                  border: isActive ? "border-cyan-700" : isHighlighted ? "border-cyan-400" : "border-cyan-200",
-                  icon: isActive ? "text-cyan-200" : isHighlighted ? "text-cyan-200" : "text-cyan-500",
-                  shadow: isActive ? "shadow-lg shadow-cyan-200" : ""
-                },
-                indigo: {
-                  bg: isActive ? "bg-indigo-600" : isHighlighted ? "bg-indigo-500" : "bg-indigo-100",
-                  text: isActive ? "text-white" : isHighlighted ? "text-white" : "text-indigo-700",
-                  border: isActive ? "border-indigo-700" : isHighlighted ? "border-indigo-400" : "border-indigo-200",
-                  icon: isActive ? "text-indigo-200" : isHighlighted ? "text-indigo-200" : "text-indigo-500",
-                  shadow: isActive ? "shadow-lg shadow-indigo-200" : ""
                 },
                 green: {
                   bg: isActive ? "bg-green-600" : isHighlighted ? "bg-green-500" : "bg-green-100",
@@ -427,11 +441,11 @@ export default function LearningPath() {
           )}
         </div>
         
-        <div className="bg-gradient-to-r from-purple-50 to-cyan-50 rounded-xl p-6 border border-purple-100">
+        <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-xl p-6 border border-red-100">
           <div className="flex flex-col md:flex-row items-center">
             <div className="flex-1 mb-4 md:mb-0">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to Start Your Learning Journey?</h3>
-              <p className="text-gray-700">Join our AI Learning Hub program and master AI and GenAI skills step by step.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Ready to Start Your AI Journey?</h3>
+              <p className="text-gray-700">Join Bettercode's AI Workshop & Internship program and master cutting-edge AI skills with BuildSchool curriculum.</p>
             </div>
             <div>
               <button 
@@ -448,7 +462,7 @@ export default function LearningPath() {
                     });
                   }
                 }}
-                className="bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center"
+                className="bg-gradient-to-r from-red-600 to-orange-500 text-white font-medium py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 flex items-center"
               >
                 Apply Now
                 <ArrowRight className="ml-2 h-5 w-5" />
