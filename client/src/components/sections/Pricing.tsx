@@ -31,7 +31,7 @@ export default function Pricing() {
             Our program offers exceptional value with a comprehensive package of training, internship, and career support.
           </p>
           <div className="bg-gradient-to-r from-red-500 to-amber-500 text-white py-2 px-4 rounded-full inline-block font-semibold animate-pulse">
-            Limited Seats Available! Early Bird Discount (10%) only if paid in full
+            Limited Seats Available! Early Bird Discount (15%) for first 20 enrolls (full payment only)
           </div>
         </div>
         
@@ -46,10 +46,10 @@ export default function Pricing() {
               <div className="text-center">
                 <span className="text-gray-500 text-lg line-through">₹49,999</span>
                 <div className="flex items-center justify-center">
-                  <span className="text-purple-500 text-5xl font-bold">₹39,999</span>
+                  <span className="text-purple-500 text-5xl font-bold">₹42,499</span>
                   <span className="text-gray-500 ml-2">/ program</span>
                 </div>
-                <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded mt-2">Early bird discount (10%) only if paid in full</span>
+                <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded mt-2">Early bird discount (15%) for first 20 enrolls (full payment only)</span>
               </div>
             </div>
             
@@ -121,7 +121,7 @@ export default function Pricing() {
                 <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
                 APPLY
               </button>
-              <p className="text-sm text-gray-500 mt-4">Limited Seats Available. <span className="font-semibold text-green-600">Early bird discount (10%) only if paid in full!</span></p>
+              <p className="text-sm text-gray-500 mt-4">Limited Seats Available. <span className="font-semibold text-green-600">Early bird discount (15%) for first 20 enrolls (full payment only)!</span></p>
             </div>
           </div>
           
@@ -133,11 +133,11 @@ export default function Pricing() {
                   Early Bird Eligible
                 </div>
                 <h5 className="font-medium mb-2">Full Payment</h5>
-                <p className="text-gray-600 text-sm">Pay the entire amount to be <span className="text-green-600 font-semibold">Eligible for 10% discount!</span></p>
+                <p className="text-gray-600 text-sm">Pay the entire amount to be <span className="text-green-600 font-semibold">Eligible for 15% discount!</span></p>
               </div>
               <div className="bg-white p-4 rounded border border-gray-200">
                 <h5 className="font-medium mb-2">Installment Plan</h5>
-                <p className="text-gray-600 text-sm">Pay in 3 easy installments of ₹13,999 each (first payment at registration).</p>
+                <p className="text-gray-600 text-sm">Pay in 3 easy installments of ₹16,666 each (first payment at registration).</p>
               </div>
             </div>
           </div>
