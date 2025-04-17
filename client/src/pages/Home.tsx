@@ -2,9 +2,7 @@ import Header from "@/components/sections/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Curriculum from "@/components/sections/Curriculum";
-import SkillsTracker from "@/components/sections/SkillsTracker";
 import Benefits from "@/components/sections/Benefits";
-import LearningPath from "@/components/sections/LearningPath";
 import Pricing from "@/components/sections/Pricing";
 import Faq from "@/components/sections/Faq";
 import ApplicationForm from "@/components/sections/ApplicationForm";
@@ -17,8 +15,6 @@ export default function Home() {
       <Hero />
       <About />
       <Curriculum />
-      <LearningPath />
-      <SkillsTracker />
       <Benefits />
       <Pricing />
       <Faq />
