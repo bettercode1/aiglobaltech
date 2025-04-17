@@ -121,6 +121,9 @@ export default function ApplicationForm() {
             <p className="max-w-3xl mx-auto text-gray-600 text-lg">
               Fill out the form below to start your application process for our AI & GenAI workshop and internship program.
             </p>
+            <p className="max-w-3xl mx-auto text-amber-600 font-medium mt-3 border border-amber-300 bg-amber-50 rounded-lg px-4 py-2 inline-block">
+              <strong>Please Note:</strong> Most of the program batches will be conducted online.
+            </p>
           </div>
           
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
@@ -276,6 +279,7 @@ export default function ApplicationForm() {
                       render={({ field }) => (
                         <FormItem className="space-y-3">
                           <FormLabel className="text-gray-700">Program Mode Preference*</FormLabel>
+                          <p className="text-xs text-amber-600 italic mb-2">Disclaimer: Most of the batches will be online</p>
                           <FormControl>
                             <RadioGroup
                               onValueChange={field.onChange}
