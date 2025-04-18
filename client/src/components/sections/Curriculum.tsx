@@ -95,7 +95,7 @@ export default function Curriculum() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           <div className="bg-white rounded-xl shadow-md overflow-hidden">
             <div className="bg-red-50 p-4 border-b border-gray-200">
-              <h3 className="font-sans font-semibold text-xl text-center">Workshop Content (BuildSchool Curriculum)</h3>
+              <h3 className="font-sans font-semibold text-xl text-center">Workshop Content</h3>
             </div>
             <div className="p-6">
               <div className="space-y-4">
@@ -228,12 +228,13 @@ export default function Curriculum() {
               </p>
             </div>
             <div className="md:w-1/4 text-center">
-              <button 
-                onClick={() => scrollToSection('apply')}
+              <a 
+                href="#apply" 
+                onClick={(e) => { e.preventDefault(); scrollToSection('apply'); }}
                 className="bg-white text-red-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-md inline-block transition shadow-md"
               >
                 Apply Now
-              </button>
+              </a>
             </div>
           </div>
         </div>
