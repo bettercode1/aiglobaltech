@@ -110,7 +110,7 @@ export default function PythonCourse() {
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
-                  to="/#apply" 
+                  to="/?course=python#apply" 
                   className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 inline-flex items-center justify-center"
                 >
                   APPLY NOW

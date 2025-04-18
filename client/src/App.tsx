@@ -7,12 +7,14 @@ import Home from "@/pages/Home";
 import Admin from "@/pages/Admin";
 import PythonCourse from "@/pages/PythonCourse";
 import SqlCourse from "@/pages/SqlCourse";
+import Courses from "@/pages/Courses";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/admin" component={Admin} />
+      <Route path="/courses" component={Courses} />
       <Route path="/courses/python" component={PythonCourse} />
       <Route path="/courses/sql" component={SqlCourse} />
       <Route component={NotFound} />

@@ -81,7 +81,7 @@ export default function OtherCourses() {
           <div className="inline-block bg-white p-4 rounded-lg shadow-md border border-gray-100">
             <p className="text-gray-700 font-medium mb-2">Looking for a different technology course?</p>
             <Link 
-              to="/#other-courses" 
+              to="/courses" 
               className="text-red-500 font-semibold flex items-center justify-center hover:text-red-600"
             >
               View all courses
