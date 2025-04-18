@@ -28,13 +28,13 @@ function CourseCard({ title, description, icon, href, duration, price }: CourseC
           </span>
           <span className="font-semibold text-gray-700">{price}</span>
         </div>
-        <Link 
-          to="/#apply" 
+        <a 
+          href={`/?course=${href.includes('python') ? 'python' : href.includes('sql') ? 'sql' : 'ai-genai'}#apply`}
           className="inline-flex items-center justify-center bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors font-medium"
         >
           Apply Now
           <ArrowRight className="ml-1 h-4 w-4" />
-        </Link>
+        </a>
       </div>
     </div>
   );
