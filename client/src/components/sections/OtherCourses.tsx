@@ -29,10 +29,10 @@ function CourseCard({ title, description, icon, href, duration, price }: CourseC
           <span className="font-semibold text-gray-700">{price}</span>
         </div>
         <Link 
-          to={href} 
-          className="inline-flex items-center text-red-500 hover:text-red-600 font-medium"
+          to="/#apply" 
+          className="inline-flex items-center justify-center bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors font-medium"
         >
-          Learn more
+          Apply Now
           <ArrowRight className="ml-1 h-4 w-4" />
         </Link>
       </div>
