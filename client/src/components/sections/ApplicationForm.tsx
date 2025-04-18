@@ -400,7 +400,7 @@ export default function ApplicationForm() {
                       <button
                         type="submit"
                         disabled={submitting}
-                        className="w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-medium py-4 px-8 rounded-xl inline-flex items-center justify-center transition-all duration-300 disabled:opacity-70 shadow-md hover:shadow-lg"
+                        className="w-full bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white font-medium py-4 px-8 rounded-xl inline-flex items-center justify-center transition-all duration-300 disabled:opacity-70 shadow-md hover:shadow-lg"
                       >
                         {submitting ? (
                           <div className="flex items-center">
@@ -409,8 +409,7 @@ export default function ApplicationForm() {
                           </div>
                         ) : (
                           <div className="flex items-center">
-                            Submit Application
-                            <Send className="ml-2 h-5 w-5" />
+                            SUBMIT APPLICATION
                           </div>
                         )}
                       </button>

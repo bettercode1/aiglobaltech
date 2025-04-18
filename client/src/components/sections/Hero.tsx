@@ -48,15 +48,13 @@ export default function Hero() {
                 onClick={() => scrollToSection('apply')}
                 className="bg-black border border-red-500/50 text-red-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
               >
-                <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
                 APPLY
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
               <button 
                 onClick={() => scrollToSection('curriculum')}
                 className="bg-gray-900/80 border border-white/10 hover:border-red-500/30 text-gray-300 hover:text-red-400 font-medium py-3 px-6 rounded shadow-lg text-center transition-all duration-300 font-mono tracking-wide"
               >
-                &lt;view_curriculum/&gt;
+                VIEW CURRICULUM
               </button>
             </div>
           </div>

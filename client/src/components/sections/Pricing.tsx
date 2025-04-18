@@ -117,7 +117,6 @@ export default function Pricing() {
                 onClick={() => scrollToSection('apply')}
                 className="bg-black border border-red-500/50 text-red-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
               >
-                <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
                 APPLY
               </button>
               <p className="text-sm text-gray-500 mt-4">Limited Seats Available. <span className="font-semibold text-green-600">Early bird discount (10%) for first 20 enrolls (full payment only)!</span></p>
