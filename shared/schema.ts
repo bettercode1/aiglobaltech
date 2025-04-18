@@ -15,6 +15,7 @@ export const applications = pgTable("applications", {
   email: text("email").notNull(),
   phone: text("phone").notNull(),
   education: text("education").notNull(),
+  course: text("course").default("ai-genai"),
   mode: text("mode").notNull(),
   experience: text("experience").notNull(),
   motivation: text("motivation").notNull(),
