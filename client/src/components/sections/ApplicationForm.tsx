@@ -75,6 +75,7 @@ export default function ApplicationForm() {
     const courseParam = params.get('course');
     
     if (courseParam) {
+      console.log("Found course parameter:", courseParam);
       if (courseParam === 'python') {
         form.setValue('course', 'python');
       } else if (courseParam === 'sql') {
@@ -83,7 +84,7 @@ export default function ApplicationForm() {
         form.setValue('course', 'ai-genai');
       }
     }
-  }, [location, form]);
+  }, [form]);
 
   const mutation = useMutation({
     mutationFn: async (data: FormValues) => {

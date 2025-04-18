@@ -86,12 +86,12 @@ export default function Header() {
           >
             Pricing
           </a>
-          <Link 
-            to="/courses" 
+          <a 
+            href="/courses" 
             className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
           >
             All Courses
-          </Link>
+          </a>
           <a 
             href="#faq" 
             className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
@@ -152,12 +152,12 @@ export default function Header() {
             >
               Pricing
             </a>
-            <Link
-              to="/courses"
+            <a
+              href="/courses"
               className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
             >
               All Courses
-            </Link>
+            </a>
             <a 
               href="#faq" 
               className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
