@@ -139,15 +139,15 @@ export default function SqlCourse() {
                         <span className="text-gray-300">Design efficient and scalable databases</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-orange-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-400 mr-3 mt-0.5" />
                         <span className="text-gray-300">Data analysis and business intelligence</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-orange-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-400 mr-3 mt-0.5" />
                         <span className="text-gray-300">Hands-on projects with real-world datasets</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-orange-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-400 mr-3 mt-0.5" />
                         <span className="text-gray-300">Industry-recognized certification</span>
                       </li>
                     </ul>
@@ -198,7 +198,7 @@ export default function SqlCourse() {
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-amber-500 text-white p-3 rounded-lg inline-block mb-4">
+              <div className="bg-rose-600 text-white p-3 rounded-lg inline-block mb-4">
                 <LineChart className="h-6 w-6" />
               </div>
               <h3 className="font-semibold text-xl mb-2">Data Analytics</h3>
@@ -224,11 +224,11 @@ export default function SqlCourse() {
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h3 className="font-semibold text-xl text-gray-900">{module.title}</h3>
-                        <p className="text-orange-500 text-sm font-medium mt-1 flex items-center">
+                        <p className="text-rose-500 text-sm font-medium mt-1 flex items-center">
                           <Clock className="h-4 w-4 mr-1" /> {module.duration}
                         </p>
                       </div>
-                      <div className="bg-orange-50 text-orange-600 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                      <div className="bg-rose-50 text-rose-600 text-xs font-medium px-2.5 py-0.5 rounded-full">
                         Module {index + 1}
                       </div>
                     </div>
@@ -277,7 +277,7 @@ export default function SqlCourse() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div>
                     <h4 className="font-semibold text-lg mb-4 flex items-center">
-                      <CheckCircle2 className="h-5 w-5 text-orange-400 mr-2" />
+                      <CheckCircle2 className="h-5 w-5 text-rose-400 mr-2" />
                       What's Included:
                     </h4>
                     <ul className="space-y-2">
@@ -308,7 +308,7 @@ export default function SqlCourse() {
                     <h4 className="font-semibold text-lg mb-4">Payment Options</h4>
                     <div className="space-y-4">
                       <div className="flex items-start">
-                        <div className="h-5 w-5 rounded-full border-2 border-orange-400 bg-orange-400/20 mt-0.5 mr-3 flex-shrink-0"></div>
+                        <div className="h-5 w-5 rounded-full border-2 border-rose-400 bg-rose-400/20 mt-0.5 mr-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="font-medium text-white">Full Payment</h5>
                           <p className="text-gray-400 text-sm">Pay ₹19,999 upfront and get access to all course materials immediately.</p>
