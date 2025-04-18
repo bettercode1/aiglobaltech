@@ -33,6 +33,7 @@ const formSchema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
   education: z.string().min(1, "Please select your highest education"),
+  course: z.string().min(1, "Please select which course you're applying for"),
   mode: z.enum(["online", "offline", "hybrid"], {
     required_error: "Please select your preferred mode",
   }),
@@ -58,6 +59,7 @@ export default function ApplicationForm() {
       email: "",
       phone: "",
       education: "",
+      course: "",
       experience: "",
       motivation: "",
       referral: "",
