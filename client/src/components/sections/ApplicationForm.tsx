@@ -118,10 +118,10 @@ export default function ApplicationForm() {
               </div>
             </div>
             <h2 className="font-sans font-bold text-4xl md:text-5xl mt-2 mb-4">
-              Apply for the <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Program</span>
+              Apply for <span className="bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent">Any Program</span>
             </h2>
             <p className="max-w-3xl mx-auto text-gray-600 text-lg">
-              Fill out the form below to start your application process for our AI & GenAI workshop and internship program.
+              Fill out the form below to start your application process for any of our courses or programs.
             </p>
             <p className="max-w-3xl mx-auto text-amber-600 font-medium mt-3 border border-amber-300 bg-amber-50 rounded-lg px-4 py-2 inline-block">
               <strong>Please Note:</strong> Most of the program batches will be conducted online.
@@ -277,6 +277,32 @@ export default function ApplicationForm() {
                     
                     <FormField
                       control={form.control}
+                      name="course"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="flex items-center text-gray-700">
+                            <BookOpen className="mr-2 h-4 w-4 text-red-500" />
+                            Program / Course*
+                          </FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger className="rounded-lg">
+                                <SelectValue placeholder="Select the program you're applying for" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="ai-genai">AI & GenAI Workshop + Internship</SelectItem>
+                              <SelectItem value="python">Python Programming Masterclass</SelectItem>
+                              <SelectItem value="sql">SQL Masterclass</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage className="text-sm" />
+                        </FormItem>
+                      )}
+                    />
+                    
+                    <FormField
+                      control={form.control}
                       name="mode"
                       render={({ field }) => (
                         <FormItem className="space-y-3">
@@ -339,7 +365,7 @@ export default function ApplicationForm() {
                           <FormLabel className="text-gray-700">Why do you want to join this program?*</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder="Tell us about your motivation to join the AI & GenAI program..."
+                              placeholder="Tell us about your motivation to join this program and what you hope to achieve..."
                               rows={4}
                               className="rounded-lg resize-none"
                               {...field}
