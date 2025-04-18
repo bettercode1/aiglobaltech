@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import BettercodeLogotype from "../BettercodeLogotype";
+import { Link } from "wouter";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -85,13 +86,12 @@ export default function Header() {
           >
             Pricing
           </a>
-          <a 
-            href="#other-courses" 
+          <Link 
+            to="/courses" 
             className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
-            onClick={(e) => { e.preventDefault(); scrollToSection('other-courses'); }}
           >
-            Other Courses
-          </a>
+            All Courses
+          </Link>
           <a 
             href="#faq" 
             className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
@@ -152,13 +152,12 @@ export default function Header() {
             >
               Pricing
             </a>
-            <a 
-              href="#other-courses" 
+            <Link
+              to="/courses"
               className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
-              onClick={(e) => { e.preventDefault(); scrollToSection('other-courses'); }}
             >
-              Other Courses
-            </a>
+              All Courses
+            </Link>
             <a 
               href="#faq" 
               className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
