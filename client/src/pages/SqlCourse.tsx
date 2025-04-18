@@ -331,12 +331,12 @@ export default function SqlCourse() {
                 </div>
                 
                 <div className="text-center">
-                  <Link 
-                    to="/?course=sql#apply" 
+                  <a 
+                    href="/?course=sql#apply" 
                     className="bg-gradient-to-r from-orange-600 to-red-500 hover:from-orange-700 hover:to-red-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:shadow-orange-900/20 text-center transition-all duration-300 inline-block"
                   >
                     APPLY NOW
-                  </Link>
+                  </a>
                   <p className="text-sm text-gray-400 mt-4">Limited seats available. Next batch starts soon!</p>
                 </div>
               </div>
