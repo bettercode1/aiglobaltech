@@ -5,30 +5,52 @@ import { BadgeCheck, Bookmark, BookOpen, Brain, Code, Database, LineChart, Serve
 
 export default function Courses() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50">
+    <div className="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-900">
       <Header />
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-to-br from-red-600 to-orange-500 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="pt-32 pb-24 bg-gradient-to-br from-red-600 to-orange-500 text-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/10 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
+            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-red-500/20 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-red-400 to-orange-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
+          </div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Discover Our Tech Courses
+              <div className="inline-flex items-center justify-center p-1 rounded-full bg-white/10 backdrop-blur-sm mb-6">
+                <div className="bg-white/20 text-white rounded-full px-4 py-1.5 font-medium text-sm">
+                  BETTERCODE TECHNOLOGIES
+                </div>
+              </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                Discover Our Tech <span className="bg-gradient-to-r from-white to-red-200 bg-clip-text text-transparent">Courses</span>
               </h1>
-              <p className="text-xl md:text-2xl text-red-100 mb-8">
+              <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto">
                 Master in-demand skills with our expertly crafted courses
               </p>
               {/* No apply button as requested */}
             </div>
           </div>
+          
+          <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
         </section>
         
         {/* Course Cards */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 relative overflow-hidden">
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-100 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-orange-100 rounded-full blur-3xl opacity-30"></div>
+          
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Our Course Catalog</h2>
+              <div className="inline-flex items-center justify-center p-1 rounded-full bg-white shadow-md mb-4">
+                <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
+                  <BookOpen className="h-4 w-4 mr-2" />
+                  OUR PROGRAMS
+                </div>
+              </div>
+              <h2 className="font-sans font-bold text-3xl lg:text-4xl mt-2 mb-4">Our Course Catalog</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Choose from our selection of specialized courses designed to accelerate your tech career
               </p>
@@ -186,18 +208,29 @@ export default function Courses() {
         </section>
         
         {/* Why Choose Us */}
-        <section className="py-20 bg-gray-50">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-gradient-to-br from-violet-50 to-indigo-100 relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-300 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-300 rounded-full blur-3xl opacity-20"></div>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold mb-4">Why Choose Our Courses</h2>
+              <div className="inline-flex items-center justify-center p-1 rounded-full bg-white shadow-md mb-4">
+                <div className="bg-gradient-to-r from-red-600 to-orange-600 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
+                  <Sparkles className="h-4 w-4 mr-2" />
+                  WHY CHOOSE US
+                </div>
+              </div>
+              <h2 className="font-sans font-bold text-3xl lg:text-4xl mt-2 mb-4">Why Choose Our Courses</h2>
               <p className="text-gray-600 max-w-2xl mx-auto">
                 Bettercode's courses offer a unique learning experience designed to maximize your tech career potential
               </p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <div className="bg-red-100 w-12 h-12 rounded-lg flex items-center justify-center text-red-600 mb-5">
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-gradient-to-br from-red-500 to-red-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <Sparkles className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Industry Relevant</h3>
@@ -206,8 +239,8 @@ export default function Courses() {
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <div className="bg-orange-100 w-12 h-12 rounded-lg flex items-center justify-center text-orange-600 mb-5">
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-gradient-to-br from-orange-500 to-red-500 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <Server className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Hands-on Projects</h3>
@@ -216,8 +249,8 @@ export default function Courses() {
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <div className="bg-amber-100 w-12 h-12 rounded-lg flex items-center justify-center text-amber-600 mb-5">
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-gradient-to-br from-red-500 to-orange-500 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <LineChart className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Career Support</h3>
@@ -226,8 +259,8 @@ export default function Courses() {
                 </p>
               </div>
               
-              <div className="bg-white p-6 rounded-xl shadow-md border border-gray-100">
-                <div className="bg-purple-100 w-12 h-12 rounded-lg flex items-center justify-center text-purple-600 mb-5">
+              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="bg-gradient-to-br from-orange-600 to-red-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <BookOpen className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Expert Instruction</h3>
@@ -240,14 +273,24 @@ export default function Courses() {
         </section>
         
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-gradient-to-br from-red-600 to-orange-500 text-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-orange-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
+          </div>
+
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-6">Ready to Accelerate Your Tech Career?</h2>
-              <p className="text-xl text-gray-300 mb-8">
+              <div className="inline-flex items-center justify-center p-1 rounded-full bg-red-500/20 backdrop-blur-sm mb-6">
+                <div className="bg-white/20 text-white rounded-full px-4 py-1.5 font-medium text-sm">
+                  LIMITED SPOTS AVAILABLE
+                </div>
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Accelerate Your Tech Career?</h2>
+              <p className="text-xl text-white/80 mb-8">
                 Don't miss the opportunity to learn in-demand skills for the future job market
               </p>
-              <p className="text-gray-400">Limited seats available for upcoming batches</p>
+              <p className="text-white/70 font-medium">Limited seats available for upcoming batches</p>
             </div>
           </div>
         </section>
