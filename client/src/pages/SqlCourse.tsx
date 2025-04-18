@@ -73,7 +73,7 @@ export default function SqlCourse() {
       <section className="pt-32 pb-16 bg-gradient-to-r from-gray-900 to-gray-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]"></div>
         <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
-          <div className="absolute -top-24 -right-24 w-72 h-72 bg-orange-500/20 rounded-full blur-3xl"></div>
+          <div className="absolute -top-24 -right-24 w-72 h-72 bg-rose-500/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-10 left-10 w-80 h-80 bg-red-500/10 rounded-full blur-3xl"></div>
         </div>
         
@@ -96,7 +96,7 @@ export default function SqlCourse() {
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full border border-gray-700 flex items-center">
-                  <Calendar className="h-4 w-4 text-orange-400 mr-2" />
+                  <Calendar className="h-4 w-4 text-rose-400 mr-2" />
                   <span className="text-gray-300 text-sm">2 months</span>
                 </div>
                 <div className="bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full border border-gray-700 flex items-center">
@@ -111,7 +111,7 @@ export default function SqlCourse() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link 
                   to="/?course=sql#apply" 
-                  className="bg-gradient-to-r from-orange-600 to-red-500 hover:from-orange-700 hover:to-red-600 text-white font-medium py-3 px-6 rounded shadow-lg hover:shadow-orange-900/20 text-center transition-all duration-300 inline-flex items-center justify-center"
+                  className="bg-gradient-to-r from-rose-600 to-red-500 hover:from-rose-700 hover:to-red-600 text-white font-medium py-3 px-6 rounded shadow-lg hover:shadow-rose-900/20 text-center transition-all duration-300 inline-flex items-center justify-center"
                 >
                   APPLY NOW
                 </Link>
@@ -125,17 +125,17 @@ export default function SqlCourse() {
             </div>
             <div className="md:w-1/2">
               <div className="relative rounded-lg overflow-hidden border border-gray-700 shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-red-500/20 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/20 to-red-500/20 backdrop-blur-sm"></div>
                 <div className="relative p-6">
                   <div className="bg-gray-900/80 backdrop-blur rounded-lg border border-gray-700 p-6">
                     <h3 className="font-bold text-xl mb-4 text-white">Course Highlights</h3>
                     <ul className="space-y-3">
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-orange-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-400 mr-3 mt-0.5" />
                         <span className="text-gray-300">Master SQL queries from basic to advanced</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-orange-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-400 mr-3 mt-0.5" />
                         <span className="text-gray-300">Design efficient and scalable databases</span>
                       </li>
                       <li className="flex items-start">
@@ -160,8 +160,8 @@ export default function SqlCourse() {
                           <span className="text-white font-bold text-2xl ml-2">₹19,999</span>
                         </div>
                       </div>
-                      <div className="bg-gradient-to-r from-orange-500/20 to-red-500/20 rounded p-2 text-center text-sm">
-                        <span className="text-orange-300 font-medium">Early bird discount available</span>
+                      <div className="bg-gradient-to-r from-rose-500/20 to-red-500/20 rounded p-2 text-center text-sm">
+                        <span className="text-rose-300 font-medium">Early bird discount available</span>
                       </div>
                     </div>
                   </div>
@@ -182,7 +182,7 @@ export default function SqlCourse() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-orange-500 text-white p-3 rounded-lg inline-block mb-4">
+              <div className="bg-rose-500 text-white p-3 rounded-lg inline-block mb-4">
                 <Database className="h-6 w-6" />
               </div>
               <h3 className="font-semibold text-xl mb-2">Database Management</h3>
@@ -333,7 +333,7 @@ export default function SqlCourse() {
                 <div className="text-center">
                   <a 
                     href="/?course=sql#apply" 
-                    className="bg-gradient-to-r from-orange-600 to-red-500 hover:from-orange-700 hover:to-red-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:shadow-orange-900/20 text-center transition-all duration-300 inline-block"
+                    className="bg-gradient-to-r from-rose-600 to-red-500 hover:from-rose-700 hover:to-red-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:shadow-rose-900/20 text-center transition-all duration-300 inline-block"
                   >
                     APPLY NOW
                   </a>
