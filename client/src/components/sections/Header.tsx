@@ -86,6 +86,13 @@ export default function Header() {
             Pricing
           </a>
           <a 
+            href="#other-courses" 
+            className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
+            onClick={(e) => { e.preventDefault(); scrollToSection('other-courses'); }}
+          >
+            Other Courses
+          </a>
+          <a 
             href="#faq" 
             className={`font-medium ${scrolled ? 'text-gray-200 hover:text-red-400' : 'text-white/90 hover:text-white'} transition-colors duration-200`}
             onClick={(e) => { e.preventDefault(); scrollToSection('faq'); }}
@@ -144,6 +151,13 @@ export default function Header() {
               onClick={(e) => { e.preventDefault(); scrollToSection('pricing'); }}
             >
               Pricing
+            </a>
+            <a 
+              href="#other-courses" 
+              className="block px-3 py-2.5 text-base font-medium text-gray-200 hover:text-red-400 hover:bg-gray-800 rounded-lg transition-colors duration-200"
+              onClick={(e) => { e.preventDefault(); scrollToSection('other-courses'); }}
+            >
+              Other Courses
             </a>
             <a 
               href="#faq" 

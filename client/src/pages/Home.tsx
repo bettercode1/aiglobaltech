@@ -4,6 +4,7 @@ import About from "@/components/sections/About";
 import Curriculum from "@/components/sections/Curriculum";
 import Benefits from "@/components/sections/Benefits";
 import Pricing from "@/components/sections/Pricing";
+import OtherCourses from "@/components/sections/OtherCourses";
 import Faq from "@/components/sections/Faq";
 import ApplicationForm from "@/components/sections/ApplicationForm";
 import Footer from "@/components/sections/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
       <Curriculum />
       <Benefits />
       <Pricing />
+      <OtherCourses />
       <Faq />
       <ApplicationForm />
       <Footer />
