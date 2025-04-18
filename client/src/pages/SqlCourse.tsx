@@ -89,7 +89,7 @@ export default function SqlCourse() {
                 <span className="text-gray-300">SQL Course</span>
               </div>
               <h1 className="font-sans font-bold text-4xl md:text-5xl tracking-tight mb-6">
-                SQL <span className="bg-gradient-to-r from-orange-500 to-red-400 bg-clip-text text-transparent">Masterclass</span>
+                SQL <span className="bg-gradient-to-r from-rose-500 to-red-400 bg-clip-text text-transparent">Masterclass</span>
               </h1>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
                 Master database management with our comprehensive SQL course covering data modeling, queries, and analytics.

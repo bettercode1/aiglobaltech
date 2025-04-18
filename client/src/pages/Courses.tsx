@@ -59,7 +59,7 @@ export default function Courses() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* AI & GenAI Course */}
               <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-red-100 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-red-600 to-orange-500 flex items-center justify-center p-8">
+                <div className="h-48 bg-gradient-to-r from-red-600 to-rose-500 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Brain className="h-12 w-12 text-white" />
                   </div>
@@ -99,7 +99,7 @@ export default function Courses() {
                   </div>
                   <a 
                     href="/?course=ai-genai#apply" 
-                    className="block w-full bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
+                    className="block w-full bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
                     APPLY NOW
                   </a>
@@ -157,7 +157,7 @@ export default function Courses() {
               
               {/* SQL Course */}
               <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-red-100 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-orange-500 to-orange-600 flex items-center justify-center p-8">
+                <div className="h-48 bg-gradient-to-r from-rose-500 to-rose-600 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Database className="h-12 w-12 text-white" />
                   </div>
@@ -197,7 +197,7 @@ export default function Courses() {
                   </div>
                   <a 
                     href="/?course=sql#apply" 
-                    className="block w-full bg-gradient-to-r from-orange-600 to-red-500 hover:from-orange-700 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
+                    className="block w-full bg-gradient-to-r from-rose-600 to-red-500 hover:from-rose-700 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
                     APPLY NOW
                   </a>
@@ -273,10 +273,10 @@ export default function Courses() {
         </section>
         
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-red-600 to-orange-500 text-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-red-600 to-rose-500 text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-orange-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-rose-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
