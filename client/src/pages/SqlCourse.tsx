@@ -113,7 +113,7 @@ export default function SqlCourse() {
                   to="/#apply" 
                   className="bg-gradient-to-r from-orange-600 to-red-500 hover:from-orange-700 hover:to-red-600 text-white font-medium py-3 px-6 rounded shadow-lg hover:shadow-orange-900/20 text-center transition-all duration-300 inline-flex items-center justify-center"
                 >
-                  ENROLL NOW
+                  APPLY NOW
                 </Link>
                 <button 
                   onClick={() => scrollToSection('curriculum')}
@@ -335,7 +335,7 @@ export default function SqlCourse() {
                     to="/#apply" 
                     className="bg-gradient-to-r from-orange-600 to-red-500 hover:from-orange-700 hover:to-red-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:shadow-orange-900/20 text-center transition-all duration-300 inline-block"
                   >
-                    ENROLL NOW
+                    APPLY NOW
                   </Link>
                   <p className="text-sm text-gray-400 mt-4">Limited seats available. Next batch starts soon!</p>
                 </div>
