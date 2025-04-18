@@ -16,12 +16,11 @@ export default function Pricing() {
   };
 
   return (
-    <section id="pricing" className="py-16 bg-gradient-to-br from-blue-950 via-indigo-950 to-purple-950 text-white relative overflow-hidden">
+    <section id="pricing" className="py-16 bg-gradient-to-br from-red-950 via-rose-950 to-orange-950 text-white relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iODAiIGhlaWdodD0iODAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg3KSIgb3BhY2l0eT0iMC4wNyI+PHBhdGggZD0iTTAgMTAgUTQwIDQwIDgwIDEwIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIgLz48L3N2Zz4=')]"></div>
-        <div className="absolute top-40 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-purple-500/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/4 left-1/5 w-40 h-40 bg-indigo-500/10 rounded-full blur-2xl"></div>
+        <div className="absolute top-40 right-1/4 w-96 h-96 bg-red-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/3 w-64 h-64 bg-orange-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/5 w-40 h-40 bg-rose-500/10 rounded-full blur-2xl"></div>
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
@@ -36,8 +35,8 @@ export default function Pricing() {
         </div>
         
         <div className="max-w-3xl mx-auto bg-white text-gray-900 rounded-xl shadow-lg overflow-hidden">
-          <div className="bg-purple-100 p-6 text-center">
-            <h3 className="font-sans font-bold text-2xl text-purple-500">Complete Workshop + Internship Package</h3>
+          <div className="bg-red-50 p-6 text-center">
+            <h3 className="font-sans font-bold text-2xl text-red-500">Complete Workshop + Internship Package</h3>
             <p className="text-gray-600 mt-2">Comprehensive 5-month program</p>
           </div>
           
@@ -46,7 +45,7 @@ export default function Pricing() {
               <div className="text-center">
                 <span className="text-gray-500 text-lg line-through">₹49,999</span>
                 <div className="flex items-center justify-center">
-                  <span className="text-purple-500 text-5xl font-bold">₹44,999</span>
+                  <span className="text-red-500 text-5xl font-bold">₹44,999</span>
                   <span className="text-gray-500 ml-2">/ program</span>
                 </div>
                 <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded mt-2">Early bird discount (10%) for first 20 enrolls (full payment only)</span>
@@ -56,7 +55,7 @@ export default function Pricing() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div>
                 <h4 className="font-sans font-semibold text-lg mb-4 flex items-center">
-                  <Check className="h-5 w-5 text-blue-500 mr-2" />
+                  <Check className="h-5 w-5 text-red-500 mr-2" />
                   Workshop Includes:
                 </h4>
                 <ul className="space-y-2">
@@ -85,7 +84,7 @@ export default function Pricing() {
               
               <div>
                 <h4 className="font-sans font-semibold text-lg mb-4 flex items-center">
-                  <Check className="h-5 w-5 text-green-500 mr-2" />
+                  <Check className="h-5 w-5 text-red-500 mr-2" />
                   Internship Includes:
                 </h4>
                 <ul className="space-y-2">
@@ -116,7 +115,7 @@ export default function Pricing() {
             <div className="text-center">
               <button 
                 onClick={() => scrollToSection('apply')}
-                className="bg-black border border-cyan-500/50 text-cyan-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-cyan-900/20 text-center transition-all duration-300 flex items-center justify-center group"
+                className="bg-black border border-red-500/50 text-red-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
               >
                 <span className="mr-2 font-mono text-sm tracking-wider">{">"}</span>
                 APPLY
