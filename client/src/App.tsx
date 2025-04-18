@@ -5,12 +5,16 @@ import { Toaster } from "@/components/ui/toaster";
 import NotFound from "@/pages/not-found";
 import Home from "@/pages/Home";
 import Admin from "@/pages/Admin";
+import PythonCourse from "@/pages/PythonCourse";
+import SqlCourse from "@/pages/SqlCourse";
 
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/admin" component={Admin} />
+      <Route path="/courses/python" component={PythonCourse} />
+      <Route path="/courses/sql" component={SqlCourse} />
       <Route component={NotFound} />
     </Switch>
   );
