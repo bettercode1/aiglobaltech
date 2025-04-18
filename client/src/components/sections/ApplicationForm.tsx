@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
+import { useLocation } from "wouter";
 
 import {
   Form,
@@ -50,6 +51,7 @@ type FormValues = z.infer<typeof formSchema>;
 export default function ApplicationForm() {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
+  const [location] = useLocation();
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -66,6 +68,22 @@ export default function ApplicationForm() {
       terms: false,
     },
   });
+  
+  // Extract course parameter from URL if present
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const courseParam = params.get('course');
+    
+    if (courseParam) {
+      if (courseParam === 'python') {
+        form.setValue('course', 'python');
+      } else if (courseParam === 'sql') {
+        form.setValue('course', 'sql');
+      } else if (courseParam === 'ai-genai') {
+        form.setValue('course', 'ai-genai');
+      }
+    }
+  }, [location, form]);
 
   const mutation = useMutation({
     mutationFn: async (data: FormValues) => {
