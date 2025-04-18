@@ -19,14 +19,7 @@ export default function Courses() {
               <p className="text-xl md:text-2xl text-red-100 mb-8">
                 Master in-demand skills with our expertly crafted courses
               </p>
-              <div className="max-w-md mx-auto flex flex-col sm:flex-row gap-4 justify-center">
-                <Link 
-                  to="/?course=ai-genai#apply" 
-                  className="bg-white text-red-600 hover:bg-red-50 font-medium py-3 px-6 rounded-lg shadow-lg hover:shadow-red-900/30 transition-all duration-300"
-                >
-                  Apply For a Course
-                </Link>
-              </div>
+              {/* No apply button as requested */}
             </div>
           </div>
         </section>
@@ -82,12 +75,12 @@ export default function Courses() {
                     <div className="text-gray-800 font-bold text-2xl">₹49,999</div>
                     <div className="text-gray-500 text-sm">Early bird: 15% off</div>
                   </div>
-                  <Link 
-                    to="/?course=ai-genai#apply" 
+                  <a 
+                    href="/?course=ai-genai#apply" 
                     className="block w-full bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
                     APPLY NOW
-                  </Link>
+                  </a>
                 </div>
               </div>
               
@@ -131,12 +124,12 @@ export default function Courses() {
                     <div className="text-gray-800 font-bold text-2xl">₹24,999</div>
                     <div className="text-gray-500 text-sm">Early bird available</div>
                   </div>
-                  <Link 
-                    to="/?course=python#apply" 
+                  <a 
+                    href="/?course=python#apply" 
                     className="block w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
                     APPLY NOW
-                  </Link>
+                  </a>
                 </div>
               </div>
               
@@ -180,12 +173,12 @@ export default function Courses() {
                     <div className="text-gray-800 font-bold text-2xl">₹19,999</div>
                     <div className="text-gray-500 text-sm">Early bird available</div>
                   </div>
-                  <Link 
-                    to="/?course=sql#apply" 
+                  <a 
+                    href="/?course=sql#apply" 
                     className="block w-full bg-gradient-to-r from-orange-600 to-red-500 hover:from-orange-700 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
                     APPLY NOW
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -254,14 +247,7 @@ export default function Courses() {
               <p className="text-xl text-gray-300 mb-8">
                 Don't miss the opportunity to learn in-demand skills for the future job market
               </p>
-              <Link 
-                to="/#apply" 
-                className="inline-flex items-center justify-center bg-gradient-to-r from-red-600 to-orange-500 hover:from-red-700 hover:to-orange-600 text-white font-medium py-4 px-8 rounded-lg shadow-lg transition-all duration-300"
-              >
-                <Bookmark className="mr-2 h-5 w-5" />
-                RESERVE YOUR SPOT NOW
-              </Link>
-              <p className="text-gray-400 mt-4">Limited seats available for upcoming batches</p>
+              <p className="text-gray-400">Limited seats available for upcoming batches</p>
             </div>
           </div>
         </section>
