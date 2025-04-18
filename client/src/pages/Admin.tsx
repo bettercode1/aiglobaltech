@@ -183,7 +183,9 @@ export default function Admin() {
       app.email?.toLowerCase().includes(searchTermLower) ||
       app.phone?.includes(searchTerm) ||
       app.mode?.toLowerCase().includes(searchTermLower) ||
-      app.status?.toLowerCase().includes(searchTermLower)
+      app.status?.toLowerCase().includes(searchTermLower) ||
+      app.course?.toLowerCase().includes(searchTermLower) ||
+      getCourseLabel(app.course || "")?.toLowerCase().includes(searchTermLower)
     );
   });
   
@@ -203,13 +205,14 @@ export default function Admin() {
   const exportToCSV = () => {
     if (!applications) return;
     
-    const headers = ["First Name", "Last Name", "Email", "Phone", "Education", "Mode", "Experience", "Motivation", "Referral", "Status", "Date", "Notes"];
+    const headers = ["First Name", "Last Name", "Email", "Phone", "Education", "Course", "Mode", "Experience", "Motivation", "Referral", "Status", "Date", "Notes"];
     const rows = applications.map((app) => [
       app.firstName,
       app.lastName,
       app.email,
       app.phone,
       app.education,
+      getCourseLabel(app.course || "ai-genai"),
       app.mode,
       app.experience,
       app.motivation,
@@ -257,6 +260,16 @@ export default function Admin() {
       "advanced": "Advanced"
     };
     return experienceMap[value] || value;
+  };
+  
+  // Helper function to get course/program label
+  const getCourseLabel = (value: string) => {
+    const courseMap: {[key: string]: string} = {
+      "ai-genai": "AI & GenAI Workshop",
+      "python": "Python Programming",
+      "sql": "SQL Masterclass"
+    };
+    return courseMap[value] || value;
   };
   
   // Helper function to get status color
@@ -474,6 +487,9 @@ export default function Admin() {
                           <td className="py-4 px-6 border-b">
                             <div className="space-y-1">
                               <div className="flex flex-wrap gap-1">
+                                <span className="text-xs font-medium bg-red-100 text-red-800 rounded-full px-2.5 py-0.5">
+                                  {getCourseLabel(application.course || "ai-genai")}
+                                </span>
                                 <span className="text-xs font-medium bg-purple-100 text-purple-800 rounded-full px-2.5 py-0.5">
                                   {application.mode.charAt(0).toUpperCase() + application.mode.slice(1)}
                                 </span>
@@ -517,7 +533,25 @@ export default function Admin() {
             {applications && applications.length > 0 && (
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h3 className="text-lg font-semibold mb-4">Application Statistics</h3>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                  <div className="bg-red-50 rounded-lg p-4">
+                    <h4 className="text-sm font-medium text-red-800 mb-2">Course Applications</h4>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600">AI & GenAI</span>
+                        <span className="text-sm font-medium">{applications.filter((a) => a.course === 'ai-genai' || !a.course).length}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600">Python</span>
+                        <span className="text-sm font-medium">{applications.filter((a) => a.course === 'python').length}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600">SQL</span>
+                        <span className="text-sm font-medium">{applications.filter((a) => a.course === 'sql').length}</span>
+                      </div>
+                    </div>
+                  </div>
+                
                   <div className="bg-purple-50 rounded-lg p-4">
                     <h4 className="text-sm font-medium text-purple-800 mb-2">Mode Preference</h4>
                     <div className="space-y-2">
