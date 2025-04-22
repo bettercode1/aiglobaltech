@@ -108,11 +108,13 @@ export default function Admin() {
         description: "The application has been updated successfully.",
       });
       setApplicationNotesOpen(false);
+      setSelectedApplication(null);
     },
     onError: (error: Error) => {
+      console.error("Application update error:", error);
       toast({
         title: "Update Failed",
-        description: error.message,
+        description: error.message || "Failed to update application. Please try again.",
         variant: "destructive",
       });
     }
@@ -123,7 +125,7 @@ export default function Admin() {
     mutationFn: async (contentData: typeof contentFormData) => {
       const response = await apiRequest("POST", "/api/content", {
         ...contentData,
-        content: contentData.content ? JSON.parse(contentData.content) : {}
+        content: typeof contentData.content === 'string' ? JSON.parse(contentData.content) : contentData.content
       });
       return response.json();
     },
@@ -137,9 +139,10 @@ export default function Admin() {
       resetContentForm();
     },
     onError: (error: Error) => {
+      console.error("Create content error:", error);
       toast({
         title: "Creation Failed",
-        description: error.message,
+        description: error.message || "Failed to create content. Please try again.",
         variant: "destructive",
       });
     }
@@ -338,8 +341,10 @@ export default function Admin() {
   // Function to handle content form submission
   const handleContentSubmit = () => {
     try {
-      // Validate JSON content
-      JSON.parse(contentFormData.content);
+      // Validate JSON content if it's a string
+      if (typeof contentFormData.content === 'string') {
+        JSON.parse(contentFormData.content);
+      }
       
       if (selectedContent) {
         // Update existing content
@@ -352,6 +357,7 @@ export default function Admin() {
         createContentMutation.mutate(contentFormData);
       }
     } catch (e) {
+      console.error("JSON validation error:", e);
       toast({
         title: "Invalid JSON",
         description: "The content field must contain valid JSON.",
