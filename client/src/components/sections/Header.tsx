@@ -133,19 +133,19 @@ export default function Header({ isCoursePage = false }: { isCoursePage?: boolea
         </div>
         
         <div className="hidden md:block">
-          <a 
-            href={isCoursePage ? "/#apply" : "#apply"}
-            className="bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
-            onClick={(e) => { 
-              if (!isCoursePage) {
+          {!isCoursePage && (
+            <a 
+              href="#apply"
+              className="bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
+              onClick={(e) => { 
                 e.preventDefault(); 
                 scrollToSection('apply'); 
-              }
-            }}
-          >
-            APPLY NOW
-            <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-          </a>
+              }}
+            >
+              APPLY NOW
+              <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+            </a>
+          )}
         </div>
         
         {/* Mobile menu button */}
@@ -181,12 +181,7 @@ export default function Header({ isCoursePage = false }: { isCoursePage?: boolea
                 >
                   SQL Course
                 </a>
-                <a 
-                  href="/#apply" 
-                  className="block px-3 py-2.5 text-base font-medium bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white rounded-lg mt-4 shadow-md"
-                >
-                  Apply Now
-                </a>
+
               </>
             ) : (
               // Mobile Navigation for Home page
