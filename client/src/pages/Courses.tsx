@@ -10,11 +10,11 @@ export default function Courses() {
       
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="pt-32 pb-24 bg-gradient-to-br from-red-600 to-rose-500 text-white relative overflow-hidden">
+        <section className="pt-32 pb-24 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/10 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
-            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-rose-500/20 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-red-400 to-rose-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
+            <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/5 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
+            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gray-700/10 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
+            <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-gray-800 to-gray-700 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
           </div>
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -25,7 +25,7 @@ export default function Courses() {
                 </div>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Discover Our Tech <span className="bg-gradient-to-r from-white to-rose-200 bg-clip-text text-transparent">Courses</span>
+                Discover Our Tech <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Courses</span>
               </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto">
                 Master in-demand skills with our expertly crafted courses
@@ -39,13 +39,13 @@ export default function Courses() {
         
         {/* Course Cards */}
         <section className="py-20 relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-rose-100 rounded-full blur-3xl opacity-30"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-rose-100 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-200 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-200 rounded-full blur-3xl opacity-30"></div>
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center p-1 rounded-full bg-white shadow-md mb-4">
-                <div className="bg-gradient-to-r from-red-600 to-rose-600 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
+                <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
                   <BookOpen className="h-4 w-4 mr-2" />
                   OUR PROGRAMS
                 </div>
@@ -87,7 +87,7 @@ export default function Courses() {
                       <span className="text-gray-600">Practical AI implementation projects</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">2-month paid internship opportunity</span>
                     </li>
                   </ul>
@@ -99,7 +99,7 @@ export default function Courses() {
                   </div>
 
                   <div className="mt-4 text-sm text-gray-500">
-                    <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
+                    <p className="font-medium text-gray-700 mb-1">Course Highlights:</p>
                     <ul className="list-disc pl-4 space-y-1">
                       <li>Build no-code AI workflows</li>
                       <li>Create chatbots &amp; agents</li>
@@ -220,16 +220,16 @@ export default function Courses() {
         </section>
         
         {/* Why Choose Us */}
-        <section className="py-20 bg-gradient-to-br from-rose-50 to-rose-100 relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-rose-300 rounded-full blur-3xl opacity-20"></div>
-            <div className="absolute bottom-10 left-10 w-96 h-96 bg-rose-300 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-gray-300 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute bottom-10 left-10 w-96 h-96 bg-gray-300 rounded-full blur-3xl opacity-20"></div>
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center p-1 rounded-full bg-white shadow-md mb-4">
-                <div className="bg-gradient-to-r from-rose-600 to-rose-500 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
+                <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
                   <Sparkles className="h-4 w-4 mr-2" />
                   WHY CHOOSE US
                 </div>
@@ -242,7 +242,7 @@ export default function Courses() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-rose-500 to-rose-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
+                <div className="bg-gradient-to-br from-gray-700 to-gray-800 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <Sparkles className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Industry Relevant</h3>
@@ -252,7 +252,7 @@ export default function Courses() {
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-rose-500 to-rose-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
+                <div className="bg-gradient-to-br from-gray-700 to-gray-800 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <Server className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Hands-on Projects</h3>
@@ -262,7 +262,7 @@ export default function Courses() {
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-rose-500 to-rose-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
+                <div className="bg-gradient-to-br from-gray-700 to-gray-800 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <LineChart className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Career Support</h3>
