@@ -79,15 +79,15 @@ export default function Courses() {
                   </p>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">GenAI tools mastery (ChatGPT, Claude, Midjourney)</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Practical AI implementation projects</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">2-month paid internship opportunity</span>
                     </li>
                   </ul>
@@ -98,10 +98,10 @@ export default function Courses() {
                     <div className="text-gray-500 text-sm">Early bird: 15% off</div>
                   </div>
                   <a 
-                    href="/?course=ai-genai#apply" 
+                    href="/" 
                     className="block w-full bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
-                    APPLY NOW
+                    VIEW DETAILS
                   </a>
                 </div>
               </div>
@@ -147,10 +147,10 @@ export default function Courses() {
                     <div className="text-gray-500 text-sm">Early bird available</div>
                   </div>
                   <a 
-                    href="/?course=python#apply" 
+                    href="/python" 
                     className="block w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
-                    APPLY NOW
+                    VIEW DETAILS
                   </a>
                 </div>
               </div>
@@ -196,10 +196,10 @@ export default function Courses() {
                     <div className="text-gray-500 text-sm">Early bird available</div>
                   </div>
                   <a 
-                    href="/?course=sql#apply" 
+                    href="/sql" 
                     className="block w-full bg-gradient-to-r from-rose-600 to-red-500 hover:from-rose-700 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
-                    APPLY NOW
+                    VIEW DETAILS
                   </a>
                 </div>
               </div>
