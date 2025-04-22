@@ -281,23 +281,23 @@ export default function SqlCourse() {
                     </h4>
                     <ul className="space-y-2">
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">Complete SQL curriculum (8 weeks)</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">Unlimited access to course materials</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">Real-world database projects</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">Query review and optimization assistance</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">SQL Masterclass certification</span>
                       </li>
                     </ul>
