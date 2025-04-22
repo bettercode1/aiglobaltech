@@ -14,25 +14,9 @@ function CourseCard({ title, description, icon, href, duration, price }: CourseC
   // Extract course type from href for the application form
   const courseParam = href.includes('python') ? 'python' : href.includes('sql') ? 'sql' : 'ai-genai';
   
-  const scrollToApplicationForm = () => {
-    // Go to homepage first
-    window.location.href = `/?course=${courseParam}`;
-    
-    // Set a small timeout to ensure the URL change has happened
-    setTimeout(() => {
-      // Then scroll to the application form
-      const applySection = document.getElementById('apply');
-      if (applySection) {
-        const headerOffset = 80;
-        const elementPosition = applySection.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-        
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth"
-        });
-      }
-    }, 100);
+  // Simple function to redirect to application form with course type
+  const redirectToApplicationForm = () => {
+    window.location.href = `/?course=${courseParam}#apply`;
   };
   
   return (
@@ -53,7 +37,7 @@ function CourseCard({ title, description, icon, href, duration, price }: CourseC
           <span className="font-semibold text-gray-700">{price}</span>
         </div>
         <button 
-          onClick={scrollToApplicationForm}
+          onClick={redirectToApplicationForm}
           className="inline-flex items-center justify-center bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition-colors font-medium"
         >
           Apply Now

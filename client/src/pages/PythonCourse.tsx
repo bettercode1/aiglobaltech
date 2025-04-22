@@ -74,7 +74,7 @@ export default function PythonCourse() {
         <div className="absolute inset-0 bg-grid-white/[0.05] bg-[length:20px_20px]"></div>
         <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none">
           <div className="absolute -top-24 -right-24 w-72 h-72 bg-red-500/20 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-10 left-10 w-80 h-80 bg-orange-500/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-10 left-10 w-80 h-80 bg-rose-500/10 rounded-full blur-3xl"></div>
         </div>
         
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -109,12 +109,12 @@ export default function PythonCourse() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/?course=python#apply" 
+                <a 
+                  href="/?course=python#apply" 
                   className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 inline-flex items-center justify-center"
                 >
                   APPLY NOW
-                </Link>
+                </a>
                 <button 
                   onClick={() => scrollToSection('curriculum')}
                   className="bg-gray-700/60 hover:bg-gray-700 border border-gray-600 text-gray-200 font-medium py-3 px-6 rounded shadow-lg text-center transition-all duration-300"
@@ -190,7 +190,7 @@ export default function PythonCourse() {
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-orange-500 text-white p-3 rounded-lg inline-block mb-4">
+              <div className="bg-rose-500 text-white p-3 rounded-lg inline-block mb-4">
                 <Server className="h-6 w-6" />
               </div>
               <h3 className="font-semibold text-xl mb-2">Data Science & Analysis</h3>
@@ -198,7 +198,7 @@ export default function PythonCourse() {
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-amber-500 text-white p-3 rounded-lg inline-block mb-4">
+              <div className="bg-red-500 text-white p-3 rounded-lg inline-block mb-4">
                 <BrainCircuit className="h-6 w-6" />
               </div>
               <h3 className="font-semibold text-xl mb-2">Web Development</h3>

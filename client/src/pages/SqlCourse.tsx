@@ -109,12 +109,12 @@ export default function SqlCourse() {
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link 
-                  to="/?course=sql#apply" 
+                <a 
+                  href="/?course=sql#apply" 
                   className="bg-gradient-to-r from-rose-600 to-red-500 hover:from-rose-700 hover:to-red-600 text-white font-medium py-3 px-6 rounded shadow-lg hover:shadow-rose-900/20 text-center transition-all duration-300 inline-flex items-center justify-center"
                 >
                   APPLY NOW
-                </Link>
+                </a>
                 <button 
                   onClick={() => scrollToSection('curriculum')}
                   className="bg-gray-700/60 hover:bg-gray-700 border border-gray-600 text-gray-200 font-medium py-3 px-6 rounded shadow-lg text-center transition-all duration-300"
