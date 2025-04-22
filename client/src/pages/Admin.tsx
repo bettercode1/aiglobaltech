@@ -150,7 +150,7 @@ export default function Admin() {
     mutationFn: async ({ section, data }: { section: string, data: typeof contentFormData }) => {
       const response = await apiRequest("PUT", `/api/content/${section}`, {
         ...data,
-        content: data.content ? JSON.parse(data.content) : {}
+        content: typeof data.content === 'string' ? JSON.parse(data.content) : data.content
       });
       return response.json();
     },
@@ -164,9 +164,10 @@ export default function Admin() {
       resetContentForm();
     },
     onError: (error: Error) => {
+      console.error("Update content error:", error);
       toast({
         title: "Update Failed",
-        description: error.message,
+        description: error.message || "Failed to update content. Please try again.",
         variant: "destructive",
       });
     }
