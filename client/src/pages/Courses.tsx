@@ -115,7 +115,7 @@ export default function Courses() {
                 </div>
                 <div className="p-6 flex-grow">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-600">
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-red-100 text-red-600">
                       Programming
                     </span>
                     <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
@@ -128,15 +128,15 @@ export default function Courses() {
                   </p>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Core Python programming concepts</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Data analysis with Pandas & NumPy</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Web development with Flask</span>
                     </li>
                   </ul>
@@ -164,7 +164,7 @@ export default function Courses() {
                 </div>
                 <div className="p-6 flex-grow">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-green-100 text-green-600">
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600">
                       Data
                     </span>
                     <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
@@ -177,15 +177,15 @@ export default function Courses() {
                   </p>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Database design and normalization</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Advanced querying techniques</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Data analysis and visualization</span>
                     </li>
                   </ul>
@@ -208,7 +208,7 @@ export default function Courses() {
         </section>
         
         {/* Why Choose Us */}
-        <section className="py-20 bg-gradient-to-br from-violet-50 to-indigo-100 relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-rose-50 to-red-100 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-300 rounded-full blur-3xl opacity-20"></div>
             <div className="absolute bottom-10 left-10 w-96 h-96 bg-rose-300 rounded-full blur-3xl opacity-20"></div>
