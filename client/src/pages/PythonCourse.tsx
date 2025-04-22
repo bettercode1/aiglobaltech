@@ -80,7 +80,7 @@ export default function PythonCourse() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
               <div className="mb-6 flex items-center">
-                <a href="/" className="text-red-400 hover:text-red-300 flex items-center mr-2 transition-colors">
+                <a href="/" className="text-rose-500 hover:text-rose-400 flex items-center mr-2 transition-colors">
                   <ArrowLeft className="h-4 w-4 mr-1" />
                   Home
                 </a>
@@ -95,7 +95,7 @@ export default function PythonCourse() {
               </p>
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full border border-gray-700 flex items-center">
-                  <Calendar className="h-4 w-4 text-red-400 mr-2" />
+                  <Calendar className="h-4 w-4 text-rose-500 mr-2" />
                   <span className="text-gray-300 text-sm">3 months</span>
                 </div>
                 <div className="bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full border border-gray-700 flex items-center">
@@ -110,7 +110,7 @@ export default function PythonCourse() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="/?course=python#apply" 
-                  className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 inline-flex items-center justify-center"
+                  className="bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-medium py-3 px-6 rounded shadow-lg hover:shadow-rose-900/20 text-center transition-all duration-300 inline-flex items-center justify-center"
                 >
                   APPLY NOW
                 </a>
@@ -160,7 +160,7 @@ export default function PythonCourse() {
                         </div>
                       </div>
                       <div className="bg-gradient-to-r from-red-500/20 to-rose-500/20 rounded p-2 text-center text-sm">
-                        <span className="text-red-300 font-medium">Early bird discount available</span>
+                        <span className="text-rose-300 font-medium">Early bird discount available</span>
                       </div>
                     </div>
                   </div>
@@ -223,11 +223,11 @@ export default function PythonCourse() {
                     <div className="flex justify-between items-start mb-4">
                       <div>
                         <h3 className="font-semibold text-xl text-gray-900">{module.title}</h3>
-                        <p className="text-red-500 text-sm font-medium mt-1 flex items-center">
+                        <p className="text-rose-500 text-sm font-medium mt-1 flex items-center">
                           <Clock className="h-4 w-4 mr-1" /> {module.duration}
                         </p>
                       </div>
-                      <div className="bg-red-50 text-red-600 text-xs font-medium px-2.5 py-0.5 rounded-full">
+                      <div className="bg-rose-50 text-rose-600 text-xs font-medium px-2.5 py-0.5 rounded-full">
                         Module {index + 1}
                       </div>
                     </div>
@@ -307,7 +307,7 @@ export default function PythonCourse() {
                     <h4 className="font-semibold text-lg mb-4">Payment Options</h4>
                     <div className="space-y-4">
                       <div className="flex items-start">
-                        <div className="h-5 w-5 rounded-full border-2 border-red-400 bg-red-400/20 mt-0.5 mr-3 flex-shrink-0"></div>
+                        <div className="h-5 w-5 rounded-full border-2 border-rose-500 bg-rose-500/20 mt-0.5 mr-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="font-medium text-white">Full Payment</h5>
                           <p className="text-gray-400 text-sm">Pay ₹24,999 upfront and get access to all course materials immediately.</p>
@@ -332,7 +332,7 @@ export default function PythonCourse() {
                 <div className="text-center">
                   <a 
                     href="/?course=python#apply" 
-                    className="bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 inline-block"
+                    className="bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-medium py-3 px-8 rounded-lg shadow-lg hover:shadow-rose-900/20 text-center transition-all duration-300 inline-block"
                   >
                     APPLY NOW
                   </a>
