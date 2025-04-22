@@ -103,7 +103,7 @@ export default function PythonCourse() {
                   <span className="text-gray-300 text-sm">Flexible schedule</span>
                 </div>
                 <div className="bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full border border-gray-700 flex items-center">
-                  <BookOpen className="h-4 w-4 text-yellow-400 mr-2" />
+                  <BookOpen className="h-4 w-4 text-rose-400 mr-2" />
                   <span className="text-gray-300 text-sm">Self-paced materials</span>
                 </div>
               </div>
@@ -235,7 +235,7 @@ export default function PythonCourse() {
                     <ul className="space-y-2">
                       {module.topics.map((topic, topicIndex) => (
                         <li key={topicIndex} className="flex items-start">
-                          <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <CheckCircle2 className="h-5 w-5 text-rose-500 mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700">{topic}</span>
                         </li>
                       ))}
@@ -281,23 +281,23 @@ export default function PythonCourse() {
                     </h4>
                     <ul className="space-y-2">
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">Complete Python curriculum (12 weeks)</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">24/7 access to course materials</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">Hands-on projects and assignments</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">Personal code reviews and feedback</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mt-0.5 mr-2" />
                         <span className="text-gray-300">Course completion certificate</span>
                       </li>
                     </ul>

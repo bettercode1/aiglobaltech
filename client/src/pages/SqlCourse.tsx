@@ -235,7 +235,7 @@ export default function SqlCourse() {
                     <ul className="space-y-2">
                       {module.topics.map((topic, topicIndex) => (
                         <li key={topicIndex} className="flex items-start">
-                          <CheckCircle2 className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                          <CheckCircle2 className="h-5 w-5 text-rose-500 mr-2 mt-0.5 flex-shrink-0" />
                           <span className="text-gray-700">{topic}</span>
                         </li>
                       ))}
