@@ -6,7 +6,7 @@ import { BadgeCheck, Bookmark, BookOpen, Brain, Code, Database, LineChart, Serve
 export default function Courses() {
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-900">
-      <Header />
+      <Header isCoursePage={true} />
       
       <main className="flex-grow">
         {/* Hero Section */}
@@ -107,6 +107,15 @@ export default function Courses() {
                       <li>24/7 mentor support</li>
                     </ul>
                   </div>
+                  
+                  <div className="mt-6">
+                    <a 
+                      href="/#apply" 
+                      className="block w-full bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 font-medium py-2.5 px-6 rounded text-center transition-all duration-300"
+                    >
+                      APPLY NOW
+                    </a>
+                  </div>
                 </div>
               </div>
               
@@ -160,6 +169,15 @@ export default function Courses() {
                       <li>Project-based learning approach</li>
                     </ul>
                   </div>
+                  
+                  <div className="mt-6">
+                    <a 
+                      href="/#apply" 
+                      className="block w-full bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 font-medium py-2.5 px-6 rounded text-center transition-all duration-300"
+                    >
+                      APPLY NOW
+                    </a>
+                  </div>
                 </div>
               </div>
               
@@ -212,6 +230,15 @@ export default function Courses() {
                       <li>Data manipulation &amp; analysis</li>
                       <li>Real-world database projects</li>
                     </ul>
+                  </div>
+                  
+                  <div className="mt-6">
+                    <a 
+                      href="/#apply" 
+                      className="block w-full bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 font-medium py-2.5 px-6 rounded text-center transition-all duration-300"
+                    >
+                      APPLY NOW
+                    </a>
                   </div>
                 </div>
               </div>
