@@ -130,23 +130,23 @@ export default function PythonCourse() {
                     <h3 className="font-bold text-xl mb-4 text-white">Course Highlights</h3>
                     <ul className="space-y-3">
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-red-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mr-3 mt-0.5" />
                         <span className="text-gray-300">Learn Python from scratch to advanced concepts</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-red-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mr-3 mt-0.5" />
                         <span className="text-gray-300">Build real-world applications and projects</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-red-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mr-3 mt-0.5" />
                         <span className="text-gray-300">Data science and web development with Python</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-red-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mr-3 mt-0.5" />
                         <span className="text-gray-300">Individual mentoring and code reviews</span>
                       </li>
                       <li className="flex items-start">
-                        <CheckCircle2 className="h-5 w-5 text-red-400 mr-3 mt-0.5" />
+                        <CheckCircle2 className="h-5 w-5 text-rose-500 mr-3 mt-0.5" />
                         <span className="text-gray-300">Certification upon successful completion</span>
                       </li>
                     </ul>
@@ -181,7 +181,7 @@ export default function PythonCourse() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-red-500 text-white p-3 rounded-lg inline-block mb-4">
+              <div className="bg-rose-500 text-white p-3 rounded-lg inline-block mb-4">
                 <Code className="h-6 w-6" />
               </div>
               <h3 className="font-semibold text-xl mb-2">Core Python Programming</h3>
@@ -197,7 +197,7 @@ export default function PythonCourse() {
             </div>
             
             <div className="bg-gray-50 p-6 rounded-lg border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-              <div className="bg-red-500 text-white p-3 rounded-lg inline-block mb-4">
+              <div className="bg-rose-500 text-white p-3 rounded-lg inline-block mb-4">
                 <BrainCircuit className="h-6 w-6" />
               </div>
               <h3 className="font-semibold text-xl mb-2">Web Development</h3>
@@ -276,7 +276,7 @@ export default function PythonCourse() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div>
                     <h4 className="font-semibold text-lg mb-4 flex items-center">
-                      <CheckCircle2 className="h-5 w-5 text-red-400 mr-2" />
+                      <CheckCircle2 className="h-5 w-5 text-rose-500 mr-2" />
                       What's Included:
                     </h4>
                     <ul className="space-y-2">
