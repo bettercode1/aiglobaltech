@@ -13,7 +13,7 @@ export default function Courses() {
         <section className="pt-32 pb-24 bg-gradient-to-br from-red-600 to-rose-500 text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
             <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/10 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
-            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-red-500/20 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
+            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-rose-500/20 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
             <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-red-400 to-rose-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
           </div>
           
@@ -25,7 +25,7 @@ export default function Courses() {
                 </div>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-                Discover Our Tech <span className="bg-gradient-to-r from-white to-red-200 bg-clip-text text-transparent">Courses</span>
+                Discover Our Tech <span className="bg-gradient-to-r from-white to-rose-200 bg-clip-text text-transparent">Courses</span>
               </h1>
               <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto">
                 Master in-demand skills with our expertly crafted courses
@@ -39,7 +39,7 @@ export default function Courses() {
         
         {/* Course Cards */}
         <section className="py-20 relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-red-100 rounded-full blur-3xl opacity-30"></div>
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-rose-100 rounded-full blur-3xl opacity-30"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-rose-100 rounded-full blur-3xl opacity-30"></div>
           
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -58,7 +58,7 @@ export default function Courses() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* AI & GenAI Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-red-100 flex flex-col">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-rose-100 flex flex-col">
                 <div className="h-48 bg-gradient-to-r from-red-600 to-rose-500 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Brain className="h-12 w-12 text-white" />
@@ -107,7 +107,7 @@ export default function Courses() {
               </div>
               
               {/* Python Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-red-100 flex flex-col">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-rose-100 flex flex-col">
                 <div className="h-48 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Code className="h-12 w-12 text-white" />
