@@ -21,9 +21,9 @@ function CourseCard({ title, description, icon, href, duration, price }: CourseC
   
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border border-gray-100">
-      <div className="bg-gradient-to-r from-red-500/10 to-orange-500/10 p-6">
+      <div className="bg-gradient-to-r from-red-500/10 to-rose-500/10 p-6">
         <div className="flex items-center mb-4">
-          <div className="p-2 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg text-white mr-4">
+          <div className="p-2 bg-gradient-to-br from-red-500 to-rose-500 rounded-lg text-white mr-4">
             {icon}
           </div>
           <h3 className="font-sans font-bold text-xl text-gray-800">{title}</h3>

@@ -1,7 +1,6 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { ArrowRight, ArrowLeft, CheckCircle2, Calendar, Clock, BookOpen, Code, Server, BrainCircuit } from "lucide-react";
-import { Link } from "wouter";
 
 export default function PythonCourse() {
   const scrollToSection = (id: string) => {
@@ -81,10 +80,10 @@ export default function PythonCourse() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
               <div className="mb-6 flex items-center">
-                <Link href="/" className="text-red-400 hover:text-red-300 flex items-center mr-2 transition-colors">
+                <a href="/" className="text-red-400 hover:text-red-300 flex items-center mr-2 transition-colors">
                   <ArrowLeft className="h-4 w-4 mr-1" />
                   Home
-                </Link>
+                </a>
                 <span className="text-gray-400 mx-2">/</span>
                 <span className="text-gray-300">Python Course</span>
               </div>

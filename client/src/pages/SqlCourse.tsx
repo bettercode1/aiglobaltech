@@ -1,7 +1,6 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { ArrowRight, ArrowLeft, CheckCircle2, Calendar, Clock, BookOpen, Database, LineChart, Layers } from "lucide-react";
-import { Link } from "wouter";
 
 export default function SqlCourse() {
   const scrollToSection = (id: string) => {
@@ -81,10 +80,10 @@ export default function SqlCourse() {
           <div className="flex flex-col md:flex-row items-center gap-8">
             <div className="md:w-1/2">
               <div className="mb-6 flex items-center">
-                <Link href="/" className="text-red-400 hover:text-red-300 flex items-center mr-2 transition-colors">
+                <a href="/" className="text-red-400 hover:text-red-300 flex items-center mr-2 transition-colors">
                   <ArrowLeft className="h-4 w-4 mr-1" />
                   Home
-                </Link>
+                </a>
                 <span className="text-gray-400 mx-2">/</span>
                 <span className="text-gray-300">SQL Course</span>
               </div>
@@ -104,7 +103,7 @@ export default function SqlCourse() {
                   <span className="text-gray-300 text-sm">Flexible schedule</span>
                 </div>
                 <div className="bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full border border-gray-700 flex items-center">
-                  <BookOpen className="h-4 w-4 text-yellow-400 mr-2" />
+                  <BookOpen className="h-4 w-4 text-rose-400 mr-2" />
                   <span className="text-gray-300 text-sm">Instructor-led sessions</span>
                 </div>
               </div>
