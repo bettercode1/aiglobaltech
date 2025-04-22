@@ -59,14 +59,14 @@ export default function Courses() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* AI & GenAI Course */}
               <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-rose-100 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-red-600 to-rose-500 flex items-center justify-center p-8">
+                <div className="h-48 bg-gradient-to-r from-rose-600 to-rose-500 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Brain className="h-12 w-12 text-white" />
                   </div>
                 </div>
                 <div className="p-6 flex-grow">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-red-100 text-red-600">
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600">
                       Flagship Program
                     </span>
                     <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
@@ -99,7 +99,7 @@ export default function Courses() {
                   </div>
                   <a 
                     href="/" 
-                    className="block w-full bg-gradient-to-r from-red-600 to-rose-500 hover:from-red-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
+                    className="block w-full bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
                     VIEW DETAILS
                   </a>
@@ -108,14 +108,14 @@ export default function Courses() {
               
               {/* Python Course */}
               <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-rose-100 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-red-500 to-red-600 flex items-center justify-center p-8">
+                <div className="h-48 bg-gradient-to-r from-rose-500 to-rose-600 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Code className="h-12 w-12 text-white" />
                   </div>
                 </div>
                 <div className="p-6 flex-grow">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-red-100 text-red-600">
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600">
                       Programming
                     </span>
                     <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
@@ -148,7 +148,7 @@ export default function Courses() {
                   </div>
                   <a 
                     href="/python" 
-                    className="block w-full bg-gradient-to-r from-red-600 to-red-500 hover:from-red-700 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
+                    className="block w-full bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
                     VIEW DETAILS
                   </a>
@@ -156,7 +156,7 @@ export default function Courses() {
               </div>
               
               {/* SQL Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-red-100 flex flex-col">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-rose-100 flex flex-col">
                 <div className="h-48 bg-gradient-to-r from-rose-500 to-rose-600 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Database className="h-12 w-12 text-white" />
@@ -197,7 +197,7 @@ export default function Courses() {
                   </div>
                   <a 
                     href="/sql" 
-                    className="block w-full bg-gradient-to-r from-rose-600 to-red-500 hover:from-rose-700 hover:to-red-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
+                    className="block w-full bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
                   >
                     VIEW DETAILS
                   </a>
@@ -217,7 +217,7 @@ export default function Courses() {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center mb-16">
               <div className="inline-flex items-center justify-center p-1 rounded-full bg-white shadow-md mb-4">
-                <div className="bg-gradient-to-r from-red-600 to-rose-600 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
+                <div className="bg-gradient-to-r from-rose-600 to-rose-500 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
                   <Sparkles className="h-4 w-4 mr-2" />
                   WHY CHOOSE US
                 </div>
