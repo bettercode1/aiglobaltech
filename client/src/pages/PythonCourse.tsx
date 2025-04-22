@@ -89,7 +89,7 @@ export default function PythonCourse() {
                 <span className="text-gray-300">Python Course</span>
               </div>
               <h1 className="font-sans font-bold text-4xl md:text-5xl tracking-tight mb-6">
-                Python Programming <span className="bg-gradient-to-r from-red-500 to-orange-400 bg-clip-text text-transparent">Masterclass</span>
+                Python Programming <span className="bg-gradient-to-r from-red-500 to-rose-400 bg-clip-text text-transparent">Masterclass</span>
               </h1>
               <p className="text-xl text-gray-300 mb-6 leading-relaxed">
                 Master Python programming from fundamentals to advanced concepts with real-world projects and hands-on practice.
@@ -100,7 +100,7 @@ export default function PythonCourse() {
                   <span className="text-gray-300 text-sm">3 months</span>
                 </div>
                 <div className="bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full border border-gray-700 flex items-center">
-                  <Clock className="h-4 w-4 text-orange-400 mr-2" />
+                  <Clock className="h-4 w-4 text-rose-400 mr-2" />
                   <span className="text-gray-300 text-sm">Flexible schedule</span>
                 </div>
                 <div className="bg-gray-800/50 backdrop-blur px-4 py-2 rounded-full border border-gray-700 flex items-center">
@@ -125,7 +125,7 @@ export default function PythonCourse() {
             </div>
             <div className="md:w-1/2">
               <div className="relative rounded-lg overflow-hidden border border-gray-700 shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-orange-500/20 backdrop-blur-sm"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-red-500/20 to-rose-500/20 backdrop-blur-sm"></div>
                 <div className="relative p-6">
                   <div className="bg-gray-900/80 backdrop-blur rounded-lg border border-gray-700 p-6">
                     <h3 className="font-bold text-xl mb-4 text-white">Course Highlights</h3>
@@ -160,7 +160,7 @@ export default function PythonCourse() {
                           <span className="text-white font-bold text-2xl ml-2">₹24,999</span>
                         </div>
                       </div>
-                      <div className="bg-gradient-to-r from-red-500/20 to-orange-500/20 rounded p-2 text-center text-sm">
+                      <div className="bg-gradient-to-r from-red-500/20 to-rose-500/20 rounded p-2 text-center text-sm">
                         <span className="text-red-300 font-medium">Early bird discount available</span>
                       </div>
                     </div>
