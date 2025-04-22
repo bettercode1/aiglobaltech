@@ -111,15 +111,15 @@ export default function Courses() {
               </div>
               
               {/* Python Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-rose-100 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-rose-500 to-rose-600 flex items-center justify-center p-8">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-gray-200 flex flex-col">
+                <div className="h-48 bg-gradient-to-r from-gray-700 to-gray-800 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Code className="h-12 w-12 text-white" />
                   </div>
                 </div>
                 <div className="p-6 flex-grow">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600">
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-200 text-gray-800">
                       Programming
                     </span>
                     <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
@@ -132,15 +132,15 @@ export default function Courses() {
                   </p>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Core Python programming concepts</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Data analysis with Pandas & NumPy</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Web development with Flask</span>
                     </li>
                   </ul>
@@ -152,7 +152,7 @@ export default function Courses() {
                   </div>
 
                   <div className="mt-4 text-sm text-gray-500">
-                    <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
+                    <p className="font-medium text-gray-700 mb-1">Course Highlights:</p>
                     <ul className="list-disc pl-4 space-y-1">
                       <li>Python fundamentals &amp; advanced OOP</li>
                       <li>Data analysis with pandas &amp; matplotlib</li>
@@ -164,15 +164,15 @@ export default function Courses() {
               </div>
               
               {/* SQL Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-rose-100 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-rose-500 to-rose-600 flex items-center justify-center p-8">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-gray-200 flex flex-col">
+                <div className="h-48 bg-gradient-to-r from-gray-700 to-gray-800 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Database className="h-12 w-12 text-white" />
                   </div>
                 </div>
                 <div className="p-6 flex-grow">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600">
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-200 text-gray-800">
                       Data
                     </span>
                     <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
@@ -185,15 +185,15 @@ export default function Courses() {
                   </p>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Database design and normalization</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Advanced querying techniques</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Data analysis and visualization</span>
                     </li>
                   </ul>
@@ -205,7 +205,7 @@ export default function Courses() {
                   </div>
 
                   <div className="mt-4 text-sm text-gray-500">
-                    <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
+                    <p className="font-medium text-gray-700 mb-1">Course Highlights:</p>
                     <ul className="list-disc pl-4 space-y-1">
                       <li>SQL query fundamentals to advanced</li>
                       <li>Database design principles</li>
@@ -272,7 +272,7 @@ export default function Courses() {
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-rose-600 to-rose-500 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
+                <div className="bg-gradient-to-br from-gray-700 to-gray-800 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <BookOpen className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Expert Instruction</h3>
@@ -285,15 +285,15 @@ export default function Courses() {
         </section>
         
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-rose-600 to-rose-500 text-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900 text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-rose-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-rose-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-700 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-700 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center justify-center p-1 rounded-full bg-rose-500/20 backdrop-blur-sm mb-6">
+              <div className="inline-flex items-center justify-center p-1 rounded-full bg-gray-700/20 backdrop-blur-sm mb-6">
                 <div className="bg-white/20 text-white rounded-full px-4 py-1.5 font-medium text-sm">
                   LIMITED SPOTS AVAILABLE
                 </div>
