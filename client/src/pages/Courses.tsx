@@ -103,6 +103,15 @@ export default function Courses() {
                   >
                     VIEW DETAILS
                   </a>
+                  <div className="mt-4 text-sm text-gray-500">
+                    <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Build no-code AI workflows</li>
+                      <li>Create chatbots &amp; agents</li>
+                      <li>Develop image generation skills</li>
+                      <li>24/7 mentor support</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               
@@ -152,6 +161,15 @@ export default function Courses() {
                   >
                     VIEW DETAILS
                   </a>
+                  <div className="mt-4 text-sm text-gray-500">
+                    <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Python fundamentals &amp; advanced OOP</li>
+                      <li>Data analysis with pandas &amp; matplotlib</li>
+                      <li>Web development with Flask/Django</li>
+                      <li>Project-based learning approach</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
               
@@ -201,6 +219,15 @@ export default function Courses() {
                   >
                     VIEW DETAILS
                   </a>
+                  <div className="mt-4 text-sm text-gray-500">
+                    <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>SQL query fundamentals to advanced</li>
+                      <li>Database design principles</li>
+                      <li>Data manipulation &amp; analysis</li>
+                      <li>Real-world database projects</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             </div>
