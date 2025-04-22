@@ -3,7 +3,7 @@ import { useQuery, useMutation } from "@tanstack/react-query";
 import { 
   ArrowLeft, Search, Download, Edit, Plus, X, Save, CheckCircle, 
   XCircle, FileText, Settings, MessagesSquare, Layers, ChevronRight,
-  BookOpen, Users, RefreshCw
+  BookOpen, Users, RefreshCw, LogIn, User, Lock, Loader2
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { queryClient } from "@/lib/queryClient";
@@ -39,8 +39,16 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Application, Content } from "@shared/schema";
+import { Application, Content, User as AdminUser } from "@shared/schema";
 
 // Type for API response
 interface ApiResponse<T> {
@@ -54,6 +62,13 @@ export default function Admin() {
   const { toast } = useToast();
   const [searchTerm, setSearchTerm] = useState("");
   const [activeTab, setActiveTab] = useState("applications");
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+  const [loginCredentials, setLoginCredentials] = useState({
+    username: "",
+    password: ""
+  });
+  const [isInitializing, setIsInitializing] = useState(false);
   
   // Applications state
   const [selectedApplication, setSelectedApplication] = useState<Application | null>(null);
@@ -371,6 +386,117 @@ export default function Admin() {
     window.location.hash = activeTab;
   }, [activeTab]);
   
+  // Login mutation
+  const loginMutation = useMutation({
+    mutationFn: async (credentials: typeof loginCredentials) => {
+      const response = await apiRequest("POST", "/api/login", credentials);
+      return response.json();
+    },
+    onSuccess: (data) => {
+      setIsAuthenticated(true);
+      setIsLoggingIn(false);
+      toast({
+        title: "Login Successful",
+        description: "You are now logged into the admin dashboard.",
+      });
+    },
+    onError: (error: Error) => {
+      console.error("Login error:", error);
+      toast({
+        title: "Login Failed",
+        description: "Invalid username or password. Please try again.",
+        variant: "destructive",
+      });
+      setIsLoggingIn(false);
+    }
+  });
+
+  // Initialize admin user mutation
+  const initAdminMutation = useMutation({
+    mutationFn: async () => {
+      const response = await apiRequest("POST", "/api/init-admin", {});
+      return response.json();
+    },
+    onSuccess: (data) => {
+      setIsInitializing(false);
+      toast({
+        title: "Admin Account Created",
+        description: "Default admin account has been created. You can now log in.",
+      });
+    },
+    onError: (error: Error) => {
+      console.error("Init admin error:", error);
+      toast({
+        title: "Initialization Failed",
+        description: "Failed to create default admin account.",
+        variant: "destructive",
+      });
+      setIsInitializing(false);
+    }
+  });
+
+  // Logout mutation
+  const logoutMutation = useMutation({
+    mutationFn: async () => {
+      const response = await apiRequest("POST", "/api/logout", {});
+      return response.json();
+    },
+    onSuccess: () => {
+      setIsAuthenticated(false);
+      toast({
+        title: "Logged Out",
+        description: "You have been logged out of the admin dashboard.",
+      });
+      queryClient.invalidateQueries({ queryKey: ['/api/applications'] });
+      queryClient.invalidateQueries({ queryKey: ['/api/content'] });
+    },
+    onError: (error: Error) => {
+      console.error("Logout error:", error);
+      toast({
+        title: "Logout Failed",
+        description: "Failed to log out. Please try again.",
+        variant: "destructive",
+      });
+    }
+  });
+
+  // Check if user is already authenticated
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const response = await fetch('/api/user');
+        if (response.ok) {
+          const data = await response.json();
+          if (data.success) {
+            setIsAuthenticated(true);
+          }
+        }
+      } catch (error) {
+        console.error("Auth check error:", error);
+      }
+    };
+    
+    checkAuth();
+  }, []);
+
+  // Handle login form submission
+  const handleLogin = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoggingIn(true);
+    loginMutation.mutate(loginCredentials);
+  };
+
+  // Handle init admin click
+  const handleInitAdmin = () => {
+    setIsInitializing(true);
+    initAdminMutation.mutate();
+  };
+
+  // Handle logout click
+  const handleLogout = () => {
+    logoutMutation.mutate();
+  };
+
   // Effect to set active tab based on URL hash
   useEffect(() => {
     const hash = window.location.hash.substring(1);
@@ -379,7 +505,11 @@ export default function Admin() {
     }
   }, [location]);
   
-  const isMutating = updateApplicationMutation.isPending || createContentMutation.isPending || updateContentMutation.isPending;
+  const isMutating = updateApplicationMutation.isPending || 
+                    createContentMutation.isPending || 
+                    updateContentMutation.isPending ||
+                    loginMutation.isPending ||
+                    logoutMutation.isPending;
   
   return (
     <div className="min-h-screen bg-gray-100 pb-12">
@@ -392,19 +522,114 @@ export default function Admin() {
               <span>Back to Website</span>
             </Link>
             <h1 className="text-2xl font-bold text-white">Admin Dashboard</h1>
-            <div className="w-24"></div> {/* Spacer for alignment */}
+            {isAuthenticated && (
+              <Button 
+                variant="outline" 
+                className="text-white border-white hover:bg-white/10"
+                onClick={handleLogout}
+                disabled={logoutMutation.isPending}
+              >
+                {logoutMutation.isPending ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  <span>Logout</span>
+                )}
+              </Button>
+            )}
+            {!isAuthenticated && <div className="w-24"></div>}
           </div>
         </div>
       </header>
       
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
-        <Tabs 
-          defaultValue="applications" 
-          value={activeTab} 
-          onValueChange={setActiveTab}
-          className="space-y-6"
-        >
+        {!isAuthenticated ? (
+          <div className="max-w-md mx-auto">
+            <Card className="shadow-lg">
+              <CardHeader>
+                <CardTitle className="text-center text-2xl">Admin Login</CardTitle>
+                <CardDescription className="text-center">Sign in to access the admin dashboard</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleLogin} className="space-y-4">
+                  <div className="space-y-2">
+                    <label htmlFor="username" className="text-sm font-medium">Username</label>
+                    <div className="relative">
+                      <User className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                      <Input 
+                        id="username"
+                        type="text" 
+                        className="pl-10"
+                        placeholder="Enter username" 
+                        value={loginCredentials.username}
+                        onChange={(e) => setLoginCredentials({...loginCredentials, username: e.target.value})}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="password" className="text-sm font-medium">Password</label>
+                    <div className="relative">
+                      <Lock className="absolute left-3 top-3 h-4 w-4 text-gray-400" />
+                      <Input 
+                        id="password"
+                        type="password" 
+                        className="pl-10"
+                        placeholder="Enter password" 
+                        value={loginCredentials.password}
+                        onChange={(e) => setLoginCredentials({...loginCredentials, password: e.target.value})}
+                        required
+                      />
+                    </div>
+                  </div>
+                  <Button 
+                    type="submit" 
+                    className="w-full" 
+                    disabled={isLoggingIn}
+                  >
+                    {isLoggingIn ? (
+                      <>
+                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                        Signing in...
+                      </>
+                    ) : (
+                      <>
+                        <LogIn className="mr-2 h-4 w-4" />
+                        Sign In
+                      </>
+                    )}
+                  </Button>
+                </form>
+              </CardContent>
+              <CardFooter className="flex justify-center">
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  onClick={handleInitAdmin}
+                  disabled={isInitializing}
+                >
+                  {isInitializing ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Creating account...
+                    </>
+                  ) : (
+                    <>
+                      <User className="mr-2 h-4 w-4" />
+                      Create default admin account
+                    </>
+                  )}
+                </Button>
+              </CardFooter>
+            </Card>
+          </div>
+        ) : (
+          <Tabs 
+            defaultValue="applications" 
+            value={activeTab} 
+            onValueChange={setActiveTab}
+            className="space-y-6"
+          >
           <div className="bg-white rounded-lg shadow-sm p-2 mb-6">
             <TabsList className="grid w-full grid-cols-2">
               <TabsTrigger 
@@ -781,6 +1006,7 @@ export default function Admin() {
             </div>
           </TabsContent>
         </Tabs>
+        )}
       </main>
       
       {/* Application Notes Dialog */}
