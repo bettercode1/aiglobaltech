@@ -9,8 +9,12 @@ import {
 } from "@shared/schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
+import { setupAuth } from "./auth";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  // Set up authentication
+  const isAuthenticated = setupAuth(app);
+  
   // API routes
   const apiRouter = express.Router();
   
@@ -46,7 +50,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
 
   // Get all applications (for admin purposes)
-  apiRouter.get("/applications", async (req, res) => {
+  apiRouter.get("/applications", isAuthenticated, async (req, res) => {
     try {
       const applications = await storage.getApplications();
       res.json({
@@ -63,7 +67,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // Get a specific application by ID
-  apiRouter.get("/applications/:id", async (req, res) => {
+  apiRouter.get("/applications/:id", isAuthenticated, async (req, res) => {
     try {
       const id = parseInt(req.params.id);
       if (isNaN(id)) {
@@ -95,7 +99,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // Update application status and notes
-  apiRouter.patch("/applications/:id", async (req, res) => {
+  apiRouter.patch("/applications/:id", isAuthenticated, async (req, res) => {
     try {
       const id = parseInt(req.params.id);
       if (isNaN(id)) {
@@ -141,7 +145,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // ============= CONTENT MANAGEMENT ENDPOINTS =============
   
   // Get all content sections
-  apiRouter.get("/content", async (req, res) => {
+  apiRouter.get("/content", isAuthenticated, async (req, res) => {
     try {
       const allContent = await storage.getAllContent();
       res.json({
@@ -184,7 +188,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // Create new content section
-  apiRouter.post("/content", async (req, res) => {
+  apiRouter.post("/content", isAuthenticated, async (req, res) => {
     try {
       const contentData = insertContentSchema.parse(req.body);
       
@@ -223,7 +227,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   });
   
   // Update existing content section
-  apiRouter.put("/content/:section", async (req, res) => {
+  apiRouter.put("/content/:section", isAuthenticated, async (req, res) => {
     try {
       const section = req.params.section;
       const updateData = updateContentSchema.parse(req.body);
