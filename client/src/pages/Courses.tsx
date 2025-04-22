@@ -58,15 +58,15 @@ export default function Courses() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {/* AI & GenAI Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-rose-100 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-rose-600 to-rose-500 flex items-center justify-center p-8">
+              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-gray-200 flex flex-col">
+                <div className="h-48 bg-gradient-to-r from-gray-700 to-gray-800 flex items-center justify-center p-8">
                   <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
                     <Brain className="h-12 w-12 text-white" />
                   </div>
                 </div>
                 <div className="p-6 flex-grow">
                   <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-600">
+                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-200 text-gray-800">
                       Flagship Program
                     </span>
                     <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
@@ -79,11 +79,11 @@ export default function Courses() {
                   </p>
                   <ul className="space-y-2 mb-4">
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">GenAI tools mastery (ChatGPT, Claude, Midjourney)</span>
                     </li>
                     <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-rose-500 mr-2 flex-shrink-0" />
+                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
                       <span className="text-gray-600">Practical AI implementation projects</span>
                     </li>
                     <li className="flex items-start">
@@ -97,12 +97,7 @@ export default function Courses() {
                     <div className="text-gray-800 font-bold text-2xl">₹49,999</div>
                     <div className="text-gray-500 text-sm">Early bird: 15% off</div>
                   </div>
-                  <a 
-                    href="/" 
-                    className="block w-full bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
-                  >
-                    VIEW DETAILS
-                  </a>
+
                   <div className="mt-4 text-sm text-gray-500">
                     <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
                     <ul className="list-disc pl-4 space-y-1">
@@ -155,12 +150,7 @@ export default function Courses() {
                     <div className="text-gray-800 font-bold text-2xl">₹24,999</div>
                     <div className="text-gray-500 text-sm">Early bird available</div>
                   </div>
-                  <a 
-                    href="/python" 
-                    className="block w-full bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
-                  >
-                    VIEW DETAILS
-                  </a>
+
                   <div className="mt-4 text-sm text-gray-500">
                     <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
                     <ul className="list-disc pl-4 space-y-1">
@@ -213,12 +203,7 @@ export default function Courses() {
                     <div className="text-gray-800 font-bold text-2xl">₹19,999</div>
                     <div className="text-gray-500 text-sm">Early bird available</div>
                   </div>
-                  <a 
-                    href="/sql" 
-                    className="block w-full bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-medium py-3 px-4 rounded-lg text-center transition-colors duration-300"
-                  >
-                    VIEW DETAILS
-                  </a>
+
                   <div className="mt-4 text-sm text-gray-500">
                     <p className="font-medium text-rose-600 mb-1">Course Highlights:</p>
                     <ul className="list-disc pl-4 space-y-1">
