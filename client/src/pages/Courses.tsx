@@ -4,19 +4,6 @@ import Footer from "@/components/sections/Footer";
 import { BadgeCheck, Bookmark, BookOpen, Brain, Code, Database, LineChart, Server, Sparkles, Timer } from "lucide-react";
 
 export default function Courses() {
-  // Function to handle the Apply Now button click
-  const handleApplyNowClick = (e) => {
-    e.preventDefault();
-    window.location.href = "/";
-    // Add a small delay to ensure the home page loads before scrolling
-    setTimeout(() => {
-      const applySection = document.getElementById('apply');
-      if (applySection) {
-        applySection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-900">
       <Header isCoursePage={true} />
@@ -120,16 +107,6 @@ export default function Courses() {
                       <li>24/7 mentor support</li>
                     </ul>
                   </div>
-                  
-                  <div className="mt-6">
-                    <a 
-                      href="/" 
-                      onClick={handleApplyNowClick}
-                      className="block w-full bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 font-medium py-2.5 px-6 rounded text-center transition-all duration-300"
-                    >
-                      APPLY NOW
-                    </a>
-                  </div>
                 </div>
               </div>
               
@@ -183,16 +160,6 @@ export default function Courses() {
                       <li>Project-based learning approach</li>
                     </ul>
                   </div>
-                  
-                  <div className="mt-6">
-                    <a 
-                      href="/" 
-                      onClick={handleApplyNowClick}
-                      className="block w-full bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 font-medium py-2.5 px-6 rounded text-center transition-all duration-300"
-                    >
-                      APPLY NOW
-                    </a>
-                  </div>
                 </div>
               </div>
               
@@ -245,16 +212,6 @@ export default function Courses() {
                       <li>Data manipulation &amp; analysis</li>
                       <li>Real-world database projects</li>
                     </ul>
-                  </div>
-                  
-                  <div className="mt-6">
-                    <a 
-                      href="/" 
-                      onClick={handleApplyNowClick}
-                      className="block w-full bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-800 hover:to-gray-900 font-medium py-2.5 px-6 rounded text-center transition-all duration-300"
-                    >
-                      APPLY NOW
-                    </a>
                   </div>
                 </div>
               </div>
