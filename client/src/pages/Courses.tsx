@@ -208,9 +208,9 @@ export default function Courses() {
         </section>
         
         {/* Why Choose Us */}
-        <section className="py-20 bg-gradient-to-br from-rose-50 to-red-100 relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-rose-50 to-rose-100 relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-300 rounded-full blur-3xl opacity-20"></div>
+            <div className="absolute -top-24 -right-24 w-64 h-64 bg-rose-300 rounded-full blur-3xl opacity-20"></div>
             <div className="absolute bottom-10 left-10 w-96 h-96 bg-rose-300 rounded-full blur-3xl opacity-20"></div>
           </div>
 
@@ -230,7 +230,7 @@ export default function Courses() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-red-500 to-red-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
+                <div className="bg-gradient-to-br from-rose-500 to-rose-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <Sparkles className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Industry Relevant</h3>
@@ -240,7 +240,7 @@ export default function Courses() {
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-rose-500 to-red-500 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
+                <div className="bg-gradient-to-br from-rose-500 to-rose-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <Server className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Hands-on Projects</h3>
@@ -250,7 +250,7 @@ export default function Courses() {
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-red-500 to-rose-500 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
+                <div className="bg-gradient-to-br from-rose-500 to-rose-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <LineChart className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Career Support</h3>
@@ -260,7 +260,7 @@ export default function Courses() {
               </div>
               
               <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-rose-600 to-red-600 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
+                <div className="bg-gradient-to-br from-rose-600 to-rose-500 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
                   <BookOpen className="h-6 w-6" />
                 </div>
                 <h3 className="font-bold text-lg mb-2">Expert Instruction</h3>
@@ -273,15 +273,15 @@ export default function Courses() {
         </section>
         
         {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-red-600 to-rose-500 text-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-rose-600 to-rose-500 text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-red-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-rose-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
             <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-rose-400 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
           </div>
 
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center justify-center p-1 rounded-full bg-red-500/20 backdrop-blur-sm mb-6">
+              <div className="inline-flex items-center justify-center p-1 rounded-full bg-rose-500/20 backdrop-blur-sm mb-6">
                 <div className="bg-white/20 text-white rounded-full px-4 py-1.5 font-medium text-sm">
                   LIMITED SPOTS AVAILABLE
                 </div>
