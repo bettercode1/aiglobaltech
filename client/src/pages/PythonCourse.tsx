@@ -1,8 +1,22 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { ArrowRight, ArrowLeft, CheckCircle2, Calendar, Clock, BookOpen, Code, Server, BrainCircuit } from "lucide-react";
+import { useLocation } from "@/hooks/use-location";
+import { formatPrice, getPriceDetails } from "@/lib/currency";
 
 export default function PythonCourse() {
+  const [country] = useLocation();
+  
+  // Base price in USD
+  const pythonBasePriceUSD = 300; // Equivalent to ₹24,999
+  const pythonOriginalPriceUSD = 360; // Equivalent to ₹29,999
+  const installmentPriceUSD = pythonBasePriceUSD / 3;
+  
+  // Format prices based on user's location
+  const regularPrice = formatPrice(pythonBasePriceUSD, country?.toString());
+  const originalPrice = formatPrice(pythonOriginalPriceUSD, country?.toString());
+  const installmentPrice = formatPrice(installmentPriceUSD, country?.toString());
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -155,8 +169,8 @@ export default function PythonCourse() {
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-gray-400">Course Price:</span>
                         <div className="text-right">
-                          <span className="text-gray-400 text-sm line-through">₹29,999</span>
-                          <span className="text-white font-bold text-2xl ml-2">₹24,999</span>
+                          <span className="text-gray-400 text-sm line-through">{originalPrice}</span>
+                          <span className="text-white font-bold text-2xl ml-2">{regularPrice}</span>
                         </div>
                       </div>
                       <div className="bg-gradient-to-r from-red-500/20 to-rose-500/20 rounded p-2 text-center text-sm">

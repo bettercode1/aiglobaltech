@@ -55,8 +55,14 @@ export function getLocaleFromCurrency(currency: CurrencyCode): string {
 
 export function getPriceDetails(amountInUSD: number, country?: string): PriceDisplay {
   const currency = getLocalCurrency(country);
-  const amount = amountInUSD * CONVERSION_RATES[currency];
-  const formatted = formatPrice(amountInUSD, currency);
+  
+  // Apply 50% price increase for USD and CAD
+  const adjustedAmount = currency === 'USD' || currency === 'CAD' 
+    ? amountInUSD * 1.5  // Increase USD and CAD prices by 50%
+    : amountInUSD;       // Keep INR pricing the same
+    
+  const amount = adjustedAmount * CONVERSION_RATES[currency];
+  const formatted = formatPrice(adjustedAmount, currency);
   
   return {
     amount,
