@@ -1206,6 +1206,60 @@ export default function Admin() {
                 onChange={(e) => setApplicationNotes(e.target.value)}
               />
             </div>
+            
+            {selectedApplication && (
+              <div className="bg-gray-50 rounded-md p-3 mt-2">
+                <h4 className="text-sm font-medium text-gray-700 mb-2">Application Details</h4>
+                <div className="grid grid-cols-2 gap-2 text-sm">
+                  <div className="text-gray-500">Course:</div>
+                  <div className="font-medium">{getCourseLabel(selectedApplication.course || "ai-genai")}</div>
+                  
+                  <div className="text-gray-500">Mode:</div>
+                  <div className="font-medium">{selectedApplication.mode.charAt(0).toUpperCase() + selectedApplication.mode.slice(1)}</div>
+                  
+                  <div className="text-gray-500">Experience:</div>
+                  <div className="font-medium">{getExperienceLabel(selectedApplication.experience)}</div>
+                  
+                  <div className="text-gray-500">Education:</div>
+                  <div className="font-medium">{getEducationLabel(selectedApplication.education)}</div>
+                  
+                  {selectedApplication.country && (
+                    <>
+                      <div className="text-gray-500">Country:</div>
+                      <div className="font-medium">
+                        {selectedApplication.country === 'US' ? 'United States' : 'Canada'}
+                      </div>
+                      
+                      {selectedApplication.state && (
+                        <>
+                          <div className="text-gray-500">
+                            {selectedApplication.country === 'US' ? 'State:' : 'Province:'}
+                          </div>
+                          <div className="font-medium">{selectedApplication.state}</div>
+                        </>
+                      )}
+                      
+                      {selectedApplication.city && (
+                        <>
+                          <div className="text-gray-500">City:</div>
+                          <div className="font-medium">{selectedApplication.city}</div>
+                        </>
+                      )}
+                    </>
+                  )}
+                  
+                  <div className="text-gray-500">Submission Date:</div>
+                  <div className="font-medium">{formatDate(selectedApplication.createdAt)}</div>
+                </div>
+                
+                {selectedApplication.motivation && (
+                  <div className="mt-3 pt-3 border-t border-gray-200">
+                    <div className="text-gray-500 mb-1">Motivation:</div>
+                    <div className="text-sm text-gray-700">{selectedApplication.motivation}</div>
+                  </div>
+                )}
+              </div>
+            )}
           </div>
           
           <DialogFooter>
