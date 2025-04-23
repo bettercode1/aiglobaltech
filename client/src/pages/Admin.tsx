@@ -108,11 +108,15 @@ export default function Admin() {
   const {
     data: contentResponse,
     isLoading: isLoadingContent,
-    error: contentError
+    error: contentError,
+    refetch: refetchContent
   } = useQuery<ApiResponse<Content[]>>({
     queryKey: ['/api/content'],
     staleTime: 30000,
-    refetchOnWindowFocus: true
+    refetchOnWindowFocus: true,
+    enabled: isAuthenticated, // Only run query when authenticated
+    retry: 2,
+    retryDelay: 1000
   });
   
   // Update application status mutation
@@ -400,6 +404,13 @@ export default function Admin() {
     onSuccess: (data) => {
       setIsAuthenticated(true);
       setIsLoggingIn(false);
+      
+      // Trigger data refetches explicitly
+      setTimeout(() => {
+        refetchApplications();
+        refetchContent();
+      }, 300);
+      
       toast({
         title: "Login Successful",
         description: "You are now logged into the admin dashboard.",
@@ -502,6 +513,19 @@ export default function Admin() {
     
     checkAuth();
   }, []);
+  
+  // Refetch data when authentication state changes
+  useEffect(() => {
+    if (isAuthenticated) {
+      // Add a small delay to ensure auth headers are properly set
+      const timer = setTimeout(() => {
+        refetchApplications();
+        refetchContent();
+      }, 500);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isAuthenticated, refetchApplications, refetchContent]);
 
   // Handle login form submission
   const handleLogin = (e: React.FormEvent) => {
@@ -736,8 +760,17 @@ export default function Admin() {
                   <p className="mt-4 text-gray-600">Loading applications...</p>
                 </div>
               ) : applicationsError ? (
-                <div className="bg-red-50 text-red-800 p-4 rounded-md">
-                  <p>Error loading applications. Please try again later.</p>
+                <div className="bg-red-50 text-red-800 p-4 rounded-md flex flex-col items-center">
+                  <p className="mb-4">Error loading applications. Please try again.</p>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={() => refetchApplications()}
+                    className="border-red-500 text-red-600 hover:bg-red-50"
+                  >
+                    <RefreshCw className="mr-2 h-4 w-4" />
+                    Retry Loading Applications
+                  </Button>
                 </div>
               ) : applications.length === 0 ? (
                 <div className="text-center py-12">
@@ -946,8 +979,17 @@ export default function Admin() {
                   <p className="mt-4 text-gray-600">Loading content sections...</p>
                 </div>
               ) : contentError ? (
-                <div className="bg-red-50 text-red-800 p-4 rounded-md">
-                  <p>Error loading content. Please try again later.</p>
+                <div className="bg-red-50 text-red-800 p-4 rounded-md flex flex-col items-center">
+                  <p className="mb-4">Error loading content. Please try again.</p>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    onClick={() => refetchContent()}
+                    className="border-red-500 text-red-600 hover:bg-red-50"
+                  >
+                    <RefreshCw className="mr-2 h-4 w-4" />
+                    Retry Loading Content
+                  </Button>
                 </div>
               ) : content.length === 0 ? (
                 <div className="bg-blue-50 p-6 rounded-lg text-center">
