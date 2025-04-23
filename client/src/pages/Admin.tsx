@@ -605,7 +605,7 @@ export default function Admin() {
                       <Input 
                         id="username"
                         type="text" 
-                        className="pl-10"
+                        className="pl-10 text-gray-900"
                         placeholder="Enter username" 
                         value={loginCredentials.username}
                         onChange={(e) => setLoginCredentials({...loginCredentials, username: e.target.value})}
@@ -620,7 +620,7 @@ export default function Admin() {
                       <Input 
                         id="password"
                         type="password" 
-                        className="pl-10"
+                        className="pl-10 text-gray-900"
                         placeholder="Enter password" 
                         value={loginCredentials.password}
                         onChange={(e) => setLoginCredentials({...loginCredentials, password: e.target.value})}
