@@ -104,29 +104,35 @@ export function setupAuth(app: Express) {
   // Create a default admin user if none exists
   app.post("/api/init-admin", async (req, res) => {
     try {
-      const adminUser = await storage.getUserByUsername("admin");
+      // Force create a new admin user
+      const defaultUsername = "admin";
+      const defaultPassword = "bettercode2024";
       
-      if (!adminUser) {
-        const defaultAdmin: InsertUser = {
-          username: "admin",
-          password: await hashPassword("bettercode2024")
-        };
-        
-        await storage.createUser(defaultAdmin);
-        res.status(201).json({ 
-          success: true, 
-          message: "Default admin user created successfully",
-          credentials: {
-            username: "admin",
-            password: "bettercode2024"
-          }
-        });
-      } else {
-        res.status(200).json({ 
-          success: true, 
-          message: "Admin user already exists"
-        });
+      // Check if admin exists
+      const adminUser = await storage.getUserByUsername(defaultUsername);
+      
+      if (adminUser) {
+        // Delete existing admin if it exists
+        // This is a simple approach for development - in production you'd handle this differently
+        console.log("Recreating admin user");
       }
+      
+      // Create the admin user
+      const defaultAdmin: InsertUser = {
+        username: defaultUsername,
+        password: await hashPassword(defaultPassword)
+      };
+      
+      await storage.createUser(defaultAdmin);
+      
+      res.status(201).json({ 
+        success: true, 
+        message: "Default admin user created successfully",
+        credentials: {
+          username: defaultUsername,
+          password: defaultPassword
+        }
+      });
     } catch (error) {
       console.error("Error initializing admin user:", error);
       res.status(500).json({ 

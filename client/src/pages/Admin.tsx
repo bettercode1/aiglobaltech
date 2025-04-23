@@ -69,6 +69,7 @@ export default function Admin() {
     password: ""
   });
   const [isInitializing, setIsInitializing] = useState(false);
+  const [adminCredentials, setAdminCredentials] = useState<{username: string, password: string} | null>(null);
   
   // Applications state
   const [selectedApplication, setSelectedApplication] = useState<Application | null>(null);
@@ -419,10 +420,29 @@ export default function Admin() {
     },
     onSuccess: (data) => {
       setIsInitializing(false);
-      toast({
-        title: "Admin Account Created",
-        description: "Default admin account has been created. You can now log in.",
-      });
+      
+      if (data.credentials) {
+        setAdminCredentials({
+          username: data.credentials.username,
+          password: data.credentials.password
+        });
+        
+        // Auto-fill the login form 
+        setLoginCredentials({
+          username: data.credentials.username,
+          password: data.credentials.password
+        });
+        
+        toast({
+          title: "Admin Account Created",
+          description: "Default admin account has been created. The login credentials have been filled in for you.",
+        });
+      } else {
+        toast({
+          title: "Admin Account Ready",
+          description: "Default admin account has been created. You can now log in.",
+        });
+      }
     },
     onError: (error: Error) => {
       console.error("Init admin error:", error);
@@ -551,6 +571,19 @@ export default function Admin() {
                 <CardDescription className="text-center">Sign in to access the admin dashboard</CardDescription>
               </CardHeader>
               <CardContent>
+                {adminCredentials && (
+                  <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-md">
+                    <h3 className="text-sm font-medium text-green-800 mb-2">Admin Credentials Created</h3>
+                    <div className="grid grid-cols-2 gap-2 text-sm">
+                      <div className="font-medium text-green-700">Username:</div>
+                      <div className="text-green-800">{adminCredentials.username}</div>
+                      <div className="font-medium text-green-700">Password:</div>
+                      <div className="text-green-800">{adminCredentials.password}</div>
+                    </div>
+                    <p className="mt-2 text-xs text-green-600">These credentials have been pre-filled for you.</p>
+                  </div>
+                )}
+                
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div className="space-y-2">
                     <label htmlFor="username" className="text-sm font-medium">Username</label>
