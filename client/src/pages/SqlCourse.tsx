@@ -324,14 +324,14 @@ export default function SqlCourse() {
                         <div className="h-5 w-5 rounded-full border-2 border-rose-400 bg-rose-400/20 mt-0.5 mr-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="font-medium text-white">Full Payment</h5>
-                          <p className="text-gray-400 text-sm">Pay ₹19,999 upfront and get access to all course materials immediately.</p>
+                          <p className="text-gray-400 text-sm">Pay {regularPrice} upfront and get access to all course materials immediately.</p>
                         </div>
                       </div>
                       <div className="flex items-start">
                         <div className="h-5 w-5 rounded-full border-2 border-gray-400 mt-0.5 mr-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="font-medium text-white">Installment Plan</h5>
-                          <p className="text-gray-400 text-sm">Pay in 2 monthly installments of ₹10,499 each.</p>
+                          <p className="text-gray-400 text-sm">Pay in 2 monthly installments of {installmentPrice} each.</p>
                         </div>
                       </div>
                     </div>
