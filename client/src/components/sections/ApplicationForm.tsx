@@ -26,7 +26,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Loader2, User, Mail, Phone, BookOpen, Send, Sparkles } from "lucide-react";
+import { Loader2, User, Mail, Phone, BookOpen, Send, Sparkles, MapPin, Globe } from "lucide-react";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -327,6 +327,183 @@ export default function ApplicationForm() {
                         </FormItem>
                       )}
                     />
+
+                    <div className="grid grid-cols-1 gap-6">
+                      <FormField
+                        control={form.control}
+                        name="country"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormLabel className="flex items-center text-gray-700">
+                              <Globe className="mr-2 h-4 w-4 text-blue-500" />
+                              Country*
+                            </FormLabel>
+                            <Select onValueChange={field.onChange} value={field.value}>
+                              <FormControl>
+                                <SelectTrigger className="rounded-lg">
+                                  <SelectValue placeholder="Select your country" />
+                                </SelectTrigger>
+                              </FormControl>
+                              <SelectContent>
+                                <SelectItem value="US">United States</SelectItem>
+                                <SelectItem value="CA">Canada</SelectItem>
+                              </SelectContent>
+                            </Select>
+                            <FormMessage className="text-sm" />
+                          </FormItem>
+                        )}
+                      />
+                    </div>
+                    
+                    {form.watch('country') === 'US' && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="state"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="flex items-center text-gray-700">
+                                <MapPin className="mr-2 h-4 w-4 text-blue-500" />
+                                State
+                              </FormLabel>
+                              <Select onValueChange={field.onChange} value={field.value || ""}>
+                                <FormControl>
+                                  <SelectTrigger className="rounded-lg">
+                                    <SelectValue placeholder="Select your state" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  <SelectItem value="AL">Alabama</SelectItem>
+                                  <SelectItem value="AK">Alaska</SelectItem>
+                                  <SelectItem value="AZ">Arizona</SelectItem>
+                                  <SelectItem value="AR">Arkansas</SelectItem>
+                                  <SelectItem value="CA">California</SelectItem>
+                                  <SelectItem value="CO">Colorado</SelectItem>
+                                  <SelectItem value="CT">Connecticut</SelectItem>
+                                  <SelectItem value="DE">Delaware</SelectItem>
+                                  <SelectItem value="FL">Florida</SelectItem>
+                                  <SelectItem value="GA">Georgia</SelectItem>
+                                  <SelectItem value="HI">Hawaii</SelectItem>
+                                  <SelectItem value="ID">Idaho</SelectItem>
+                                  <SelectItem value="IL">Illinois</SelectItem>
+                                  <SelectItem value="IN">Indiana</SelectItem>
+                                  <SelectItem value="IA">Iowa</SelectItem>
+                                  <SelectItem value="KS">Kansas</SelectItem>
+                                  <SelectItem value="KY">Kentucky</SelectItem>
+                                  <SelectItem value="LA">Louisiana</SelectItem>
+                                  <SelectItem value="ME">Maine</SelectItem>
+                                  <SelectItem value="MD">Maryland</SelectItem>
+                                  <SelectItem value="MA">Massachusetts</SelectItem>
+                                  <SelectItem value="MI">Michigan</SelectItem>
+                                  <SelectItem value="MN">Minnesota</SelectItem>
+                                  <SelectItem value="MS">Mississippi</SelectItem>
+                                  <SelectItem value="MO">Missouri</SelectItem>
+                                  <SelectItem value="MT">Montana</SelectItem>
+                                  <SelectItem value="NE">Nebraska</SelectItem>
+                                  <SelectItem value="NV">Nevada</SelectItem>
+                                  <SelectItem value="NH">New Hampshire</SelectItem>
+                                  <SelectItem value="NJ">New Jersey</SelectItem>
+                                  <SelectItem value="NM">New Mexico</SelectItem>
+                                  <SelectItem value="NY">New York</SelectItem>
+                                  <SelectItem value="NC">North Carolina</SelectItem>
+                                  <SelectItem value="ND">North Dakota</SelectItem>
+                                  <SelectItem value="OH">Ohio</SelectItem>
+                                  <SelectItem value="OK">Oklahoma</SelectItem>
+                                  <SelectItem value="OR">Oregon</SelectItem>
+                                  <SelectItem value="PA">Pennsylvania</SelectItem>
+                                  <SelectItem value="RI">Rhode Island</SelectItem>
+                                  <SelectItem value="SC">South Carolina</SelectItem>
+                                  <SelectItem value="SD">South Dakota</SelectItem>
+                                  <SelectItem value="TN">Tennessee</SelectItem>
+                                  <SelectItem value="TX">Texas</SelectItem>
+                                  <SelectItem value="UT">Utah</SelectItem>
+                                  <SelectItem value="VT">Vermont</SelectItem>
+                                  <SelectItem value="VA">Virginia</SelectItem>
+                                  <SelectItem value="WA">Washington</SelectItem>
+                                  <SelectItem value="WV">West Virginia</SelectItem>
+                                  <SelectItem value="WI">Wisconsin</SelectItem>
+                                  <SelectItem value="WY">Wyoming</SelectItem>
+                                  <SelectItem value="DC">Washington DC</SelectItem>
+                                </SelectContent>
+                              </Select>
+                              <FormMessage className="text-sm" />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="city"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="flex items-center text-gray-700">
+                                <MapPin className="mr-2 h-4 w-4 text-blue-500" />
+                                City
+                              </FormLabel>
+                              <FormControl>
+                                <Input placeholder="Enter your city" className="rounded-lg" {...field} />
+                              </FormControl>
+                              <FormMessage className="text-sm" />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                    )}
+                    
+                    {form.watch('country') === 'CA' && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="state"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="flex items-center text-gray-700">
+                                <MapPin className="mr-2 h-4 w-4 text-blue-500" />
+                                Province
+                              </FormLabel>
+                              <Select onValueChange={field.onChange} value={field.value || ""}>
+                                <FormControl>
+                                  <SelectTrigger className="rounded-lg">
+                                    <SelectValue placeholder="Select your province" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  <SelectItem value="AB">Alberta</SelectItem>
+                                  <SelectItem value="BC">British Columbia</SelectItem>
+                                  <SelectItem value="MB">Manitoba</SelectItem>
+                                  <SelectItem value="NB">New Brunswick</SelectItem>
+                                  <SelectItem value="NL">Newfoundland and Labrador</SelectItem>
+                                  <SelectItem value="NS">Nova Scotia</SelectItem>
+                                  <SelectItem value="ON">Ontario</SelectItem>
+                                  <SelectItem value="PE">Prince Edward Island</SelectItem>
+                                  <SelectItem value="QC">Quebec</SelectItem>
+                                  <SelectItem value="SK">Saskatchewan</SelectItem>
+                                  <SelectItem value="NT">Northwest Territories</SelectItem>
+                                  <SelectItem value="NU">Nunavut</SelectItem>
+                                  <SelectItem value="YT">Yukon</SelectItem>
+                                </SelectContent>
+                              </Select>
+                              <FormMessage className="text-sm" />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="city"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="flex items-center text-gray-700">
+                                <MapPin className="mr-2 h-4 w-4 text-blue-500" />
+                                City
+                              </FormLabel>
+                              <FormControl>
+                                <Input placeholder="Enter your city" className="rounded-lg" {...field} />
+                              </FormControl>
+                              <FormMessage className="text-sm" />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                    )}
                     
                     <FormField
                       control={form.control}
