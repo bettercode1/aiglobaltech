@@ -577,8 +577,7 @@ export default function Admin() {
                 <CardDescription className="text-center">Sign in to access the admin dashboard</CardDescription>
                 <div className="mt-4 text-center">
                   <div className="inline-block bg-gray-100 p-3 rounded-md">
-                    <p className="text-sm text-gray-700 font-medium">Default credentials:</p>
-                    <div className="grid grid-cols-2 gap-x-3 gap-y-1 mt-1 text-left text-sm">
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-1 text-left text-sm">
                       <div className="font-semibold">Username:</div>
                       <div className="flex items-center">
                         <span>admin</span>
