@@ -39,7 +39,7 @@ const formSchema = z.object({
     required_error: "Please select your preferred mode",
   }),
   experience: z.string().min(1, "Please select your experience level"),
-  country: z.enum(["US", "CA"], {
+  country: z.enum(["US", "CA", "IN"], {
     required_error: "Please select your country",
   }),
   state: z.string().min(1, "Please enter your state/province").optional(),
@@ -347,6 +347,7 @@ export default function ApplicationForm() {
                               <SelectContent>
                                 <SelectItem value="US">United States</SelectItem>
                                 <SelectItem value="CA">Canada</SelectItem>
+                                <SelectItem value="IN">India</SelectItem>
                               </SelectContent>
                             </Select>
                             <FormMessage className="text-sm" />
@@ -439,9 +440,41 @@ export default function ApplicationForm() {
                                 <MapPin className="mr-2 h-4 w-4 text-blue-500" />
                                 City
                               </FormLabel>
-                              <FormControl>
-                                <Input placeholder="Enter your city" className="rounded-lg" {...field} />
-                              </FormControl>
+                              <Select onValueChange={field.onChange} value={field.value || ""}>
+                                <FormControl>
+                                  <SelectTrigger className="rounded-lg">
+                                    <SelectValue placeholder="Select your city" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  <SelectItem value="New York">New York</SelectItem>
+                                  <SelectItem value="Los Angeles">Los Angeles</SelectItem>
+                                  <SelectItem value="Chicago">Chicago</SelectItem>
+                                  <SelectItem value="Houston">Houston</SelectItem>
+                                  <SelectItem value="Phoenix">Phoenix</SelectItem>
+                                  <SelectItem value="Philadelphia">Philadelphia</SelectItem>
+                                  <SelectItem value="San Antonio">San Antonio</SelectItem>
+                                  <SelectItem value="San Diego">San Diego</SelectItem>
+                                  <SelectItem value="Dallas">Dallas</SelectItem>
+                                  <SelectItem value="San Jose">San Jose</SelectItem>
+                                  <SelectItem value="Austin">Austin</SelectItem>
+                                  <SelectItem value="Jacksonville">Jacksonville</SelectItem>
+                                  <SelectItem value="Fort Worth">Fort Worth</SelectItem>
+                                  <SelectItem value="Columbus">Columbus</SelectItem>
+                                  <SelectItem value="San Francisco">San Francisco</SelectItem>
+                                  <SelectItem value="Charlotte">Charlotte</SelectItem>
+                                  <SelectItem value="Indianapolis">Indianapolis</SelectItem>
+                                  <SelectItem value="Seattle">Seattle</SelectItem>
+                                  <SelectItem value="Denver">Denver</SelectItem>
+                                  <SelectItem value="Washington DC">Washington DC</SelectItem>
+                                  <SelectItem value="Boston">Boston</SelectItem>
+                                  <SelectItem value="Las Vegas">Las Vegas</SelectItem>
+                                  <SelectItem value="Portland">Portland</SelectItem>
+                                  <SelectItem value="Miami">Miami</SelectItem>
+                                  <SelectItem value="Atlanta">Atlanta</SelectItem>
+                                  <SelectItem value="Other">Other</SelectItem>
+                                </SelectContent>
+                              </Select>
                               <FormMessage className="text-sm" />
                             </FormItem>
                           )}
@@ -495,9 +528,125 @@ export default function ApplicationForm() {
                                 <MapPin className="mr-2 h-4 w-4 text-blue-500" />
                                 City
                               </FormLabel>
-                              <FormControl>
-                                <Input placeholder="Enter your city" className="rounded-lg" {...field} />
-                              </FormControl>
+                              <Select onValueChange={field.onChange} value={field.value || ""}>
+                                <FormControl>
+                                  <SelectTrigger className="rounded-lg">
+                                    <SelectValue placeholder="Select your city" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  <SelectItem value="Calgary">Calgary</SelectItem>
+                                  <SelectItem value="Edmonton">Edmonton</SelectItem>
+                                  <SelectItem value="Montreal">Montreal</SelectItem>
+                                  <SelectItem value="Ottawa">Ottawa</SelectItem>
+                                  <SelectItem value="Quebec City">Quebec City</SelectItem>
+                                  <SelectItem value="Toronto">Toronto</SelectItem>
+                                  <SelectItem value="Vancouver">Vancouver</SelectItem>
+                                  <SelectItem value="Victoria">Victoria</SelectItem>
+                                  <SelectItem value="Winnipeg">Winnipeg</SelectItem>
+                                  <SelectItem value="Halifax">Halifax</SelectItem>
+                                  <SelectItem value="Other">Other</SelectItem>
+                                </SelectContent>
+                              </Select>
+                              <FormMessage className="text-sm" />
+                            </FormItem>
+                          )}
+                        />
+                      </div>
+                    )}
+                    
+                    {form.watch('country') === 'IN' && (
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormField
+                          control={form.control}
+                          name="state"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="flex items-center text-gray-700">
+                                <MapPin className="mr-2 h-4 w-4 text-blue-500" />
+                                State
+                              </FormLabel>
+                              <Select onValueChange={field.onChange} value={field.value || ""}>
+                                <FormControl>
+                                  <SelectTrigger className="rounded-lg">
+                                    <SelectValue placeholder="Select your state" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  <SelectItem value="Andhra Pradesh">Andhra Pradesh</SelectItem>
+                                  <SelectItem value="Arunachal Pradesh">Arunachal Pradesh</SelectItem>
+                                  <SelectItem value="Assam">Assam</SelectItem>
+                                  <SelectItem value="Bihar">Bihar</SelectItem>
+                                  <SelectItem value="Chhattisgarh">Chhattisgarh</SelectItem>
+                                  <SelectItem value="Goa">Goa</SelectItem>
+                                  <SelectItem value="Gujarat">Gujarat</SelectItem>
+                                  <SelectItem value="Haryana">Haryana</SelectItem>
+                                  <SelectItem value="Himachal Pradesh">Himachal Pradesh</SelectItem>
+                                  <SelectItem value="Jharkhand">Jharkhand</SelectItem>
+                                  <SelectItem value="Karnataka">Karnataka</SelectItem>
+                                  <SelectItem value="Kerala">Kerala</SelectItem>
+                                  <SelectItem value="Madhya Pradesh">Madhya Pradesh</SelectItem>
+                                  <SelectItem value="Maharashtra">Maharashtra</SelectItem>
+                                  <SelectItem value="Manipur">Manipur</SelectItem>
+                                  <SelectItem value="Meghalaya">Meghalaya</SelectItem>
+                                  <SelectItem value="Mizoram">Mizoram</SelectItem>
+                                  <SelectItem value="Nagaland">Nagaland</SelectItem>
+                                  <SelectItem value="Odisha">Odisha</SelectItem>
+                                  <SelectItem value="Punjab">Punjab</SelectItem>
+                                  <SelectItem value="Rajasthan">Rajasthan</SelectItem>
+                                  <SelectItem value="Sikkim">Sikkim</SelectItem>
+                                  <SelectItem value="Tamil Nadu">Tamil Nadu</SelectItem>
+                                  <SelectItem value="Telangana">Telangana</SelectItem>
+                                  <SelectItem value="Tripura">Tripura</SelectItem>
+                                  <SelectItem value="Uttar Pradesh">Uttar Pradesh</SelectItem>
+                                  <SelectItem value="Uttarakhand">Uttarakhand</SelectItem>
+                                  <SelectItem value="West Bengal">West Bengal</SelectItem>
+                                  <SelectItem value="Delhi">Delhi</SelectItem>
+                                  <SelectItem value="Chandigarh">Chandigarh</SelectItem>
+                                  <SelectItem value="Puducherry">Puducherry</SelectItem>
+                                </SelectContent>
+                              </Select>
+                              <FormMessage className="text-sm" />
+                            </FormItem>
+                          )}
+                        />
+                        <FormField
+                          control={form.control}
+                          name="city"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel className="flex items-center text-gray-700">
+                                <MapPin className="mr-2 h-4 w-4 text-blue-500" />
+                                City
+                              </FormLabel>
+                              <Select onValueChange={field.onChange} value={field.value || ""}>
+                                <FormControl>
+                                  <SelectTrigger className="rounded-lg">
+                                    <SelectValue placeholder="Select your city" />
+                                  </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                  <SelectItem value="Mumbai">Mumbai</SelectItem>
+                                  <SelectItem value="Delhi">Delhi</SelectItem>
+                                  <SelectItem value="Bangalore">Bangalore</SelectItem>
+                                  <SelectItem value="Hyderabad">Hyderabad</SelectItem>
+                                  <SelectItem value="Chennai">Chennai</SelectItem>
+                                  <SelectItem value="Kolkata">Kolkata</SelectItem>
+                                  <SelectItem value="Pune">Pune</SelectItem>
+                                  <SelectItem value="Ahmedabad">Ahmedabad</SelectItem>
+                                  <SelectItem value="Jaipur">Jaipur</SelectItem>
+                                  <SelectItem value="Lucknow">Lucknow</SelectItem>
+                                  <SelectItem value="Kochi">Kochi</SelectItem>
+                                  <SelectItem value="Chandigarh">Chandigarh</SelectItem>
+                                  <SelectItem value="Coimbatore">Coimbatore</SelectItem>
+                                  <SelectItem value="Indore">Indore</SelectItem>
+                                  <SelectItem value="Bhopal">Bhopal</SelectItem>
+                                  <SelectItem value="Nagpur">Nagpur</SelectItem>
+                                  <SelectItem value="Bhubaneswar">Bhubaneswar</SelectItem>
+                                  <SelectItem value="Guwahati">Guwahati</SelectItem>
+                                  <SelectItem value="Other">Other</SelectItem>
+                                </SelectContent>
+                              </Select>
                               <FormMessage className="text-sm" />
                             </FormItem>
                           )}

@@ -979,6 +979,10 @@ export default function Admin() {
                         <span className="text-sm font-medium">{applications.filter(a => a.country === 'CA').length}</span>
                       </div>
                       <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600">India</span>
+                        <span className="text-sm font-medium">{applications.filter(a => a.country === 'IN').length}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
                         <span className="text-sm text-gray-600">Not Specified</span>
                         <span className="text-sm font-medium">{applications.filter(a => !a.country).length}</span>
                       </div>
@@ -1227,13 +1231,15 @@ export default function Admin() {
                     <>
                       <div className="text-gray-500">Country:</div>
                       <div className="font-medium">
-                        {selectedApplication.country === 'US' ? 'United States' : 'Canada'}
+                        {selectedApplication.country === 'US' ? 'United States' : 
+                         selectedApplication.country === 'CA' ? 'Canada' : 
+                         selectedApplication.country === 'IN' ? 'India' : selectedApplication.country}
                       </div>
                       
                       {selectedApplication.state && (
                         <>
                           <div className="text-gray-500">
-                            {selectedApplication.country === 'US' ? 'State:' : 'Province:'}
+                            {selectedApplication.country === 'US' || selectedApplication.country === 'IN' ? 'State:' : 'Province:'}
                           </div>
                           <div className="font-medium">{selectedApplication.state}</div>
                         </>
