@@ -813,6 +813,21 @@ export default function Admin() {
                                 </span>
                               </div>
                               <div className="text-xs text-gray-500">Education: {getEducationLabel(application.education)}</div>
+                              {application.country && (
+                                <div className="mt-1 flex flex-wrap gap-1">
+                                  <span className="text-xs font-medium bg-green-100 text-green-800 rounded-full px-2.5 py-0.5">
+                                    {application.country === 'US' ? 'United States' : 'Canada'}
+                                  </span>
+                                  {application.state && (
+                                    <span className="text-xs font-medium bg-gray-100 text-gray-800 rounded-full px-2.5 py-0.5">
+                                      {application.state}
+                                    </span>
+                                  )}
+                                  {application.city && (
+                                    <span className="text-xs text-gray-500">{application.city}</span>
+                                  )}
+                                </div>
+                              )}
                             </div>
                           </td>
                           <td className="py-4 px-6 border-b">
@@ -949,6 +964,45 @@ export default function Admin() {
                           <span className="text-sm font-medium">{count}</span>
                         </div>
                       ))}
+                    </div>
+                  </div>
+                  
+                  <div className="bg-teal-50 rounded-lg p-4 col-span-1 md:col-span-2">
+                    <h4 className="text-sm font-medium text-teal-800 mb-2">Country Distribution</h4>
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600">United States</span>
+                        <span className="text-sm font-medium">{applications.filter(a => a.country === 'US').length}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600">Canada</span>
+                        <span className="text-sm font-medium">{applications.filter(a => a.country === 'CA').length}</span>
+                      </div>
+                      <div className="flex justify-between items-center">
+                        <span className="text-sm text-gray-600">Not Specified</span>
+                        <span className="text-sm font-medium">{applications.filter(a => !a.country).length}</span>
+                      </div>
+                      
+                      {/* Top states/provinces section */}
+                      <div className="mt-3 pt-3 border-t border-teal-200">
+                        <h5 className="text-xs font-medium text-teal-700 mb-2">Top States/Provinces</h5>
+                        {Object.entries(
+                          applications.reduce((acc: {[key: string]: number}, app) => {
+                            if (app.state) {
+                              acc[app.state] = (acc[app.state] || 0) + 1;
+                            }
+                            return acc;
+                          }, {})
+                        )
+                        .sort((a, b) => b[1] - a[1]) // Sort by count descending
+                        .slice(0, 5) // Take top 5
+                        .map(([state, count]) => (
+                          <div key={state} className="flex justify-between items-center">
+                            <span className="text-xs text-gray-600">{state}</span>
+                            <span className="text-xs font-medium">{count}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
