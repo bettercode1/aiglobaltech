@@ -510,6 +510,12 @@ export default function Admin() {
   const handleInitAdmin = () => {
     setIsInitializing(true);
     initAdminMutation.mutate();
+    
+    // Also set default credentials immediately for better UX
+    setLoginCredentials({
+      username: "admin",
+      password: "bettercode2024"
+    });
   };
 
   // Handle logout click
@@ -569,6 +575,42 @@ export default function Admin() {
               <CardHeader>
                 <CardTitle className="text-center text-2xl">Admin Login</CardTitle>
                 <CardDescription className="text-center">Sign in to access the admin dashboard</CardDescription>
+                <div className="mt-4 text-center">
+                  <div className="inline-block bg-gray-100 p-3 rounded-md">
+                    <p className="text-sm text-gray-700 font-medium">Default credentials:</p>
+                    <div className="grid grid-cols-2 gap-x-3 gap-y-1 mt-1 text-left text-sm">
+                      <div className="font-semibold">Username:</div>
+                      <div className="flex items-center">
+                        <span>admin</span>
+                        <button 
+                          type="button" 
+                          className="ml-2 text-xs text-blue-600 hover:underline"
+                          onClick={() => setLoginCredentials({...loginCredentials, username: "admin"})}
+                        >
+                          Fill
+                        </button>
+                      </div>
+                      <div className="font-semibold">Password:</div>
+                      <div className="flex items-center">
+                        <span>bettercode2024</span>
+                        <button 
+                          type="button" 
+                          className="ml-2 text-xs text-blue-600 hover:underline"
+                          onClick={() => setLoginCredentials({...loginCredentials, password: "bettercode2024"})}
+                        >
+                          Fill
+                        </button>
+                      </div>
+                    </div>
+                    <button 
+                      type="button" 
+                      className="mt-3 text-sm bg-blue-100 text-blue-700 px-2 py-1 rounded hover:bg-blue-200 transition-colors"
+                      onClick={() => setLoginCredentials({username: "admin", password: "bettercode2024"})}
+                    >
+                      Auto-fill both
+                    </button>
+                  </div>
+                </div>
               </CardHeader>
               <CardContent>
                 {adminCredentials && (
