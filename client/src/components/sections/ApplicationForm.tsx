@@ -39,6 +39,11 @@ const formSchema = z.object({
     required_error: "Please select your preferred mode",
   }),
   experience: z.string().min(1, "Please select your experience level"),
+  country: z.enum(["US", "CA"], {
+    required_error: "Please select your country",
+  }),
+  state: z.string().min(1, "Please enter your state/province").optional(),
+  city: z.string().min(1, "Please enter your city").optional(),
   motivation: z.string().min(20, "Please provide at least 20 characters about your motivation"),
   referral: z.string().optional(),
   terms: z.boolean().refine(val => val === true, {
@@ -62,6 +67,9 @@ export default function ApplicationForm() {
       phone: "",
       education: "",
       course: "",
+      country: "US",
+      state: "",
+      city: "",
       experience: "",
       motivation: "",
       referral: "",
