@@ -93,11 +93,15 @@ export default function Admin() {
   const { 
     data: applicationsResponse, 
     isLoading: isLoadingApplications, 
-    error: applicationsError 
+    error: applicationsError,
+    refetch: refetchApplications
   } = useQuery<ApiResponse<Application[]>>({
     queryKey: ['/api/applications'],
     staleTime: 30000, // 30 seconds
-    refetchOnWindowFocus: true
+    refetchOnWindowFocus: true,
+    enabled: isAuthenticated, // Only run query when authenticated
+    retry: 2,
+    retryDelay: 1000
   });
   
   // Fetch content
