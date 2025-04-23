@@ -1,8 +1,22 @@
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { ArrowRight, ArrowLeft, CheckCircle2, Calendar, Clock, BookOpen, Database, LineChart, Layers } from "lucide-react";
+import { useLocation } from "@/hooks/use-location";
+import { formatPrice, getPriceDetails } from "@/lib/currency";
 
 export default function SqlCourse() {
+  const [country] = useLocation();
+  
+  // Base price in USD
+  const sqlBasePriceUSD = 240; // Equivalent to ₹19,999
+  const sqlOriginalPriceUSD = 300; // Equivalent to ₹24,999
+  const installmentPriceUSD = sqlBasePriceUSD / 2;
+  
+  // Format prices based on user's location
+  const regularPrice = formatPrice(sqlBasePriceUSD, country?.toString());
+  const originalPrice = formatPrice(sqlOriginalPriceUSD, country?.toString());
+  const installmentPrice = formatPrice(installmentPriceUSD, country?.toString());
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -155,8 +169,8 @@ export default function SqlCourse() {
                       <div className="flex justify-between items-center mb-2">
                         <span className="text-gray-400">Course Price:</span>
                         <div className="text-right">
-                          <span className="text-gray-400 text-sm line-through">₹24,999</span>
-                          <span className="text-white font-bold text-2xl ml-2">₹19,999</span>
+                          <span className="text-gray-400 text-sm line-through">{originalPrice}</span>
+                          <span className="text-white font-bold text-2xl ml-2">{regularPrice}</span>
                         </div>
                       </div>
                       <div className="bg-gradient-to-r from-rose-500/20 to-rose-400/20 rounded p-2 text-center text-sm">
@@ -266,8 +280,8 @@ export default function SqlCourse() {
                   </div>
                   <div className="mt-4 md:mt-0">
                     <div className="flex items-center">
-                      <span className="text-gray-400 text-lg line-through mr-2">₹24,999</span>
-                      <span className="text-3xl font-bold text-white">₹19,999</span>
+                      <span className="text-gray-400 text-lg line-through mr-2">{originalPrice}</span>
+                      <span className="text-3xl font-bold text-white">{regularPrice}</span>
                     </div>
                     <p className="text-sm text-gray-400 mt-1">One-time payment</p>
                   </div>

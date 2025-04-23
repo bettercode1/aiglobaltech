@@ -280,8 +280,8 @@ export default function PythonCourse() {
                   </div>
                   <div className="mt-4 md:mt-0">
                     <div className="flex items-center">
-                      <span className="text-gray-400 text-lg line-through mr-2">₹29,999</span>
-                      <span className="text-3xl font-bold text-white">₹24,999</span>
+                      <span className="text-gray-400 text-lg line-through mr-2">{originalPrice}</span>
+                      <span className="text-3xl font-bold text-white">{regularPrice}</span>
                     </div>
                     <p className="text-sm text-gray-400 mt-1">One-time payment</p>
                   </div>
@@ -324,14 +324,14 @@ export default function PythonCourse() {
                         <div className="h-5 w-5 rounded-full border-2 border-rose-500 bg-rose-500/20 mt-0.5 mr-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="font-medium text-white">Full Payment</h5>
-                          <p className="text-gray-400 text-sm">Pay ₹24,999 upfront and get access to all course materials immediately.</p>
+                          <p className="text-gray-400 text-sm">Pay {regularPrice} upfront and get access to all course materials immediately.</p>
                         </div>
                       </div>
                       <div className="flex items-start">
                         <div className="h-5 w-5 rounded-full border-2 border-gray-400 mt-0.5 mr-3 flex-shrink-0"></div>
                         <div>
                           <h5 className="font-medium text-white">Installment Plan</h5>
-                          <p className="text-gray-400 text-sm">Pay in 3 monthly installments of ₹8,999 each.</p>
+                          <p className="text-gray-400 text-sm">Pay in 3 monthly installments of {installmentPrice} each.</p>
                         </div>
                       </div>
                     </div>
