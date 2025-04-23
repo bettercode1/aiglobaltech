@@ -8,6 +8,7 @@ import Admin from "@/pages/Admin";
 import PythonCourse from "@/pages/PythonCourse";
 import SqlCourse from "@/pages/SqlCourse";
 import Courses from "@/pages/Courses";
+import { LocationProvider } from "@/hooks/use-location";
 
 function Router() {
   return (
@@ -25,8 +26,10 @@ function Router() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router />
-      <Toaster />
+      <LocationProvider>
+        <Router />
+        <Toaster />
+      </LocationProvider>
     </QueryClientProvider>
   );
 }

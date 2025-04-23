@@ -1,6 +1,20 @@
 import { Check } from "lucide-react";
+import { useLocation } from "@/hooks/use-location";
+import { formatPrice, getPriceDetails, getDiscountedPrice } from "@/lib/currency";
 
 export default function Pricing() {
+  const [country] = useLocation();
+
+  // Price in USD (base currency for conversion)
+  const REGULAR_PRICE_USD = 599; // Equivalent to ₹49,999 
+  const DISCOUNT_PERCENTAGE = 15;
+  
+  // Get prices based on user's location
+  const regularPrice = getPriceDetails(REGULAR_PRICE_USD, country?.toString());
+  const discountedPrice = getDiscountedPrice(REGULAR_PRICE_USD, DISCOUNT_PERCENTAGE, country?.toString());
+  
+  // Calculate installment price (3 installments)
+  const installmentPrice = getPriceDetails(REGULAR_PRICE_USD / 3, country?.toString());
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -43,9 +57,9 @@ export default function Pricing() {
           <div className="p-8">
             <div className="flex justify-center mb-8">
               <div className="text-center">
-                <span className="text-gray-500 text-lg line-through">₹49,999</span>
+                <span className="text-gray-500 text-lg line-through">{regularPrice.formatted}</span>
                 <div className="flex items-center justify-center">
-                  <span className="text-red-500 text-5xl font-bold">₹42,499</span>
+                  <span className="text-red-500 text-5xl font-bold">{discountedPrice.formatted}</span>
                   <span className="text-gray-500 ml-2">/ program</span>
                 </div>
                 <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded mt-2">Early bird discount (15%) for first 20 enrolls (full payment only)</span>
