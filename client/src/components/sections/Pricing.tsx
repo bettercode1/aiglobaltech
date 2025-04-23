@@ -145,11 +145,15 @@ export default function Pricing() {
                   Early Bird Eligible
                 </div>
                 <h5 className="font-medium mb-2">Full Payment</h5>
-                <p className="text-gray-600 text-sm">Pay the entire amount to be <span className="text-green-600 font-semibold">Eligible for 15% discount!</span></p>
+                <p className="text-gray-600 text-sm">
+                  Pay the entire amount of <span className="font-semibold">{discountedPrice.formatted}</span> to be <span className="text-green-600 font-semibold">Eligible for 15% discount!</span>
+                </p>
               </div>
               <div className="bg-white p-4 rounded border border-gray-200">
                 <h5 className="font-medium mb-2">Installment Plan</h5>
-                <p className="text-gray-600 text-sm">Pay in 3 easy installments of ₹16,000 each (first payment at registration).</p>
+                <p className="text-gray-600 text-sm">
+                  Pay in 3 easy installments of <span className="font-semibold">{installmentPrice.formatted}</span> each (first payment at registration).
+                </p>
               </div>
             </div>
           </div>

@@ -1,5 +1,7 @@
 import { ArrowRight, Code, Database } from "lucide-react";
-import { Link, useLocation } from "wouter";
+import { Link, useLocation as useWouterLocation } from "wouter";
+import { useLocation } from "@/hooks/use-location";
+import { formatPrice } from "@/lib/currency";
 
 interface CourseCardProps {
   title: string;
@@ -49,6 +51,16 @@ function CourseCard({ title, description, icon, href, duration, price }: CourseC
 }
 
 export default function OtherCourses() {
+  const [country] = useLocation();
+  
+  // Define base prices in USD
+  const pythonPriceUSD = 300; // Equivalent to ₹24,999
+  const sqlPriceUSD = 240;    // Equivalent to ₹19,999
+  
+  // Format prices based on user's location
+  const pythonPrice = formatPrice(pythonPriceUSD, country?.toString());
+  const sqlPrice = formatPrice(sqlPriceUSD, country?.toString());
+  
   const courses = [
     {
       title: "Python Programming",
@@ -56,7 +68,7 @@ export default function OtherCourses() {
       icon: <Code className="h-5 w-5" />,
       href: "/courses/python",
       duration: "3 months",
-      price: "₹24,999"
+      price: pythonPrice
     },
     {
       title: "SQL Masterclass",
@@ -64,7 +76,7 @@ export default function OtherCourses() {
       icon: <Database className="h-5 w-5" />,
       href: "/courses/sql",
       duration: "2 months",
-      price: "₹19,999"
+      price: sqlPrice
     }
   ];
 

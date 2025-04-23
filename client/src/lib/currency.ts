@@ -14,7 +14,7 @@ export interface PriceDisplay {
   formatted: string;
 }
 
-export function getLocalCurrency(country?: string): CurrencyCode {
+export function getLocalCurrency(country?: string | null): CurrencyCode {
   if (!country) return 'USD';
   
   switch (country) {
@@ -27,16 +27,18 @@ export function getLocalCurrency(country?: string): CurrencyCode {
 
 export function formatPrice(
   amountInUSD: number,
-  currency: CurrencyCode = 'USD',
+  currency: CurrencyCode | string | null | undefined = 'USD',
   showCurrencyCode: boolean = true
 ): string {
-  const convertedAmount = amountInUSD * CONVERSION_RATES[currency];
+  // Make sure we have a valid currency code
+  const currencyCode = getLocalCurrency(currency);
+  const convertedAmount = amountInUSD * CONVERSION_RATES[currencyCode];
   
-  const formatter = new Intl.NumberFormat(getLocaleFromCurrency(currency), {
+  const formatter = new Intl.NumberFormat(getLocaleFromCurrency(currencyCode), {
     style: 'currency',
-    currency,
+    currency: currencyCode,
     currencyDisplay: showCurrencyCode ? 'symbol' : 'narrowSymbol',
-    maximumFractionDigits: currency === 'INR' ? 0 : 2,
+    maximumFractionDigits: currencyCode === 'INR' ? 0 : 2,
   });
   
   return formatter.format(convertedAmount);
