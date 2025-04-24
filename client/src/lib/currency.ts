@@ -32,7 +32,13 @@ export function formatPrice(
 ): string {
   // Make sure we have a valid currency code
   const currencyCode = getLocalCurrency(currency);
-  const convertedAmount = amountInUSD * CONVERSION_RATES[currencyCode];
+  
+  // Apply 50% price increase for USD and CAD
+  const adjustedAmount = currencyCode === 'USD' || currencyCode === 'CAD' 
+    ? amountInUSD * 1.5  // Increase USD and CAD prices by 50%
+    : amountInUSD;       // Keep INR pricing the same
+  
+  const convertedAmount = adjustedAmount * CONVERSION_RATES[currencyCode];
   
   const formatter = new Intl.NumberFormat(getLocaleFromCurrency(currencyCode), {
     style: 'currency',
@@ -56,13 +62,14 @@ export function getLocaleFromCurrency(currency: CurrencyCode): string {
 export function getPriceDetails(amountInUSD: number, country?: string): PriceDisplay {
   const currency = getLocalCurrency(country);
   
-  // Apply 50% price increase for USD and CAD
+  // Apply 50% price increase for USD and CAD to keep the amount property consistent
   const adjustedAmount = currency === 'USD' || currency === 'CAD' 
     ? amountInUSD * 1.5  // Increase USD and CAD prices by 50%
     : amountInUSD;       // Keep INR pricing the same
-    
+  
   const amount = adjustedAmount * CONVERSION_RATES[currency];
-  const formatted = formatPrice(adjustedAmount, currency);
+  // Note: formatPrice will handle the 50% increase internally
+  const formatted = formatPrice(amountInUSD, currency);
   
   return {
     amount,

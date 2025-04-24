@@ -9,6 +9,7 @@ import PythonCourse from "@/pages/PythonCourse";
 import SqlCourse from "@/pages/SqlCourse";
 import Courses from "@/pages/Courses";
 import { LocationProvider } from "@/hooks/use-location";
+import LocationSwitcher from "@/components/sections/LocationSwitcher";
 
 function Router() {
   return (
@@ -28,6 +29,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <LocationProvider>
         <Router />
+        <LocationSwitcher />
         <Toaster />
       </LocationProvider>
     </QueryClientProvider>
