@@ -1,4 +1,4 @@
-import { Laptop, Briefcase, Building, Check, ArrowRight, Brain, Code, Network } from "lucide-react";
+import { Laptop, Briefcase, Building, Check, ArrowRight, Brain, Code, Network, Megaphone, Users } from "lucide-react";
 
 export default function About() {
   const scrollToSection = (id: string) => {
@@ -37,39 +37,139 @@ export default function About() {
             Our workshop cum internship program welcomes everyone who wants to master AI, regardless of technical background. We'll equip you with the skills needed to survive and thrive in the rapidly evolving AI landscape.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-          <div className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-cyan-500/20 group hover:-translate-y-2">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded bg-cyan-900/50 text-cyan-400 mb-6 group-hover:bg-cyan-500/30 group-hover:text-white transition-all duration-300">
-              <Brain className="h-8 w-8" />
+        {/* Merged Benefits Cards */}
+        <div className="text-center mb-12">
+          <span className="text-blue-500 font-medium">PROGRAM BENEFITS</span>
+          <h2 className="font-sans font-bold text-3xl md:text-4xl mt-2 mb-4">Why Choose Our Program</h2>
+          <p className="max-w-3xl mx-auto text-gray-400">
+            Beyond just technical skills, our program offers a comprehensive package to boost your career prospects.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="text-purple-500 mb-4">
+              <Megaphone className="h-10 w-10" />
             </div>
-            <h3 className="font-sans font-bold text-2xl mb-3 text-white group-hover:text-cyan-400 transition-colors duration-300">Comprehensive Learning</h3>
-            <p className="text-gray-400 leading-relaxed">
-              From AI fundamentals to advanced GenAI techniques, our curriculum is designed for all backgrounds—no coding experience required. Learn practical AI skills with expert guidance.
+            <h3 className="font-sans font-semibold text-xl mb-2">Expert Seminars</h3>
+            <p className="text-gray-600">
+              Regular seminars and workshops from industry leaders and AI pioneers, giving you insights into the latest trends and technologies.
             </p>
           </div>
-          
-          <div className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-blue-500/20 group hover:-translate-y-2">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded bg-blue-900/50 text-blue-400 mb-6 group-hover:bg-blue-500/30 group-hover:text-white transition-all duration-300">
-              <Code className="h-8 w-8" />
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="text-purple-500 mb-4">
+              <Users className="h-10 w-10" />
             </div>
-            <h3 className="font-sans font-bold text-2xl mb-3 text-white group-hover:text-blue-400 transition-colors duration-300">Real-World Experience</h3>
-            <p className="text-gray-400 leading-relaxed">
-              Gain 2 months of hands-on internship experience working on actual projects with industry mentors. Build a portfolio that showcases your skills to potential employers.
+            <h3 className="font-sans font-semibold text-xl mb-2">Soft Skills Training</h3>
+            <p className="text-gray-600">
+              Enhance your communication, problem-solving, and teamwork abilities with dedicated soft skills sessions to complement your technical knowledge.
             </p>
           </div>
-          
-          <div className="bg-gray-800 p-8 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 border border-purple-500/20 group hover:-translate-y-2">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded bg-purple-900/50 text-purple-400 mb-6 group-hover:bg-purple-500/30 group-hover:text-white transition-all duration-300">
-              <Network className="h-8 w-8" />
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+            <div className="text-purple-500 mb-4">
+              <Briefcase className="h-10 w-10" />
             </div>
-            <h3 className="font-sans font-bold text-2xl mb-3 text-white group-hover:text-purple-400 transition-colors duration-300">Industry Connections</h3>
-            <p className="text-gray-400 leading-relaxed">
-              Attend seminars by AI leaders and build your professional network through our industry partnerships. Connect with professionals who share your passion.
+            <h3 className="font-sans font-semibold text-xl mb-2">Job Opportunities*</h3>
+            <p className="text-gray-600">
+              Potential for placement in our company or partner organizations based on performance during the internship phase.
             </p>
           </div>
         </div>
-        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="font-sans font-semibold text-xl mb-4 text-blue-500">Online & Offline Learning Options</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <h4 className="font-sans font-semibold text-lg mb-2">Online Mode</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                    <span className="text-gray-600">Live virtual classes</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                    <span className="text-gray-600">Recorded sessions for review</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                    <span className="text-gray-600">24/7 access to learning materials</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                    <span className="text-gray-600">Virtual team projects</span>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-sans font-semibold text-lg mb-2">Offline Mode</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                    <span className="text-gray-600">In-person classroom sessions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                    <span className="text-gray-600">Direct interaction with instructors</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                    <span className="text-gray-600">Hands-on lab sessions</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
+                    <span className="text-gray-600">Networking opportunities</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md">
+            <h3 className="font-sans font-semibold text-xl mb-4 text-green-500">What You'll Get</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <div className="bg-green-100 p-1 rounded-full text-green-500 mt-0.5 mr-3">
+                  <Check className="h-5 w-5" />
+                </div>
+                <span className="text-gray-600">Comprehensive AI & GenAI training</span>
+              </li>
+              <li className="flex items-start">
+                <div className="bg-green-100 p-1 rounded-full text-green-500 mt-0.5 mr-3">
+                  <Check className="h-5 w-5" />
+                </div>
+                <span className="text-gray-600">Industry-recognized certification</span>
+              </li>
+              <li className="flex items-start">
+                <div className="bg-green-100 p-1 rounded-full text-green-500 mt-0.5 mr-3">
+                  <Check className="h-5 w-5" />
+                </div>
+                <span className="text-gray-600">5 months of professional experience</span>
+              </li>
+              <li className="flex items-start">
+                <div className="bg-green-100 p-1 rounded-full text-green-500 mt-0.5 mr-3">
+                  <Check className="h-5 w-5" />
+                </div>
+                <span className="text-gray-600">Project portfolio for job applications</span>
+              </li>
+              <li className="flex items-start">
+                <div className="bg-green-100 p-1 rounded-full text-green-500 mt-0.5 mr-3">
+                  <Check className="h-5 w-5" />
+                </div>
+                <span className="text-gray-600">Access to AI community and networking</span>
+              </li>
+              <li className="flex items-start">
+                <div className="bg-green-100 p-1 rounded-full text-green-500 mt-0.5 mr-3">
+                  <Check className="h-5 w-5" />
+                </div>
+                <span className="text-gray-600">Potential job placement opportunities*</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        {/* <div className="bg-gray-100 p-6 rounded-lg text-center">
+          <p className="text-sm text-gray-600 mb-2">*Disclaimer: Job placement is not guaranteed and depends on availability of positions, individual performance, and market conditions.</p>
+          <p className="text-sm text-gray-600">Our company offers placement opportunities to top performers based on evaluation during the internship phase, subject to available positions.</p>
+        </div> */}
+        {/* End Merged Benefits Cards */}
+        {/* Who is this program for? and image section follows as before */}
         <div className="mt-20">
           <div className="flex flex-col md:flex-row items-center gap-12">
             <div className="md:w-1/2 relative">

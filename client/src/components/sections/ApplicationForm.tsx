@@ -6,6 +6,8 @@ import { useMutation } from "@tanstack/react-query";
 import { apiRequest } from "@/lib/queryClient";
 import { useToast } from "@/hooks/use-toast";
 import { useLocation } from "wouter";
+import { saveApplicationToFirestore } from "@/lib/firestoreHelpers";
+import { Dialog, DialogContent, DialogTitle, DialogDescription, DialogClose } from "@/components/ui/dialog";
 
 import {
   Form,
@@ -27,6 +29,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Loader2, User, Mail, Phone, BookOpen, Send, Sparkles, MapPin, Globe } from "lucide-react";
+import { courses } from "@/lib/courses";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -44,7 +47,6 @@ const formSchema = z.object({
   }),
   state: z.string().min(1, "Please enter your state/province").optional(),
   city: z.string().min(1, "Please enter your city").optional(),
-  motivation: z.string().min(20, "Please provide at least 20 characters about your motivation"),
   referral: z.string().optional(),
   terms: z.boolean().refine(val => val === true, {
     message: "You must accept the terms and conditions"
@@ -57,6 +59,8 @@ export default function ApplicationForm() {
   const { toast } = useToast();
   const [submitting, setSubmitting] = useState(false);
   const [location] = useLocation();
+  const [showThankYou, setShowThankYou] = useState(false);
+  const [selectedCourse, setSelectedCourse] = useState("");
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -66,12 +70,11 @@ export default function ApplicationForm() {
       email: "",
       phone: "",
       education: "",
-      course: "",
-      country: "US",
+      course: "", // Default to empty string
+      country: "IN", // Default to India
       state: "",
       city: "",
       experience: "",
-      motivation: "",
       referral: "",
       terms: false,
     },
@@ -94,32 +97,24 @@ export default function ApplicationForm() {
     }
   }, [form]);
 
-  const mutation = useMutation({
-    mutationFn: async (data: FormValues) => {
-      const { terms, ...applicationData } = data;
-      return apiRequest("POST", "/api/applications", applicationData);
-    },
-    onSuccess: () => {
+  const onSubmit = async (data: FormValues) => {
+    setSubmitting(true);
+    try {
+      await saveApplicationToFirestore(data);
+      setSelectedCourse(data.course);
+      setShowThankYou(true);
       toast({
         title: "Application Submitted",
         description: "We've received your application and will contact you soon!",
         variant: "default",
       });
       form.reset();
-    },
-    onError: (error) => {
+    } catch (error) {
       toast({
         title: "Submission Failed",
         description: error instanceof Error ? error.message : "Please try again later",
         variant: "destructive",
       });
-    },
-  });
-
-  const onSubmit = async (data: FormValues) => {
-    setSubmitting(true);
-    try {
-      await mutation.mutateAsync(data);
     } finally {
       setSubmitting(false);
     }
@@ -150,9 +145,9 @@ export default function ApplicationForm() {
             <p className="max-w-3xl mx-auto text-gray-600 text-lg">
               Fill out the form below to start your application process for any of our courses or programs.
             </p>
-            <p className="max-w-3xl mx-auto text-amber-600 font-medium mt-3 border border-amber-300 bg-amber-50 rounded-lg px-4 py-2 inline-block">
+            {/* <p className="max-w-3xl mx-auto text-amber-600 font-medium mt-3 border border-amber-300 bg-amber-50 rounded-lg px-4 py-2 inline-block">
               <strong>Please Note:</strong> Most of the program batches will be conducted online.
-            </p>
+            </p> */}
           </div>
           
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100">
@@ -166,12 +161,12 @@ export default function ApplicationForm() {
                     </div>
                     <span>Comprehensive AI & GenAI training</span>
                   </li>
-                  <li className="flex items-start">
+                  {/* <li className="flex items-start">
                     <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">
                       <Sparkles className="h-4 w-4" />
                     </div>
                     <span>2-month paid internship opportunity</span>
-                  </li>
+                  </li> */}
                   <li className="flex items-start">
                     <div className="p-1 bg-white/20 rounded-full mr-3 mt-0.5">
                       <Sparkles className="h-4 w-4" />
@@ -311,16 +306,21 @@ export default function ApplicationForm() {
                             <BookOpen className="mr-2 h-4 w-4 text-red-500" />
                             Program / Course*
                           </FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <Select
+                            value={form.watch("course")}
+                            onValueChange={val => form.setValue("course", val)}
+                          >
                             <FormControl>
                               <SelectTrigger className="rounded-lg">
-                                <SelectValue placeholder="Select the program you're applying for" />
+                                <SelectValue placeholder="Select Course" />
                               </SelectTrigger>
                             </FormControl>
                             <SelectContent>
-                              <SelectItem value="ai-genai">AI & GenAI Workshop + Internship</SelectItem>
-                              <SelectItem value="python">Python Programming Masterclass</SelectItem>
-                              <SelectItem value="sql">SQL Masterclass</SelectItem>
+                              {courses.map((c) => (
+                                <SelectItem key={c.name} value={c.name}>
+                                  {c.name}
+                                </SelectItem>
+                              ))}
                             </SelectContent>
                           </Select>
                           <FormMessage className="text-sm" />
@@ -712,25 +712,6 @@ export default function ApplicationForm() {
                     
                     <FormField
                       control={form.control}
-                      name="motivation"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel className="text-gray-700">Why do you want to join this program?*</FormLabel>
-                          <FormControl>
-                            <Textarea
-                              placeholder="Tell us about your motivation to join this program and what you hope to achieve..."
-                              rows={4}
-                              className="rounded-lg resize-none"
-                              {...field}
-                            />
-                          </FormControl>
-                          <FormMessage className="text-sm" />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
                       name="referral"
                       render={({ field }) => (
                         <FormItem>
@@ -802,6 +783,33 @@ export default function ApplicationForm() {
           </div>
         </div>
       </div>
+      <Dialog open={showThankYou} onOpenChange={setShowThankYou}>
+        <DialogContent className="max-w-md w-full bg-white rounded-2xl shadow-2xl p-8 text-center">
+          <DialogTitle className="text-2xl font-bold mb-2 text-[#1db954]">Thank you for applying!</DialogTitle>
+          <DialogDescription className="mb-6 text-gray-700">Your application has been received. You can now download the course brochures below.</DialogDescription>
+          <div className="flex flex-col gap-4">
+            <a
+              href="#" // TODO: Replace with selected course brochure link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-[#1db954] hover:bg-[#17a74a] text-white py-3 px-6 rounded-lg shadow font-semibold text-base transition-all duration-300 border-2 border-transparent hover:border-[#1db954] focus:outline-none focus:ring-2 focus:ring-[#1db954]"
+            >
+              Download {selectedCourse ? selectedCourse.charAt(0).toUpperCase() + selectedCourse.slice(1) : "Course"} Brochure
+            </a>
+            <a
+              href="#" // TODO: Replace with all courses brochure link
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-gradient-to-r from-[#1db954] to-[#17a74a] hover:from-[#17a74a] hover:to-[#1db954] text-white py-3 px-6 rounded-lg shadow font-semibold text-base transition-all duration-300 border-2 border-transparent hover:border-[#1db954] focus:outline-none focus:ring-2 focus:ring-[#1db954]"
+            >
+              Download All Courses Brochure
+            </a>
+          </div>
+          <DialogClose asChild>
+            <button className="mt-6 text-[#1db954] font-semibold underline">Close</button>
+          </DialogClose>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

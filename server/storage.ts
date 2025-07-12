@@ -1,7 +1,6 @@
 import {
   users, type User, type InsertUser,
-  applications, type Application, type InsertApplication, type UpdateApplication,
-  content, type Content, type InsertContent, type UpdateContent
+  applications, type Application, type InsertApplication, type UpdateApplication
 } from "@shared/schema";
 import { db } from "./db";
 import { eq, desc } from "drizzle-orm";
@@ -15,11 +14,6 @@ export interface IStorage {
   getApplications(): Promise<Application[]>;
   getApplicationById(id: number): Promise<Application | undefined>;
   updateApplicationStatus(id: number, updateData: UpdateApplication): Promise<Application | undefined>;
-  
-  getContent(section: string): Promise<Content | undefined>;
-  getAllContent(): Promise<Content[]>;
-  createContent(content: InsertContent): Promise<Content>;
-  updateContent(section: string, updates: UpdateContent): Promise<Content | undefined>;
 }
 
 export class DatabaseStorage implements IStorage {
@@ -75,43 +69,6 @@ export class DatabaseStorage implements IStorage {
       .where(eq(applications.id, id))
       .returning();
     return updatedApplication;
-  }
-  
-  async getContent(section: string): Promise<Content | undefined> {
-    const [contentItem] = await db
-      .select()
-      .from(content)
-      .where(eq(content.section, section));
-    return contentItem || undefined;
-  }
-  
-  async getAllContent(): Promise<Content[]> {
-    return await db
-      .select()
-      .from(content);
-  }
-  
-  async createContent(contentData: InsertContent): Promise<Content> {
-    const [newContent] = await db
-      .insert(content)
-      .values({
-        ...contentData,
-        updatedAt: new Date().toISOString()
-      })
-      .returning();
-    return newContent;
-  }
-  
-  async updateContent(section: string, updates: UpdateContent): Promise<Content | undefined> {
-    const [updatedContent] = await db
-      .update(content)
-      .set({
-        ...updates,
-        updatedAt: new Date().toISOString()
-      })
-      .where(eq(content.section, section))
-      .returning();
-    return updatedContent;
   }
 }
 

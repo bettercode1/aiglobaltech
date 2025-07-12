@@ -59,14 +59,13 @@ export default function Faq() {
   };
 
   return (
-    <section id="faq" className="py-16 bg-gradient-to-br from-red-50 to-orange-100 relative overflow-hidden">
+    <section id="faq" className="pt-32 pb-16 bg-gradient-to-br from-red-50 to-orange-100 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute -top-24 -right-24 w-64 h-64 bg-red-200 rounded-full blur-3xl opacity-30"></div>
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-orange-200 rounded-full blur-3xl opacity-30"></div>
       </div>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <span className="text-red-500 font-medium">FAQs</span>
           <h2 className="font-sans font-bold text-3xl md:text-4xl mt-2 mb-4">Frequently Asked Questions</h2>
           <p className="max-w-3xl mx-auto text-gray-600">
             Find answers to common questions about our AI & GenAI workshop and internship program.
@@ -81,7 +80,7 @@ export default function Faq() {
                   className="w-full flex justify-between items-center p-4 bg-white hover:bg-gray-50 transition"
                   onClick={() => toggleFaq(index)}
                 >
-                  <span className="font-sans font-medium text-left">{faq.question}</span>
+                  <span className="font-sans font-medium text-left text-black">{faq.question}</span>
                   {openIndex === index ? (
                     <ChevronUp className="h-5 w-5 text-gray-500" />
                   ) : (

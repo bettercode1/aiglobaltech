@@ -3,13 +3,17 @@ import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { 
   insertApplicationSchema, 
-  updateApplicationSchema, 
-  insertContentSchema, 
-  updateContentSchema 
+  updateApplicationSchema
 } from "@shared/schema";
 import { ZodError } from "zod";
 import { fromZodError } from "zod-validation-error";
 import { setupAuth } from "./auth";
+import path from "path";
+import fs from "fs";
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 export async function registerRoutes(app: Express): Promise<Server> {
   // Set up authentication
@@ -141,127 +145,58 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
     }
   });
+
+  // ============= BROCHURE DOWNLOAD ENDPOINT =============
   
-  // ============= CONTENT MANAGEMENT ENDPOINTS =============
-  
-  // Get all content sections
-  apiRouter.get("/content", isAuthenticated, async (req, res) => {
+  // Secure brochure download endpoint
+  apiRouter.post("/download-brochure", async (req, res) => {
     try {
-      const allContent = await storage.getAllContent();
-      res.json({
-        success: true,
-        data: allContent
-      });
+      const { courseName } = req.body;
+      
+      // You can add authentication/authorization here
+      // For example: if (!req.user) return res.status(401).json({ error: "Unauthorized" });
+      
+      // Rate limiting (optional)
+      // You can implement rate limiting here to prevent abuse
+      
+      // Determine which brochure to serve based on course name
+      let brochurePath;
+      if (courseName) {
+        // Course-specific brochure
+        const courseFileName = courseName.replace(/\s+/g, '-').toLowerCase();
+        brochurePath = path.join(__dirname, '..', 'client', 'src', 'assets', 'brochure', `${courseFileName}-brochure.pdf`);
+      } else {
+        // General brochure
+        brochurePath = path.join(__dirname, '..', 'client', 'src', 'assets', 'brochure', 'general-brochure.pdf');
+      }
+      
+      // Check if file exists
+      if (!fs.existsSync(brochurePath)) {
+        // Fallback to general brochure
+        brochurePath = path.join(__dirname, '..', 'client', 'src', 'assets', 'brochure', 'general-brochure.pdf');
+        
+        if (!fs.existsSync(brochurePath)) {
+          return res.status(404).json({
+            success: false,
+            message: "Brochure not found"
+          });
+        }
+      }
+      
+      // Set headers for file download
+      res.setHeader('Content-Type', 'application/pdf');
+      res.setHeader('Content-Disposition', `attachment; filename="${path.basename(brochurePath)}"`);
+      
+      // Stream the file
+      const fileStream = fs.createReadStream(brochurePath);
+      fileStream.pipe(res);
+      
     } catch (error) {
-      console.error("Error fetching content:", error);
+      console.error("Error downloading brochure:", error);
       res.status(500).json({
         success: false,
-        message: "Failed to fetch content. Please try again later."
+        message: "Failed to download brochure. Please try again later."
       });
-    }
-  });
-  
-  // Get content for a specific section
-  apiRouter.get("/content/:section", async (req, res) => {
-    try {
-      const section = req.params.section;
-      const contentItem = await storage.getContent(section);
-      
-      if (!contentItem) {
-        return res.status(404).json({
-          success: false,
-          message: "Content section not found"
-        });
-      }
-      
-      res.json({
-        success: true,
-        data: contentItem
-      });
-    } catch (error) {
-      console.error("Error fetching content section:", error);
-      res.status(500).json({
-        success: false,
-        message: "Failed to fetch content section. Please try again later."
-      });
-    }
-  });
-  
-  // Create new content section
-  apiRouter.post("/content", isAuthenticated, async (req, res) => {
-    try {
-      const contentData = insertContentSchema.parse(req.body);
-      
-      // Check if section already exists
-      const existingContent = await storage.getContent(contentData.section);
-      if (existingContent) {
-        return res.status(400).json({
-          success: false,
-          message: "Content section already exists"
-        });
-      }
-      
-      const newContent = await storage.createContent(contentData);
-      
-      res.status(201).json({
-        success: true,
-        message: "Content section created successfully",
-        data: newContent
-      });
-    } catch (error) {
-      if (error instanceof ZodError) {
-        const validationError = fromZodError(error);
-        res.status(400).json({
-          success: false,
-          message: "Validation error",
-          errors: validationError.message
-        });
-      } else {
-        console.error("Error creating content section:", error);
-        res.status(500).json({
-          success: false,
-          message: "Failed to create content section. Please try again later."
-        });
-      }
-    }
-  });
-  
-  // Update existing content section
-  apiRouter.put("/content/:section", isAuthenticated, async (req, res) => {
-    try {
-      const section = req.params.section;
-      const updateData = updateContentSchema.parse(req.body);
-      
-      const existingContent = await storage.getContent(section);
-      if (!existingContent) {
-        return res.status(404).json({
-          success: false,
-          message: "Content section not found"
-        });
-      }
-      
-      const updatedContent = await storage.updateContent(section, updateData);
-      
-      res.json({
-        success: true,
-        message: "Content section updated successfully",
-        data: updatedContent
-      });
-    } catch (error) {
-      if (error instanceof ZodError) {
-        const validationError = fromZodError(error);
-        res.status(400).json({
-          success: false,
-          message: "Validation error",
-          errors: validationError.message
-        });
-      } else {
-        console.error("Error updating content section:", error);
-        res.status(500).json({
-          success: false,
-          message: "Failed to update content section. Please try again later."
-        });
-      }
     }
   });
 

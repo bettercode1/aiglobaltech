@@ -51,11 +51,11 @@ export default function Pricing() {
         <div className="max-w-3xl mx-auto bg-white text-gray-900 rounded-xl shadow-lg overflow-hidden">
           <div className="bg-red-50 p-6 text-center">
             <h3 className="font-sans font-bold text-2xl text-red-500">Complete Workshop + Internship Package</h3>
-            <p className="text-gray-600 mt-2">Comprehensive 5-month program</p>
+            <p className="text-gray-600 mt-2">Comprehensive 6-month program</p>
           </div>
           
           <div className="p-8">
-            <div className="flex justify-center mb-8">
+            {/* <div className="flex justify-center mb-8">
               <div className="text-center">
                 <span className="text-gray-500 text-lg line-through">{regularPrice.formatted}</span>
                 <div className="flex items-center justify-center">
@@ -64,7 +64,7 @@ export default function Pricing() {
                 </div>
                 <span className="inline-block bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded mt-2">Early bird discount (15%) for first 20 enrolls (full payment only)</span>
               </div>
-            </div>
+            </div> */}
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
               <div>
@@ -75,7 +75,7 @@ export default function Pricing() {
                 <ul className="space-y-2">
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                    <span className="text-gray-600">3 months of instructor-led training</span>
+                    <span className="text-gray-600">4 months of instructor-led training</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
@@ -83,7 +83,7 @@ export default function Pricing() {
                   </li>
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
-                    <span className="text-gray-600">Hands-on projects with GenAI tools</span>
+                    <span className="text-gray-600">Hands-on projects</span>
                   </li>
                   <li className="flex items-start">
                     <Check className="h-5 w-5 text-green-500 mt-0.5 mr-2" />
@@ -126,7 +126,7 @@ export default function Pricing() {
               </div>
             </div>
             
-            <div className="text-center">
+            {/* <div className="text-center">
               <button 
                 onClick={() => scrollToSection('apply')}
                 className="bg-black border border-red-500/50 text-red-400 hover:bg-gray-900 font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
@@ -134,7 +134,7 @@ export default function Pricing() {
                 APPLY
               </button>
               <p className="text-sm text-gray-500 mt-4">Limited Seats Available. <span className="font-semibold text-green-600">Early bird discount (15%) for first 20 enrolls (full payment only)!</span></p>
-            </div>
+            </div> */}
           </div>
           
           <div className="bg-gray-50 p-6 border-t border-gray-200">
@@ -146,13 +146,13 @@ export default function Pricing() {
                 </div>
                 <h5 className="font-medium mb-2">Full Payment</h5>
                 <p className="text-gray-600 text-sm">
-                  Pay the entire amount of <span className="font-semibold">{discountedPrice.formatted}</span> to be <span className="text-green-600 font-semibold">Eligible for 15% discount!</span>
+                  Pay the entire amount to be <span className="text-green-600 font-semibold">Eligible for 15% discount!</span>
                 </p>
               </div>
               <div className="bg-white p-4 rounded border border-gray-200">
                 <h5 className="font-medium mb-2">Installment Plan</h5>
                 <p className="text-gray-600 text-sm">
-                  Pay in 3 easy installments of <span className="font-semibold">{installmentPrice.formatted}</span> each (first payment at registration).
+                  Pay in 3 easy installments (first payment at registration).
                 </p>
               </div>
             </div>

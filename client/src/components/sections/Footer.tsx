@@ -1,7 +1,10 @@
 import { MapPin, Mail, Phone, Facebook, Twitter, Instagram, Linkedin, ExternalLink, ChevronUp, ArrowRight } from "lucide-react";
 import BettercodeLogotype from "../BettercodeLogotype";
+import bettercodeLogo from "@/assets/bettercode.jpg";
+import { useLocation } from "wouter";
 
 export default function Footer() {
+  const [, navigate] = useLocation();
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -69,7 +72,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
           <div className="md:col-span-4">
             <div className="mb-6">
-              <BettercodeLogotype showText={true} />
+              <BettercodeLogotype showText={true} style={{ height: 72 }} />
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
               Empowering the next generation of AI professionals through comprehensive training and real-world experience. Join us on the journey to shape the future of artificial intelligence.
@@ -145,22 +148,22 @@ export default function Footer() {
             <h4 className="font-sans font-bold text-lg mb-6 text-white">Legal</h4>
             <ul className="space-y-3">
               <li>
-                <button onClick={() => alert('Terms & Conditions: This AI training program is provided by Bettercode Technologies PVT LTD. By enrolling in the program, you agree to our terms of service including attendance, code of conduct, and intellectual property policies.')} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <a href="/Terms" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Terms & Conditions</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </button>
+                </a>
               </li>
               <li>
-                <button onClick={() => alert('Privacy Policy: We collect personal information solely for program administration. Your data is securely stored and never shared with unauthorized third parties. You have the right to access and request deletion of your information.')} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <a href="/Privacy" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Privacy Policy</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </button>
+                </a>
               </li>
               <li>
-                <button onClick={() => alert('Refund Policy: Full refunds available if requested within 7 days of payment. Partial refunds of 50% if requested before the program begins. No refunds available once the program has started.')} className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
+                <a href="/Refund" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
                   <span>Refund Policy</span>
                   <ExternalLink className="ml-2 h-3 w-3 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
-                </button>
+                </a>
               </li>
               <li>
                 <a href="mailto:info@bettercode.co.in?subject=Career%20Inquiry" className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group">
@@ -202,7 +205,7 @@ export default function Footer() {
               </ul>
               <div className="mt-6 pt-6 border-t border-white/10">
                 <button 
-                  onClick={() => scrollToSection('apply')}
+                  onClick={() => navigate('/?scrollTo=apply', { replace: true })}
                   className="w-full bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
                 >
                   APPLY NOW
@@ -214,6 +217,9 @@ export default function Footer() {
         </div>
         
         <div className="pt-8 border-t border-white/10">
+          <div className="flex flex-col items-start">
+            <img src={bettercodeLogo} alt="Bettercode Logo" className="h-10 w-auto" />
+          </div>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-6 md:mb-0">© {currentYear} Bettercode Technologies PVT LTD. All rights reserved.</p>
             <div className="text-gray-400 text-sm max-w-2xl text-center md:text-right">

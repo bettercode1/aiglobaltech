@@ -1,27 +1,201 @@
-import { Link } from "wouter";
+import { ArrowRight, Award, BookOpen, Info, ChevronDown, ChevronUp, Download } from "lucide-react";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
-import { BadgeCheck, Bookmark, BookOpen, Brain, Code, Database, LineChart, Server, Sparkles, Timer } from "lucide-react";
+import { courses, Course } from "@/lib/courses";
+import React from "react";
+import { Dialog, DialogTrigger, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
+import { Brain, Sparkles } from "lucide-react";
+import { useLocation } from "wouter";
+
+function getCourseIcon(courseName: string) {
+  if (courseName.toLowerCase().includes("python")) return <BookOpen className="inline-block mr-2 h-7 w-7 text-white" />;
+  if (courseName.toLowerCase().includes("ai ml")) return <Brain className="inline-block mr-2 h-7 w-7 text-white" />;
+  if (courseName.toLowerCase().includes("gen ai")) return <Sparkles className="inline-block mr-2 h-7 w-7 text-white" />;
+  return <BookOpen className="inline-block mr-2 h-7 w-7 text-white" />;
+}
+
+function CourseCard({ course }: { course: Course }) {
+  const [dialogOpen, setDialogOpen] = React.useState(false);
+  const [downloading, setDownloading] = React.useState(false);
+  const previewCount = 3;
+  const hasMore = course.syllabus && course.syllabus.length > previewCount;
+  const syllabusToShow = course.syllabus ? [...course.syllabus.slice(0, previewCount)] : [];
+  while (syllabusToShow.length < previewCount) syllabusToShow.push("");
+  const [, navigate] = useLocation();
+
+  // Remove the Download Brochure button and related logic from CourseCard
+
+  return (
+    <div className="relative bg-[#202837] rounded-2xl shadow-xl overflow-hidden border-l-[6px] border-[#1db954] transition-all duration-300 hover:shadow-[#1db954]/30 hover:shadow-2xl hover:-translate-y-2 group flex flex-col min-w-[360px] max-w-[420px]">
+      <div className="p-8 flex flex-col h-full">
+        <div className="flex items-center mb-6">
+          <span className="inline-flex items-center justify-center bg-[#1db954] text-white rounded-full p-2 mr-4 shadow-md">
+            <BookOpen className="w-7 h-7" />
+          </span>
+          <div className="flex-1 min-w-0">
+            <h3 className="font-sans font-extrabold text-2xl md:text-3xl text-white tracking-tight drop-shadow mb-1 truncate">{course.name}</h3>
+            <div className="text-xs text-gray-200 font-medium truncate">Expert-led, hands-on learning</div>
+          </div>
+          {course.internship && course.internship !== 'No' && (
+            <span className="ml-2 inline-flex items-center px-3 py-1 rounded-full text-xs font-bold border border-[#1db954] text-[#1db954] bg-[#1db954] bg-opacity-10 shadow-sm">
+              <Award className="w-4 h-4 mr-1 text-[#1db954]" /> Internship: {course.internship}
+            </span>
+          )}
+        </div>
+        <div className="flex justify-between items-center text-lg mb-2 font-bold">
+          <span className="text-gray-100">Duration: <span className="text-white">{course.duration}</span></span>
+          <span className="flex flex-col items-end">
+            {course.cutFees ? (
+              <span className="text-red-500 line-through text-base">{course.cutFees}</span>
+            ) : (
+              <span className="text-red-500 line-through text-base">
+                {course.name === 'Full Stack/Combo Course' || course.name === 'C, C++, Python, Java, HTML, CSS, JavaScript' ? '₹ 1,20,000' : `₹${(parseInt(course.fees.replace(/[^\d]/g, '')) + 15000).toLocaleString()}`}
+              </span>
+            )}
+            <span className="text-gray-100 text-lg font-bold">{course.fees}</span>
+          </span>
+        </div>
+        <div className="border-b border-[#1db954] border-opacity-30 my-4"></div>
+        {course.syllabus && course.syllabus.length > 0 ? (
+          <div className="mb-6">
+            <ul className="list-disc pl-6 text-gray-100 text-base animate-fadeIn space-y-1 min-h-[96px]">
+              {syllabusToShow.map((item, idx) => (
+                <li key={idx} className={item ? undefined : "opacity-0 select-none pointer-events-none"}>{item || "-"}</li>
+              ))}
+            </ul>
+            {hasMore && (
+              <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                <DialogTrigger asChild>
+                  <button
+                    className="mt-4 flex items-center gap-1 text-[#1db954] underline font-semibold text-base hover:text-white transition-colors focus:outline-none"
+                  >
+                    See Full Syllabus
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-lg w-[95vw] sm:w-full bg-[#181f2a] rounded-2xl shadow-2xl border-0 p-0 overflow-hidden">
+                  <div className="bg-[#1db954] px-8 py-5 flex items-center justify-between rounded-t-2xl">
+                    <div className="flex items-center gap-3">
+                      {getCourseIcon(course.name)}
+                      <DialogTitle className="text-3xl font-extrabold text-white tracking-tight">{course.name}</DialogTitle>
+                    </div>
+                    <DialogClose asChild>
+                      <button className="text-white hover:text-gray-200 text-3xl font-bold focus:outline-none">&times;</button>
+                    </DialogClose>
+                  </div>
+                  <div className="px-8 pt-4 pb-8">
+                    <div className="flex justify-between items-center text-gray-200 text-base mb-6">
+                      <span>Duration: <span className="font-semibold">{course.duration}</span></span>
+                      <div className="flex flex-col items-end">
+                        <span className="text-red-500 line-through text-sm">₹{(parseInt(course.fees.replace(/[^\d]/g, '')) + 15000).toLocaleString()}</span>
+                        <span className="text-white font-semibold">{course.fees}</span>
+                      </div>
+                    </div>
+                    <div className="max-h-[50vh] overflow-y-auto pr-2 custom-scrollbar">
+                      <ul className="list-disc pl-6 text-white text-lg space-y-3">
+                        {course.syllabus.map((item, idx) => (
+                          <li key={idx}>{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    {/* Removed extra divider here */}
+                    <div className="mt-8 flex justify-center">
+                      <button 
+                        onClick={() => {
+                          navigate('/?scrollTo=apply');
+                        }}
+                        className="inline-flex items-center justify-center bg-[#1db954] hover:bg-[#17a74a] text-white py-3 px-8 rounded-xl shadow-lg font-bold text-lg transition-all duration-200 border-2 border-[#1db954] focus:outline-none focus:ring-2 focus:ring-[#1db954] group hover:-translate-y-1"
+                      >
+                        Apply Now
+                        <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                      </button>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+            )}
+          </div>
+        ) : (
+          <div className="mb-6 flex items-center text-[#1db954] text-sm gap-2 opacity-80">
+            <Info className="w-4 h-4" />
+            {course.name === "C, C++, Python, Java, HTML, CSS, JavaScript"
+              ? "Includes all listed courses"
+              : "No syllabus available"}
+          </div>
+        )}
+        {/* Move internship note to just above Apply Now button */}
+        <div className="mt-auto">
+          {course.internship && course.internship !== 'No' && (
+            <div className="mb-4 text-xs text-red-400 font-medium">
+              <span className="text-red-500 font-bold">*</span> Internship placement is subject to selection process and performance evaluation
+            </div>
+          )}
+          <button 
+            onClick={() => {
+              navigate('/?scrollTo=apply');
+            }}
+            className="w-full inline-flex items-center justify-center bg-[#1db954] hover:bg-[#17a74a] text-white py-3 px-8 rounded-xl shadow-lg font-bold text-lg transition-all duration-200 border-2 border-[#1db954] focus:outline-none focus:ring-2 focus:ring-[#1db954] group hover:-translate-y-1"
+          >
+            Apply Now
+            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Categorize courses
+const categories = [
+  {
+    name: "AI & ML",
+    courses: courses.filter(c => ["AI ML", "Gen AI"].includes(c.name)),
+  },
+  {
+    name: "Programming",
+    courses: courses.filter(c => ["C", "C++", "Python", "Java", "JavaScript", "Cyprus"].includes(c.name)),
+  },
+  {
+    name: "Web Development",
+    courses: courses.filter(c => ["HTML, CSS", "JavaScript"].includes(c.name)),
+  },
+  {
+    name: "Mobile App Development",
+    courses: courses.filter(c => ["Flutter"].includes(c.name)),
+  },
+  {
+    name: "Data & Database",
+    courses: courses.filter(c => ["Power BI", "ETL Library", "MySQL"].includes(c.name)),
+  },
+  {
+    name: "Excel",
+    courses: courses.filter(c => ["Adv. Excel", "Master Excel (incl. VBA)"].includes(c.name)),
+  },
+  {
+    name: "Full Stack/Combo",
+    courses: courses.filter(c => ["C, C++, Python, Java, HTML, CSS, JavaScript"].includes(c.name)),
+  },
+  {
+    name: "School Courses",
+    courses: courses.filter(c => ["School Python", "School Java", "School AI & Web"].includes(c.name)),
+  },
+];
 
 export default function Courses() {
-  return (
-    <div className="min-h-screen flex flex-col bg-gray-50 font-sans text-gray-900">
-      <Header isCoursePage={true} />
-      
+  // Scroll to top when component mounts
+  React.useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
+
+  return ( 
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-black via-[#10141a] to-gray-950 font-sans text-gray-900">
+      <Header isFaqPage={true} />
       <main className="flex-grow">
-        {/* Hero Section */}
-        <section className="pt-32 pb-24 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-white/5 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
-            <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-gray-700/10 rounded-full mix-blend-overlay blur-3xl opacity-70"></div>
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-gradient-to-br from-gray-800 to-gray-700 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
-          </div>
-          
+        <section className="pt-32 pb-12 bg-gradient-to-br from-gray-900 to-black text-white relative overflow-hidden">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="max-w-4xl mx-auto text-center">
               <div className="inline-flex items-center justify-center p-1 rounded-full bg-white/10 backdrop-blur-sm mb-6">
                 <div className="bg-white/20 text-white rounded-full px-4 py-1.5 font-medium text-sm">
-                  BETTERCODE TECHNOLOGIES
+                  AI GLOBAL TECH
                 </div>
               </div>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
@@ -30,284 +204,34 @@ export default function Courses() {
               <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-3xl mx-auto">
                 Master in-demand skills with our expertly crafted courses
               </p>
-              {/* No apply button as requested */}
             </div>
           </div>
-          
-          <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-50 to-transparent"></div>
         </section>
-        
-        {/* Course Cards */}
         <section className="py-20 relative overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gray-200 rounded-full blur-3xl opacity-30"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gray-200 rounded-full blur-3xl opacity-30"></div>
-          
+          {/* Subtle dot grid background pattern */}
+          <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+            <div 
+              className="absolute inset-0 opacity-30"
+              style={{
+                backgroundImage: `url('data:image/svg+xml;utf8,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="2" fill="%231db954" fill-opacity="0.3"/></svg>')`,
+                backgroundRepeat: 'repeat'
+              }}
+            />
+          </div>
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center p-1 rounded-full bg-white shadow-md mb-4">
-                <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
-                  <BookOpen className="h-4 w-4 mr-2" />
-                  OUR PROGRAMS
+            {categories.map(cat => cat.courses.length > 0 && (
+              <div key={cat.name} className="mb-16">
+                <h2 className="text-2xl font-bold mb-6 text-gray-200">{cat.name}</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {cat.courses.map((course) => (
+                    <CourseCard key={course.name} course={course} />
+                  ))}
                 </div>
               </div>
-              <h2 className="font-sans font-bold text-3xl lg:text-4xl mt-2 mb-4">Our Course Catalog</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Choose from our selection of specialized courses designed to accelerate your tech career
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {/* AI & GenAI Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-gray-200 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-gray-700 to-gray-800 flex items-center justify-center p-8">
-                  <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Brain className="h-12 w-12 text-white" />
-                  </div>
-                </div>
-                <div className="p-6 flex-grow">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-200 text-gray-800">
-                      Flagship Program
-                    </span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
-                      <Timer className="h-3 w-3 mr-1" /> 5 Months
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">AI & GenAI Workshop + Internship</h3>
-                  <p className="text-gray-600 mb-4">
-                    Comprehensive 3-month workshop followed by 2-month internship covering AI fundamentals to advanced GenAI applications.
-                  </p>
-                  <ul className="space-y-2 mb-4">
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">GenAI tools mastery (ChatGPT, Claude, Midjourney)</span>
-                    </li>
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">Practical AI implementation projects</span>
-                    </li>
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">2-month paid internship opportunity</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="p-6 pt-0 mt-auto">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="text-gray-800 font-bold text-2xl">₹49,999</div>
-                    <div className="text-gray-500 text-sm">Early bird: 15% off</div>
-                  </div>
-
-                  <div className="mt-4 text-sm text-gray-500">
-                    <p className="font-medium text-gray-700 mb-1">Course Highlights:</p>
-                    <ul className="list-disc pl-4 space-y-1">
-                      <li>Build no-code AI workflows</li>
-                      <li>Create chatbots &amp; agents</li>
-                      <li>Develop image generation skills</li>
-                      <li>24/7 mentor support</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Python Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-gray-200 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-gray-700 to-gray-800 flex items-center justify-center p-8">
-                  <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Code className="h-12 w-12 text-white" />
-                  </div>
-                </div>
-                <div className="p-6 flex-grow">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-200 text-gray-800">
-                      Programming
-                    </span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
-                      <Timer className="h-3 w-3 mr-1" /> 3 Months
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">Python Programming Masterclass</h3>
-                  <p className="text-gray-600 mb-4">
-                    From python basics to advanced concepts, including data science applications and web development fundamentals.
-                  </p>
-                  <ul className="space-y-2 mb-4">
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">Core Python programming concepts</span>
-                    </li>
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">Data analysis with Pandas & NumPy</span>
-                    </li>
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">Web development with Flask</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="p-6 pt-0 mt-auto">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="text-gray-800 font-bold text-2xl">₹24,999</div>
-                    <div className="text-gray-500 text-sm">Early bird available</div>
-                  </div>
-
-                  <div className="mt-4 text-sm text-gray-500">
-                    <p className="font-medium text-gray-700 mb-1">Course Highlights:</p>
-                    <ul className="list-disc pl-4 space-y-1">
-                      <li>Python fundamentals &amp; advanced OOP</li>
-                      <li>Data analysis with pandas &amp; matplotlib</li>
-                      <li>Web development with Flask/Django</li>
-                      <li>Project-based learning approach</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              
-              {/* SQL Course */}
-              <div className="bg-white rounded-xl overflow-hidden shadow-lg border border-gray-100 transition-all duration-300 hover:shadow-xl hover:border-gray-200 flex flex-col">
-                <div className="h-48 bg-gradient-to-r from-gray-700 to-gray-800 flex items-center justify-center p-8">
-                  <div className="h-24 w-24 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center">
-                    <Database className="h-12 w-12 text-white" />
-                  </div>
-                </div>
-                <div className="p-6 flex-grow">
-                  <div className="flex items-center justify-between mb-3">
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-200 text-gray-800">
-                      Data
-                    </span>
-                    <span className="text-xs font-medium px-2.5 py-0.5 rounded-full bg-gray-100 text-gray-600 flex items-center">
-                      <Timer className="h-3 w-3 mr-1" /> 2 Months
-                    </span>
-                  </div>
-                  <h3 className="text-xl font-bold mb-3">SQL Masterclass</h3>
-                  <p className="text-gray-600 mb-4">
-                    Master database management and data analysis with comprehensive SQL training covering basics to advanced topics.
-                  </p>
-                  <ul className="space-y-2 mb-4">
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">Database design and normalization</span>
-                    </li>
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">Advanced querying techniques</span>
-                    </li>
-                    <li className="flex items-start">
-                      <BadgeCheck className="h-5 w-5 text-gray-700 mr-2 flex-shrink-0" />
-                      <span className="text-gray-600">Data analysis and visualization</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="p-6 pt-0 mt-auto">
-                  <div className="flex justify-between items-center mb-4">
-                    <div className="text-gray-800 font-bold text-2xl">₹19,999</div>
-                    <div className="text-gray-500 text-sm">Early bird available</div>
-                  </div>
-
-                  <div className="mt-4 text-sm text-gray-500">
-                    <p className="font-medium text-gray-700 mb-1">Course Highlights:</p>
-                    <ul className="list-disc pl-4 space-y-1">
-                      <li>SQL query fundamentals to advanced</li>
-                      <li>Database design principles</li>
-                      <li>Data manipulation &amp; analysis</li>
-                      <li>Real-world database projects</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* Why Choose Us */}
-        <section className="py-20 bg-gradient-to-br from-gray-100 to-gray-200 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-gray-300 rounded-full blur-3xl opacity-20"></div>
-            <div className="absolute bottom-10 left-10 w-96 h-96 bg-gray-300 rounded-full blur-3xl opacity-20"></div>
-          </div>
-
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center justify-center p-1 rounded-full bg-white shadow-md mb-4">
-                <div className="bg-gradient-to-r from-gray-800 to-gray-900 text-white rounded-full px-4 py-1.5 font-medium text-sm flex items-center">
-                  <Sparkles className="h-4 w-4 mr-2" />
-                  WHY CHOOSE US
-                </div>
-              </div>
-              <h2 className="font-sans font-bold text-3xl lg:text-4xl mt-2 mb-4">Why Choose Our Courses</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                Bettercode's courses offer a unique learning experience designed to maximize your tech career potential
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-gray-700 to-gray-800 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
-                  <Sparkles className="h-6 w-6" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Industry Relevant</h3>
-                <p className="text-gray-600">
-                  Curriculum designed with input from industry professionals to focus on skills employers actually need.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-gray-700 to-gray-800 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
-                  <Server className="h-6 w-6" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Hands-on Projects</h3>
-                <p className="text-gray-600">
-                  Build a portfolio of real-world projects that demonstrate your skills to potential employers.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-gray-700 to-gray-800 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
-                  <LineChart className="h-6 w-6" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Career Support</h3>
-                <p className="text-gray-600">
-                  Dedicated career counseling, interview preparation, and networking opportunities with industry partners.
-                </p>
-              </div>
-              
-              <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="bg-gradient-to-br from-gray-700 to-gray-800 w-12 h-12 rounded-lg flex items-center justify-center text-white mb-5">
-                  <BookOpen className="h-6 w-6" />
-                </div>
-                <h3 className="font-bold text-lg mb-2">Expert Instruction</h3>
-                <p className="text-gray-600">
-                  Learn from experienced professionals with years of practical experience in their respective fields.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-        
-        {/* CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-gray-800 to-gray-900 text-white relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-700 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gray-700 rounded-full mix-blend-overlay blur-3xl opacity-20"></div>
-          </div>
-
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="max-w-4xl mx-auto text-center">
-              <div className="inline-flex items-center justify-center p-1 rounded-full bg-gray-700/20 backdrop-blur-sm mb-6">
-                <div className="bg-white/20 text-white rounded-full px-4 py-1.5 font-medium text-sm">
-                  LIMITED SPOTS AVAILABLE
-                </div>
-              </div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Accelerate Your Tech Career?</h2>
-              <p className="text-xl text-white/80 mb-8">
-                Don't miss the opportunity to learn in-demand skills for the future job market
-              </p>
-              <p className="text-white/70 font-medium">Limited seats available for upcoming batches</p>
-            </div>
+            ))}
           </div>
         </section>
       </main>
-      
       <Footer />
     </div>
   );

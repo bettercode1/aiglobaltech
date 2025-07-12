@@ -1,34 +1,26 @@
 import React from "react";
+import aiglobaltechLogo from "../assets/aiGolabalTech.png";
 
 interface BettercodeLogotypeProps {
   showText?: boolean;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-export default function BettercodeLogotype({ 
-  showText = true, 
-  className = "" 
-}: BettercodeLogotypeProps) {
+export default function BettercodeLogotype({ showText = true, className, style }: BettercodeLogotypeProps) {
   return (
-    <div className={`flex items-center ${className}`}>
-      <div className="flex-shrink-0 mr-2">
-        {/* Logo styled after the Bettercode red/orange branding */}
-        <div className="h-10 w-10 relative">
-          <div className="absolute left-0 top-2 w-3 h-6 bg-red-500 transform -skew-x-12"></div>
-          <div className="absolute right-0 top-2 w-3 h-6 bg-red-500 transform skew-x-12"></div>
-          <div className="absolute right-0 bottom-0 w-1.5 h-1.5 rounded-full bg-red-500"></div>
-        </div>
-      </div>
-      
+    <div
+      style={{ display: 'flex', alignItems: 'center', gap: 16, ...style, border: 'none', outline: 'none', boxShadow: 'none' }}
+      className={className}
+    >
+      <img
+        src={aiglobaltechLogo}
+        alt="AI Global Tech Logo"
+        style={{ height: style?.height || 40, border: 'none', outline: 'none', boxShadow: 'none' }}
+        draggable={false}
+      />
       {showText && (
-        <div>
-          <div className="font-bold text-white text-xl tracking-tight leading-none">
-            Bettercode
-          </div>
-          <div className="text-xs text-gray-300 font-medium">
-            Technologies PVT LTD
-          </div>
-        </div>
+        <span style={{ color: 'white', fontWeight: 'bold', fontSize: 24, letterSpacing: 1 }}>AiGlobalTech</span>
       )}
     </div>
   );

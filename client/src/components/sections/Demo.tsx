@@ -174,6 +174,14 @@ export default function Demo() {
   
   return (
     <section id="demo" className="py-24 bg-gradient-to-b from-gray-950 to-black relative overflow-hidden">
+      {/* Simple Badge/Logo Overlap */}
+      <div className="absolute left-1/2 -translate-x-1/2 -top-16 z-20 flex justify-center w-full pointer-events-none">
+        <img
+          src="/src/assets/aiGolabalTech.png"
+          alt="AI Global Tech Badge"
+          className="w-32 h-32 object-contain"
+        />
+      </div>
       {/* Background elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB4PSIwIiB5PSIwIiB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0xMCAwIEwwIDEwIE0xNSAwIEwwIDE1IE0yMCAwIEwwIDIwIE0yNSAwIEwwIDI1IE0zMCAwIEwwIDMwIE0zNSAwIEwwIDM1IE00MCAwIEwwIDQwIE00NSAwIEwwIDQ1IE01MCAwIEwwIDUwIE01NSAwIEwwIDU1IE02MCAwIEwwIDYwIE02NSAwIEwwIDY1IE03MCAwIEwwIDcwIE03NSAwIEwwIDc1IE04MCAwIEwwIDgwIE04NSAwIEwwIDg1IE05MCAwIEwwIDkwIE85NSAwIEwwIDk1IiBzdHJva2U9IiMwZmYiIHN0cm9rZS13aWR0aD0iMC4yIiBvcGFjaXR5PSIwLjA1Ii8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI3BhdHRlcm4pIiAvPjwvc3ZnPg==')]"></div>

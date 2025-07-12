@@ -7,7 +7,6 @@ export default function Hero() {
       const headerOffset = 80;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-      
       window.scrollTo({
         top: offsetPosition,
         behavior: "smooth"
@@ -24,10 +23,8 @@ export default function Hero() {
         <div className="absolute bottom-10 right-10 w-full h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent"></div>
         <div className="absolute top-1/3 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-transparent to-cyan-500"></div>
         <div className="absolute top-1/2 right-0 w-1/3 h-1/3 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxkZWZzPjxwYXR0ZXJuIGlkPSJncmlkIiB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiPjxwYXRoIGQ9Ik0gMjAgMCBMIDAgMCAwIDIwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwYWY1ZmYyMCIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIiAvPjwvc3ZnPg==')]"></div>
-        <div className="absolute top-20 left-10 w-20 h-20 border border-cyan-500/30"></div>
         <div className="absolute bottom-40 right-20 w-32 h-32 border border-cyan-500/30 rounded-full"></div>
       </div>
-      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col md:flex-row items-center">
           <div className="md:w-1/2 mb-10 md:mb-0 pr-0 md:pr-12">
@@ -41,7 +38,7 @@ export default function Hero() {
               Your Future in <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">AI & GenAI</span> Starts Here
             </h1>
             <p className="text-xl text-gray-200 mb-8 leading-relaxed">
-              A comprehensive 5-month program (3-month workshop + 2-month internship) designed for anyone who wants to learn AI and survive in the AI-driven future—no engineering background required.
+              A comprehensive 6-month program (4-month workshop + 2-month internship) designed for anyone who wants to learn AI and survive in the AI-driven future—no engineering background required.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <button 
@@ -90,13 +87,11 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        
         <div className="mt-20 py-5 px-8 bg-gray-900/50 rounded border border-red-500/20 shadow-lg relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-red-500 to-transparent"></div>
           <div className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-red-500 via-transparent to-red-500"></div>
           <div className="absolute right-0 top-0 h-full w-0.5 bg-gradient-to-b from-red-500 via-transparent to-transparent"></div>
           <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-transparent via-transparent to-red-500"></div>
-          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 text-center relative z-10">
             <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-red-500/10 hover:border-red-500/30">
               <div className="flex justify-center mb-2">
@@ -105,7 +100,7 @@ export default function Hero() {
                 </div>
               </div>
               <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-red-400 font-mono">05</span></p>
-              <p className="text-gray-400 font-mono text-xs">PROGRAM_MONTHS</p>
+              <p className="text-gray-400 font-mono text-base md:text-lg font-semibold">PROGRAM MONTHS</p>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-orange-500/10 hover:border-orange-500/30">
               <div className="flex justify-center mb-2">
@@ -114,7 +109,7 @@ export default function Hero() {
                 </div>
               </div>
               <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-orange-400 font-mono">02</span></p>
-              <p className="text-gray-400 font-mono text-xs">INTERNSHIP_MONTHS</p>
+              <p className="text-gray-400 font-mono text-base md:text-lg font-semibold">INTERNSHIP MONTHS</p>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-amber-500/10 hover:border-amber-500/30">
               <div className="flex justify-center mb-2">
@@ -123,7 +118,7 @@ export default function Hero() {
                 </div>
               </div>
               <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-amber-400 font-mono">15+</span></p>
-              <p className="text-gray-400 font-mono text-xs">GENAI_TOOLS</p>
+              <p className="text-gray-400 font-mono text-base md:text-lg font-semibold">GENAI TOOLS</p>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-rose-500/10 hover:border-rose-500/30">
               <div className="flex justify-center mb-2">
@@ -132,11 +127,10 @@ export default function Hero() {
                 </div>
               </div>
               <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-rose-400 font-mono">10+</span></p>
-              <p className="text-gray-400 font-mono text-xs">INDUSTRY_EXPERTS</p>
+              <p className="text-gray-400 font-mono text-base md:text-lg font-semibold">INDUSTRY EXPERTS</p>
             </div>
           </div>
         </div>
-        
         <div className="flex justify-center mt-16">
           <button 
             onClick={() => scrollToSection('about')}

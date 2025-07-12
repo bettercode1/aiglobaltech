@@ -26,7 +26,7 @@ export default function Curriculum() {
           <span className="text-red-500 font-medium">CURRICULUM</span>
           <h2 className="font-sans font-bold text-3xl md:text-4xl mt-2 mb-4">What You'll Learn</h2>
           <p className="max-w-3xl mx-auto text-gray-600">
-            Our comprehensive curriculum takes you from AI fundamentals to building advanced GenAI applications over a 5-month journey (3-month workshop + 2-month internship).
+            Our comprehensive curriculum takes you from AI fundamentals to building advanced GenAI applications over a 6-month journey (4-month workshop + 2-month internship).
           </p>
         </div>
         
@@ -41,7 +41,7 @@ export default function Curriculum() {
                 <div className="bg-red-100 p-2 rounded-full text-red-500 mr-4">
                   <BookOpen className="h-6 w-6" />
                 </div>
-                <h4 className="font-sans font-semibold text-lg">Phase 1: Workshop (3 Months)</h4>
+                <h4 className="font-sans font-semibold text-lg">Phase 1: Workshop (4 Months)</h4>
               </div>
               <ul className="space-y-2 pl-12">
                 <li className="flex items-center">
@@ -102,7 +102,7 @@ export default function Curriculum() {
                 <div>
                   <h4 className="font-sans font-semibold text-lg mb-2 flex items-center">
                     <Brain className="h-5 w-5 text-red-500 mr-2" />
-                    Module 1: AI Foundations (2 weeks)
+                    Module 1: AI Foundations (3 weeks)
                   </h4>
                   <ul className="space-y-1 pl-6">
                     <li className="text-sm text-gray-600">• Introduction to AI concepts and terminology</li>
@@ -115,7 +115,7 @@ export default function Curriculum() {
                 <div>
                   <h4 className="font-sans font-semibold text-lg mb-2 flex items-center">
                     <Lightbulb className="h-5 w-5 text-orange-500 mr-2" />
-                    Module 2: AI Tool Mastery (3 weeks)
+                    Module 2: AI Tool Mastery (4 weeks)
                   </h4>
                   <ul className="space-y-1 pl-6">
                     <li className="text-sm text-gray-600">• Mastering ChatGPT, Claude, and Gemini</li>
@@ -128,7 +128,7 @@ export default function Curriculum() {
                 <div>
                   <h4 className="font-sans font-semibold text-lg mb-2 flex items-center">
                     <Code className="h-5 w-5 text-amber-500 mr-2" />
-                    Module 3: AI Application Development (4 weeks)
+                    Module 3: AI Application Development (5 weeks)
                   </h4>
                   <ul className="space-y-1 pl-6">
                     <li className="text-sm text-gray-600">• Building custom AI agents and assistants</li>
@@ -141,7 +141,7 @@ export default function Curriculum() {
                 <div>
                   <h4 className="font-sans font-semibold text-lg mb-2 flex items-center">
                     <Rocket className="h-5 w-5 text-rose-500 mr-2" />
-                    Module 4: Industry AI Projects (3 weeks)
+                    Module 4: Industry AI Projects (4 weeks)
                   </h4>
                   <ul className="space-y-1 pl-6">
                     <li className="text-sm text-gray-600">• AI-powered business automation</li>
@@ -216,7 +216,7 @@ export default function Curriculum() {
           </div>
         </div>
         
-        <div className="bg-gradient-to-r from-red-500 to-orange-500 p-6 rounded-lg text-white">
+        {/* <div className="bg-gradient-to-r from-red-500 to-orange-500 p-6 rounded-lg text-white">
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-3/4 mb-4 md:mb-0 md:pr-6">
               <h3 className="font-sans font-semibold text-xl mb-2 flex items-center">
@@ -237,7 +237,7 @@ export default function Curriculum() {
               </a>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
