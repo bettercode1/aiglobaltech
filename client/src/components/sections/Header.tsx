@@ -74,8 +74,8 @@ export default function Header({
           </a>
         </div>
 
-        {/* Desktop nav links */}
-        <div className="hidden md:flex space-x-8 items-center">
+        {/* Desktop nav links - Centered */}
+        <div className="hidden md:flex space-x-8 items-center absolute left-1/2 transform -translate-x-1/2">
           <a
             href="/"
             className={`font-medium ${
@@ -120,20 +120,28 @@ export default function Header({
             />
           )}
 
-          {/* Show button only on homepage */}
+          {/* Show logo and button only on homepage */}
           {!isCoursePage && !isFaqPage && (
-            <a
-              href="#apply"
-              className="bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
-              style={{ minWidth: 170 }}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("apply");
-              }}
-            >
-              APPLY NOW
-              <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
-            </a>
+            <>
+              <img
+                src="/src/assets/bettercode.jpg"
+                alt="BetterCode Logo"
+                className="h-12 w-auto object-contain"
+                style={{width: 170 }}
+              />
+              <a
+                href="#apply"
+                className="bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
+                style={{ minWidth: 170 }}
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("apply");
+                }}
+              >
+                APPLY NOW
+                <ChevronRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
+              </a>
+            </>
           )}
         </div>
 

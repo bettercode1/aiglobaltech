@@ -30,6 +30,7 @@ import {
 } from "@/components/ui/select";
 import { Loader2, User, Mail, Phone, BookOpen, Send, Sparkles, MapPin, Globe } from "lucide-react";
 import { courses } from "@/lib/courses";
+import { getCourseBrochureLink, allCoursesBrochureLink } from "@/lib/courseBrochures";
 
 const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
@@ -750,7 +751,10 @@ export default function ApplicationForm() {
                           </FormControl>
                           <div className="space-y-1 leading-none">
                             <FormLabel className="text-gray-700">
-                              I agree to the <a href="#" className="text-purple-600 hover:underline font-medium">Terms and Conditions</a> and <a href="#" className="text-purple-600 hover:underline font-medium">Privacy Policy</a>.
+                              I agree to the  
+                              <a href="/Terms" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline font-medium">Terms and Conditions </a>
+                               and  
+                              <a href="/Privacy" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:underline font-medium"> Privacy Policy</a>.
                             </FormLabel>
                             <FormMessage className="text-sm" />
                           </div>
@@ -789,15 +793,15 @@ export default function ApplicationForm() {
           <DialogDescription className="mb-6 text-gray-700">Your application has been received. You can now download the course brochures below.</DialogDescription>
           <div className="flex flex-col gap-4">
             <a
-              href="#" // TODO: Replace with selected course brochure link
+              href={getCourseBrochureLink(selectedCourse)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-[#1db954] hover:bg-[#17a74a] text-white py-3 px-6 rounded-lg shadow font-semibold text-base transition-all duration-300 border-2 border-transparent hover:border-[#1db954] focus:outline-none focus:ring-2 focus:ring-[#1db954]"
             >
-              Download {selectedCourse ? selectedCourse.charAt(0).toUpperCase() + selectedCourse.slice(1) : "Course"} Brochure
+              Download {selectedCourse.charAt(0).toUpperCase() + selectedCourse.slice(1)} Brochure
             </a>
             <a
-              href="#" // TODO: Replace with all courses brochure link
+              href={allCoursesBrochureLink}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center bg-gradient-to-r from-[#1db954] to-[#17a74a] hover:from-[#17a74a] hover:to-[#1db954] text-white py-3 px-6 rounded-lg shadow font-semibold text-base transition-all duration-300 border-2 border-transparent hover:border-[#1db954] focus:outline-none focus:ring-2 focus:ring-[#1db954]"

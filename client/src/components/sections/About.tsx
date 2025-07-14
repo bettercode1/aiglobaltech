@@ -141,7 +141,7 @@ export default function About() {
                 <div className="bg-green-100 p-1 rounded-full text-green-500 mt-0.5 mr-3">
                   <Check className="h-5 w-5" />
                 </div>
-                <span className="text-gray-600">5 months of professional experience</span>
+                <span className="text-gray-600">6 months of professional experience</span>
               </li>
               <li className="flex items-start">
                 <div className="bg-green-100 p-1 rounded-full text-green-500 mt-0.5 mr-3">

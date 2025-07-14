@@ -205,7 +205,17 @@ export default function Footer() {
               </ul>
               <div className="mt-6 pt-6 border-t border-white/10">
                 <button 
-                  onClick={() => navigate('/?scrollTo=apply', { replace: true })}
+                  onClick={() => {
+                    const el = document.getElementById('apply');
+                    if (el) {
+                      const headerOffset = 80;
+                      const elementPosition = el.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    } else {
+                      navigate('/?scrollTo=apply', { replace: true });
+                    }
+                  }}
                   className="w-full bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-3 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
                 >
                   APPLY NOW

@@ -99,7 +99,7 @@ export default function Hero() {
                   <Sparkles className="h-5 w-5 text-red-400" />
                 </div>
               </div>
-              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-red-400 font-mono">05</span></p>
+              <p className="text-2xl md:text-3xl font-bold text-white"><span className="text-red-400 font-mono">06</span></p>
               <p className="text-gray-400 font-mono text-base md:text-lg font-semibold">PROGRAM MONTHS</p>
             </div>
             <div className="transform hover:scale-105 transition-transform duration-300 bg-black/30 p-4 rounded border border-orange-500/10 hover:border-orange-500/30">

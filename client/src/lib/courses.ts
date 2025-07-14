@@ -116,20 +116,6 @@ export const courses: Course[] = [
     ],
   },
   {
-    name: 'Master Excel (incl. VBA)',
-    duration: '1 Month',
-    fees: '₹ 14,999',
-    internship: 'No',
-    syllabus: [
-      'Excel Basics & Functions',
-      'Formatting & Charts',
-      'Lookup & Logic Functions',
-      'Data Filtering & Pivot Tables',
-      'VBA Programming & Macros',
-      'Practical Business Projects',
-    ],
-  },
-  {
     name: 'HTML, CSS',
     duration: '3 Month',
     fees: '₹ 29,999',
