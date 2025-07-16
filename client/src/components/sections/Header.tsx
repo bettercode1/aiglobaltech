@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, ChevronRight } from "lucide-react";
 import BettercodeLogotype from "../BettercodeLogotype";
+import bettercodeLogo from "@/assets/bettercode.jpg";
 
 export default function Header({
   isCoursePage = false,
@@ -55,7 +56,7 @@ export default function Header({
 
   return (
     <header className={headerClass} style={{ top: 0, left: 0 }}>
-      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+      <nav className="container mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between relative">
         {/* Logo / Brand */}
         <div className="flex items-center">
           <a
@@ -68,8 +69,7 @@ export default function Header({
           >
             <BettercodeLogotype
               showText={false}
-              className="mr-6"
-              style={{ height: 80 }}
+              className="h-10 md:h-12"
             />
           </a>
         </div>
@@ -112,23 +112,27 @@ export default function Header({
         {/* Desktop Right Side: Button + Logo only on Home */}
         <div className="hidden md:flex items-center gap-4">
         {(isCoursePage || isFaqPage) && (
-            <img
-              src="/src/assets/bettercode.jpg"
-              alt="BetterCode Logo"
-              className="h-12 w-auto object-contain"
-              style={{width: 170 }}
-            />
+            <a href="https://bettercode.co.in/" target="_blank" rel="noopener noreferrer">
+              <img
+                src={bettercodeLogo}
+                alt="BetterCode Logo"
+                className="h-12 w-auto object-contain"
+                style={{width: 170 }}
+              />
+            </a>
           )}
 
           {/* Show logo and button only on homepage */}
           {!isCoursePage && !isFaqPage && (
             <>
-              <img
-                src="/src/assets/bettercode.jpg"
-                alt="BetterCode Logo"
-                className="h-12 w-auto object-contain"
-                style={{width: 170 }}
-              />
+              <a href="https://bettercode.co.in/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src={bettercodeLogo}
+                  alt="BetterCode Logo"
+                  className="h-12 w-auto object-contain"
+                  style={{width: 170 }}
+                />
+              </a>
               <a
                 href="#apply"
                 className="bg-gradient-to-r from-red-600 to-red-500 text-white hover:from-red-700 hover:to-red-600 font-medium py-2.5 px-6 rounded shadow-lg hover:shadow-red-900/20 text-center transition-all duration-300 flex items-center justify-center group"
@@ -145,8 +149,18 @@ export default function Header({
           )}
         </div>
 
-        {/* Mobile menu button */}
-        <div className="md:hidden">
+        {/* Mobile menu button and BetterCode logo */}
+        <div className="md:hidden z-10 flex items-center gap-2">
+          {/* BetterCode Logo */}
+          <a href="https://bettercode.co.in/" target="_blank" rel="noopener noreferrer">
+            <img
+              src={bettercodeLogo}
+              alt="BetterCode Logo"
+              className="h-7 w-auto object-contain"
+              style={{width: 85 }}
+            />
+          </a>
+          
           <button
             onClick={toggleMobileMenu}
             className={scrolled ? "text-gray-800" : "text-white"}

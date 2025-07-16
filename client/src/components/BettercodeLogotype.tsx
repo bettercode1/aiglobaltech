@@ -10,13 +10,13 @@ interface BettercodeLogotypeProps {
 export default function BettercodeLogotype({ showText = true, className, style }: BettercodeLogotypeProps) {
   return (
     <div
-      style={{ display: 'flex', alignItems: 'center', gap: 16, ...style, border: 'none', outline: 'none', boxShadow: 'none' }}
+      style={{ display: 'flex', alignItems: 'center', gap: 16, ...style }}
       className={className}
     >
       <img
         src={aiglobaltechLogo}
         alt="AI Global Tech Logo"
-        style={{ height: style?.height || 40, border: 'none', outline: 'none', boxShadow: 'none' }}
+        className="h-full w-auto object-contain"
         draggable={false}
       />
       {showText && (

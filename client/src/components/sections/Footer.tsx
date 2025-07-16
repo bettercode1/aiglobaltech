@@ -78,16 +78,13 @@ export default function Footer() {
               Empowering the next generation of AI professionals through comprehensive training and real-world experience. Join us on the journey to shape the future of artificial intelligence.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
+              <a href="https://www.facebook.com/Bettercodetech" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a href="#" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
+              <a href="https://www.instagram.com/_ai_gt_?igsh=bGV3MmR6OHRucjNq" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href="#" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
+              <a href="https://www.linkedin.com/company/bettercode-technologies-pvt-ltd/" target="_blank" rel="noopener noreferrer" className="p-2 bg-white/10 backdrop-blur-md rounded-full text-white hover:bg-white/20 transition-all duration-300">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
@@ -182,7 +179,7 @@ export default function Footer() {
                   <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
                     <MapPin className="h-5 w-5" />
                   </div>
-                  <a href="https://goo.gl/maps/h98RWH7" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">Bettercode Technologies PVT LTD, Pimpri Chinchwad, Pune 411033</a>
+                  <a href="https://maps.app.goo.gl/85mVLkiC4spLLZqs9?g_st=aw" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-white transition-colors duration-300">Bettercode Technologies PVT LTD, Pimpri Chinchwad, Pune 411033</a>
                 </li>
                 <li className="flex items-start">
                   <div className="p-2 bg-white/10 rounded-full mr-4 mt-0.5 text-cyan-400 flex-shrink-0">
@@ -228,7 +225,9 @@ export default function Footer() {
         
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col items-start">
-            <img src={bettercodeLogo} alt="Bettercode Logo" className="h-10 w-auto" />
+            <a href="https://bettercode.co.in/" target="_blank" rel="noopener noreferrer">
+              <img src={bettercodeLogo} alt="Bettercode Logo" className="h-10 w-auto" />
+            </a>
           </div>
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-6 md:mb-0">© {currentYear} Bettercode Technologies PVT LTD. All rights reserved.</p>

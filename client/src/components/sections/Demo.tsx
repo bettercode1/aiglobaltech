@@ -177,7 +177,7 @@ export default function Demo() {
       {/* Simple Badge/Logo Overlap */}
       <div className="absolute left-1/2 -translate-x-1/2 -top-16 z-20 flex justify-center w-full pointer-events-none">
         <img
-          src="/src/assets/aiGolabalTech.png"
+          src="/assets/aiGolabalTech-Dd-RNDJl.png"
           alt="AI Global Tech Badge"
           className="w-32 h-32 object-contain"
         />
