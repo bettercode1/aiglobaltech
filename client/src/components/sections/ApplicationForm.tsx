@@ -34,7 +34,7 @@ const formSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(2, "Last name must be at least 2 characters"),
   email: z.string().email("Invalid email address"),
-  phone: z.string().min(10, "Phone number must be at least 10 digits"),
+  phone: z.string().regex(/^\d{10}$/, "Phone number must be exactly 10 digits"),
   education: z.string().min(1, "Please select your highest education"),
   course: z.string().min(1, "Please select which course you're applying for"),
   mode: z.enum(["online", "offline", "hybrid"], {
@@ -282,7 +282,24 @@ export default function ApplicationForm() {
                               Phone Number*
                             </FormLabel>
                             <FormControl>
-                              <Input placeholder="Your phone number" className="rounded-lg" {...field} />
+                              <Input 
+                                type="tel"
+                                placeholder="Enter 10 digit phone number" 
+                                className="rounded-lg" 
+                                {...field}
+                                onKeyPress={(e) => {
+                                  // Allow only numbers and control keys
+                                  const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'Backspace', 'Delete', 'Tab', 'Escape', 'Enter'];
+                                  if (!allowedKeys.includes(e.key) && !e.ctrlKey && !e.metaKey) {
+                                    e.preventDefault();
+                                  }
+                                }}
+                                onChange={(e) => {
+                                  // Remove any non-numeric characters and limit to 10 digits
+                                  const value = e.target.value.replace(/\D/g, '').slice(0, 10);
+                                  field.onChange(value);
+                                }}
+                              />
                             </FormControl>
                             <FormMessage className="text-sm" />
                           </FormItem>
@@ -574,7 +591,7 @@ export default function ApplicationForm() {
                                   </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    {(indianStatesWithCities[selectedState] || ["Other"]).map((city) => (
+                                    {(indianStatesWithCities[selectedState || ""] || ["Other"]).map((city: string) => (
                                       <SelectItem key={city} value={city}>{city}</SelectItem>
                                     ))}
                                 </SelectContent>
